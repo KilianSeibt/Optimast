@@ -1,0 +1,26 @@
+Alt-Hohenschönhausen, 52.54608, 13.5013
+Berlin, 52.52437, 13.41053
+Berlin Köpenick, 52.44254, 13.58228
+Charlottenburg, 52.51667, 13.28333
+Friedrichsfelde, 52.50575, 13.50812
+Friedrichshain, 52.51559, 13.45482
+Gesundbrunnen, 52.55035, 13.39139
+Hellersdorf, 52.53319, 13.6088
+Kreuzberg, 52.49973, 13.40338
+Köpenick, 52.4455, 13.57455
+Lichtenrade, 52.39844, 13.40637
+Lichterfelde, 52.4333, 13.30762
+Mariendorf, 52.4378, 13.38109
+Marzahn, 52.54525, 13.56983
+Mitte, 52.52003, 13.40489
+Moabit, 52.52635, 13.33903
+Neu-Hohenschönhausen, 52.56681, 13.51255
+Neukölln, 52.47719, 13.43126
+Pankow, 52.56926, 13.40186
+Prenzlauer Berg, 52.53878, 13.42443
+Steglitz, 52.45606, 13.332
+Tempelhof, 52.46667, 13.4
+Treptow, 52.49376, 13.44469
+Wedding, 52.54734, 13.35594
+Wilmersdorf, 52.48333, 13.31667
+Zehlendorf, 52.43333, 13.25
