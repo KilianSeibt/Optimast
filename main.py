@@ -399,7 +399,7 @@ def main():
     plot_map(city_coords=list(meta.cities.values()), tower_small_coords = towers_small, tower_large_coords = towers_large, headline=headline, grid=grid)
 
     #plot_map(city_coords=list(coords.values()))
-
+    #test
 
 if __name__ == '__main__':
     main()
