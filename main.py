@@ -6,7 +6,7 @@ def main():
     meta = Meta()
     meta.create_cities()
     
-    grid_densities_to_test = [20_000, 15_000, 10_000]
+    grid_densities_to_test = [1000]
     all_results = {}
     
     for density in grid_densities_to_test:
