@@ -2,6 +2,8 @@ from plotting import *
 from models import *
 from pulp import *
 
+import timeit
+
 def calculate_density(cities_small_radius: set[City], cities_large_radius: set[City],
                       costs_small: float, costs_large: float, uncovered_cities: set[City]) -> tuple[float, str]:
 
@@ -58,16 +60,18 @@ def heuristic_approach(problem: Problem) -> tuple[set[Tower], set[Tower]]:
 
         tower_coords[small_or_large].add(tower)
 
+        points_to_update = set()
         for city in problem.grids_to_cities[small_or_large][best_point]:
             uncovered_cities.discard(city)
-            for grid_point in problem.cities_to_grids['large'][city]:
-                density = calculate_density(problem.grids_to_cities['small'][grid_point],
-                                            problem.grids_to_cities['large'][grid_point],
-                                            problem.costs['small'], problem.costs['large'], uncovered_cities)
-                if density == float("-inf"):
-                    grid_points_to_density.pop(grid_point)
-                else:
-                    grid_points_to_density[grid_point] = density
+            points_to_update |= problem.cities_to_grids['large'][city]
+        for grid_point in points_to_update:
+            density = calculate_density(problem.grids_to_cities['small'][grid_point],
+                                        problem.grids_to_cities['large'][grid_point],
+                                        problem.costs['small'], problem.costs['large'], uncovered_cities)
+            if density == float("-inf"):
+                grid_points_to_density.pop(grid_point)
+            else:
+                grid_points_to_density[grid_point] = density
 
     return tower_coords['small'], tower_coords['large']
 
@@ -127,6 +131,7 @@ def main():
     problem = Problem(tower_size_S, tower_size_L, grid_density)
 
     towers_small_coords, towers_large_coords = MILP_approach(problem)
+    #TIME heuristic approach: total time: 90.61614779999945, avg time: 18.123229559999892
 
     total_costs = len(towers_small_coords) * problem.costs['small'] + len(towers_large_coords) * problem.costs['large']
     write_txt_file(towers_small_coords, towers_large_coords)
