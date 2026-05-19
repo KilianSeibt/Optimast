@@ -1,7 +1,7 @@
-from plotting import *
 from models import *
 from pulp import *
 from osm import *
+from plot_radii import *
 import time
 import timeit
 import random
@@ -110,7 +110,8 @@ def MILP_approach(problem: Problem) -> tuple[set[Tower], set[Tower]]:
             for g in problem.cities_to_grids[t].get(city, [])
         ) >= 1
 
-    pulp_problem.solve()
+    # Suppress solver output (CBC only)
+    pulp_problem.solve(PULP_CBC_CMD(msg=False))
 
     tower_coords: dict = {'small': set(), 'large': set()}
 
@@ -139,15 +140,15 @@ def main():
     print("    STARTE META-OPTIMIERUNG (EPSILON & RADIUS)")
     print("=" * 60)
     
-    grid_density = 1_000
+    grid_density = 5_000
     
     # Startwerte für die Radien
-    t_1 = 19_000  # small
-    t_2 = 49_000  # large
+    t_1 = 50_000  # small
+    t_2 = 60_000  # large
     
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 1     # Wie oft sollen t_1 und t_2 angepasst werden?
-    N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
+    MAX_ITERATIONS = 15     # Wie oft sollen t_1 und t_2 angepasst werden?
+    N_EPSILONS = 5         # Wie viele Epsilons pro Iteration testen?
     STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
     
     best_overall_costs = float('inf')
@@ -157,6 +158,8 @@ def main():
     best_problem = None
     
     start_total_time = time.time()
+
+    points_to_plot = []
     
     # =========================================================
     # ÄUSSERE SCHLEIFE: Passe die Tower-Größen an (t_1, t_2)
@@ -190,6 +193,7 @@ def main():
             # 4. Minimalstes Problem (m_i) dieser Iteration speichern
             if costs < current_iter_best_costs:
                 current_iter_best_costs = costs
+                points_to_plot.append({'t_1': t_1, 't_2': t_2, 'cost': current_iter_best_costs})
                 current_iter_best_eps = (eps_x, eps_y)
                 current_iter_small, current_iter_large = towers_small, towers_large
                 current_iter_problem = problem
@@ -218,12 +222,13 @@ def main():
             
         # Sicherheits-Check: Radien dürfen nicht zu klein werden
         t_1 = max(5_000, t_1)
-        t_2 = max(20_000, t_2)
+        t_2 = min(20_000, t_2)
 
     # =========================================================
     # ENDE DER OPTIMIERUNG - ERGEBNISSE AUSGEBEN
     # =========================================================
     write_txt_file(best_small_towers, best_large_towers)
+    plot_radii(points_to_plot)
     
     print("\n" + "=" * 60)
     print("               FINALE ERGEBNIS-ZUSAMMENFASSUNG")

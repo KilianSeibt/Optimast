@@ -1,7 +1,27 @@
 import folium
 from folium.plugins import FastMarkerCluster
-# WICHTIG: Wir holen uns die Funktion direkt aus eurer plotting.py!
-from plotting import utm_to_latlon
+import geopandas as gpd
+from shapely.geometry import Point as ShapelyPoint
+from abc import ABC, abstractmethod
+def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
+    """
+    Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
+
+    :param point: (x, y) in meters (UTM)
+    :return: (lat, lon)
+    """
+    x, y = point
+
+    gdf = gpd.GeoDataFrame(
+        geometry=[ShapelyPoint(x, y)],
+        crs="EPSG:32632"
+    )
+
+    gdf_latlon = gdf.to_crs(epsg=4326)
+
+    lon, lat = gdf_latlon.geometry.iloc[0].x, gdf_latlon.geometry.iloc[0].y
+
+    return lat, lon
 
 def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, output_html="abdeckung_karte.html"):
     """
