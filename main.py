@@ -125,7 +125,7 @@ def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = N
 
 def main():
 
-    grid_density = 1_000
+    grid_density = 10_000
     tower_size_S, tower_size_L = 17_500, 47_500
     #tower_size_S, tower_size_L = 20_000, 50_000
     problem = Problem(tower_size_S, tower_size_L, grid_density)
