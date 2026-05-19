@@ -1,8 +1,11 @@
 from plotting import *
 from models import *
 from pulp import *
-
+from osm import *
+import time
 import timeit
+import random
+
 
 def calculate_density(cities_small_radius: set[City], cities_large_radius: set[City],
                       costs_small: float, costs_large: float, uncovered_cities: set[City]) -> tuple[float, str]:
@@ -93,10 +96,18 @@ def MILP_approach(problem: Problem) -> tuple[set[Tower], set[Tower]]:
     )
 
     for city in problem.cities:
+        # Sicherheitsnetz: Holt sich eine leere Liste [], falls die Stadt durch das Epsilon unerreichbar wurde
+        grids_small = problem.cities_to_grids['small'].get(city, [])
+        grids_large = problem.cities_to_grids['large'].get(city, [])
+        
+        if not grids_small and not grids_large:
+            print(f"Warnung: Die Stadt {city.name} kann vom aktuellen Raster (mit Epsilon-Verschiebung) nicht abgedeckt werden!")
+            continue # Überspringt diese Stadt, damit das Programm nicht crasht
+            
         pulp_problem += lpSum(
             x[g, t]
             for t in ['small', 'large']
-            for g in problem.cities_to_grids[t][city]
+            for g in problem.cities_to_grids[t].get(city, [])
         ) >= 1
 
     pulp_problem.solve()
@@ -124,25 +135,111 @@ def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = N
 
 
 def main():
-
+    print("=" * 60)
+    print("    STARTE META-OPTIMIERUNG (EPSILON & RADIUS)")
+    print("=" * 60)
+    
     grid_density = 1_000
-    tower_size_S, tower_size_L = 17_500, 47_500
-    #tower_size_S, tower_size_L = 20_000, 50_000
-    problem = Problem(tower_size_S, tower_size_L, grid_density)
+    
+    # Startwerte für die Radien
+    t_1 = 19_000  # small
+    t_2 = 49_000  # large
+    
+    # Hyperparameter für die Meta-Optimierung
+    MAX_ITERATIONS = 1     # Wie oft sollen t_1 und t_2 angepasst werden?
+    N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
+    STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
+    
+    best_overall_costs = float('inf')
+    best_t_1, best_t_2 = t_1, t_2
+    best_epsilon = (0, 0)
+    best_small_towers, best_large_towers = set(), set()
+    best_problem = None
+    
+    start_total_time = time.time()
+    
+    # =========================================================
+    # ÄUSSERE SCHLEIFE: Passe die Tower-Größen an (t_1, t_2)
+    # =========================================================
+    for iteration in range(MAX_ITERATIONS):
+        print(f"\n--- [Iteration {iteration+1}/{MAX_ITERATIONS}] Teste Radien: S={t_1}m, L={t_2}m ---")
+        
+        current_iter_best_costs = float('inf')
+        current_iter_best_eps = (0, 0)
+        current_iter_small, current_iter_large = set(), set()
+        current_iter_problem = None
+        
+        # =========================================================
+        # INNERE SCHLEIFE: Teste N verschiedene Epsilons
+        # =========================================================
+        for i in range(N_EPSILONS):
+            # 1. Zufälliges Epsilon würfeln (zwischen 0 und grid_density)
+            eps_x = random.randint(0, grid_density)
+            eps_y = random.randint(0, grid_density)
+            
+            print(f"  -> Teste Epsilon {i+1}/{N_EPSILONS}: Offset X:{eps_x}m, Y:{eps_y}m... ", end="", flush=True)
+            
+            # 2. Problem erstellen und MILP lösen
+            problem = Problem(t_1, t_2, grid_density, eps_x, eps_y)
+            towers_small, towers_large = MILP_approach(problem)
+            
+            # 3. Kosten berechnen
+            costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large']
+            print(f"Kosten: {costs:.2f} GE")
+            
+            # 4. Minimalstes Problem (m_i) dieser Iteration speichern
+            if costs < current_iter_best_costs:
+                current_iter_best_costs = costs
+                current_iter_best_eps = (eps_x, eps_y)
+                current_iter_small, current_iter_large = towers_small, towers_large
+                current_iter_problem = problem
 
-    towers_small_coords, towers_large_coords = MILP_approach(problem)
-    #TIME heuristic approach: total time: 90.61614779999945, avg time: 18.123229559999892
+        # =========================================================
+        # UPDATE-REGEL (Stochastic Hill Climbing / Pseudo-Gradient)
+        # =========================================================
+        if current_iter_best_costs < best_overall_costs:
+            print(f"  [!] NEUES GLOBALES MINIMUM GEFUNDEN: {current_iter_best_costs:.2f} GE")
+            best_overall_costs = current_iter_best_costs
+            best_t_1, best_t_2 = t_1, t_2
+            best_epsilon = current_iter_best_eps
+            best_small_towers, best_large_towers = current_iter_small, current_iter_large
+            best_problem = current_iter_problem
+            
+            # Wir sind auf einem guten Weg! Verändere die Radien leicht für die nächste Runde.
+            # Zufälliger Schritt (+ oder - STEP_SIZE)
+            t_1 += random.choice([-STEP_SIZE, STEP_SIZE])
+            t_2 += random.choice([-STEP_SIZE, STEP_SIZE])
+        else:
+            print(f"  [x] Keine Verbesserung. Bleibe beim Bisherigen besten.")
+            # Wir haben uns verschlechtert! Gehe zurück zu den besten Werten und probiere 
+            # eine andere zufällige Richtung aus.
+            t_1 = best_t_1 + random.choice([-STEP_SIZE, STEP_SIZE])
+            t_2 = best_t_2 + random.choice([-STEP_SIZE, STEP_SIZE])
+            
+        # Sicherheits-Check: Radien dürfen nicht zu klein werden
+        t_1 = max(5_000, t_1)
+        t_2 = max(20_000, t_2)
 
-    total_costs = len(towers_small_coords) * problem.costs['small'] + len(towers_large_coords) * problem.costs['large']
-    write_txt_file(towers_small_coords, towers_large_coords)
-    headline = (f'grid_density = {grid_density}, tower sizes: ({tower_size_S, tower_size_L}'
-                f'\n{len(towers_small_coords)} small towers, '
-                f'{len(towers_large_coords)} large towers, costs = {total_costs}')
+    # =========================================================
+    # ENDE DER OPTIMIERUNG - ERGEBNISSE AUSGEBEN
+    # =========================================================
+    write_txt_file(best_small_towers, best_large_towers)
+    
+    print("\n" + "=" * 60)
+    print("               FINALE ERGEBNIS-ZUSAMMENFASSUNG")
+    print("=" * 60)
+    print(f" Gesamte Programmlaufzeit:     {time.time() - start_total_time:.2f} Sekunden")
+    print("-" * 60)
+    print(f" BESTE RADIEN:                  S={best_t_1}m, L={best_t_2}m")
+    print(f" BESTES EPSILON (X, Y):         ({best_epsilon[0]}m, {best_epsilon[1]}m)")
+    print(f" Gebaute kleine Masten (Blau):  {len(best_small_towers)}")
+    print(f" Gebaute große Masten (Lila):  {len(best_large_towers)}")
+    print(f" FINALE MINIMALKOSTEN:          {best_overall_costs:.2f} GE")
+    print("=" * 60)
+    
+    # OSM-Visualisierung für das absolut beste gefundene Set
+    visualize_coverage_on_osm(best_problem, best_small_towers, best_large_towers)
+    print("=" * 60)
 
-    plot_map(city_coords=problem.cities,
-             tower_small_coords=towers_small_coords, tower_large_coords=towers_large_coords,
-             radius_small=tower_size_S, radius_large=tower_size_L, headline=headline)
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

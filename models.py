@@ -25,7 +25,8 @@ class City(Point):
 
 class Problem:
 
-    def __init__(self, R_small, R_large, grid_density):
+    # Füge epsilon_x und epsilon_y mit Standardwert 0 hinzu
+    def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0):
 
         self.cities: set[City] = set()
         self.nr_of_cities: int = 0
@@ -34,9 +35,16 @@ class Problem:
         self.cities_to_grids: dict[str, dict] = {'small': {}, 'large': {}}
         self.radius: dict = {'small': R_small, 'large': R_large}
         self.costs: dict = {'small': cost_function(R_small), 'large': cost_function(R_large)}
+        
+        # Speichere die Parameter
+        self.grid_density = grid_density
+        self.epsilon_x = epsilon_x
+        self.epsilon_y = epsilon_y
 
         self.load_cities()
-        self.create_grid(grid_density, pattern='square')
+        self.create_grid(step_size=self.grid_density)
+        
+        # --- HIER FEHLTE DER AUFRUF ZUM BERECHNEN DER DISTANZEN ---
         self.get_points_in_circles()
 
     def load_cities(self):
@@ -91,25 +99,34 @@ class Problem:
 
         x_min, x_max = (285_000, 915_000)
         y_min, y_max = (5215_000, 6115_000)
-        x, y = (x_min, y_min)
+        
+        # --- NEU: Epsilon auf den Startwert addieren ---
+        start_x = x_min + self.epsilon_x
+        start_y = y_min + self.epsilon_y
+        
+        x, y = (start_x, start_y)
         shift = 0.5 * step_size
         even = True
+        
         while y <= y_max:
             while x <= x_max:
                 if is_in_Germany((x, y), 'xy'):
                     self.grid.add(Point(x=x, y=y))
                 x += step_size
+                
+            # X muss für die neue Zeile auf den EPSILON-Startwert zurückgesetzt werden!
             if pattern == 'hexagon':
                 if even:
-                    x = x_min + shift
+                    x = start_x + shift
                     even = False
                 else:
                     even = True
-                    x = x_min
+                    x = start_x
             elif pattern == 'square':
-                x = x_min
+                x = start_x
             else:
                 raise ValueError
+                
             y += step_size
 
 class Solver:
