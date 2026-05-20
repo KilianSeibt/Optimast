@@ -16,6 +16,16 @@ def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = N
             else:
                 file.write(f'{str(tower.lat)}, {str(tower.lon)}, {tower.radius}\n')
 
+def print_results(radius_small: int, radius_large: int, epsilon: tuple[int, int], small_towers: set[Tower], large_towers: set[Tower], costs: float):
+    print("\n" + "=" * 60)
+    print("               FINALE ERGEBNIS-ZUSAMMENFASSUNG")
+    print("-" * 60)
+    print(f" BESTE RADIEN:                  S={radius_small}m, L={radius_large}m")
+    print(f" BESTES EPSILON (X, Y):         ({epsilon[0]}m, {epsilon[1]}m)")
+    print(f" Gebaute kleine Masten (Blau):  {len(small_towers)}")
+    print(f" Gebaute große Masten (Lila):  {len(large_towers)}")
+    print(f" FINALE MINIMALKOSTEN:          {costs:.2f} GE")
+    print("=" * 60)
 
 def main():
     print("=" * 60)
@@ -109,20 +119,11 @@ def main():
     # =========================================================
     write_txt_file(best_small_towers, best_large_towers)
     plot_radii(points_to_plot)
-    
-    print("\n" + "=" * 60)
-    print("               FINALE ERGEBNIS-ZUSAMMENFASSUNG")
-    print("-" * 60)
-    print(f" BESTE RADIEN:                  S={best_t_1}m, L={best_t_2}m")
-    print(f" BESTES EPSILON (X, Y):         ({best_epsilon[0]}m, {best_epsilon[1]}m)")
-    print(f" Gebaute kleine Masten (Blau):  {len(best_small_towers)}")
-    print(f" Gebaute große Masten (Lila):  {len(best_large_towers)}")
-    print(f" FINALE MINIMALKOSTEN:          {best_overall_costs:.2f} GE")
-    print("=" * 60)
+
+    print_results(best_t_1, best_t_2, best_epsilon, best_small_towers, best_large_towers, best_overall_costs)
     
     # OSM-Visualisierung für das absolut beste gefundene Set
     visualize_coverage_on_osm(best_problem, best_small_towers, best_large_towers)
-    print("=" * 60)
 
 if __name__ == "__main__":
     main()
