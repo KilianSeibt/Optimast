@@ -35,12 +35,12 @@ def main():
     grid_density = 5_000
     
     # Startwerte für die Radien
-    t_1 = 50_000  # small
-    t_2 = 60_000  # large
+    t_1 = 20_000  # small
+    t_2 = 50_000  # large
     
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 15     # Wie oft sollen t_1 und t_2 angepasst werden?
-    N_EPSILONS = 5         # Wie viele Epsilons pro Iteration testen?
+    MAX_ITERATIONS = 1     # Wie oft sollen t_1 und t_2 angepasst werden?
+    N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
     STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
     
     best_overall_costs = float('inf')
