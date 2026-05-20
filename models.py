@@ -42,7 +42,7 @@ class Problem:
         self.epsilon_y = epsilon_y
 
         self.load_cities()
-        self.create_grid(step_size=self.grid_density)
+        self.create_grid(step_size=self.grid_density, pattern='hexagon')
         
         # --- HIER FEHLTE DER AUFRUF ZUM BERECHNEN DER DISTANZEN ---
         self.get_points_in_circles()
