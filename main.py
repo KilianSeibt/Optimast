@@ -74,10 +74,10 @@ def main():
             
             # 2. Problem erstellen und MILP lösen
             problem = Problem(t_1, t_2, grid_density, eps_x, eps_y)
-            towers_small, towers_large = problem.solve()
+            towers_small, towers_large, interference_cost = problem.solve()
             
             # 3. Kosten berechnen
-            costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large']
+            costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large'] + interference_cost
             print(f"Kosten: {costs:.2f} GE")
             
             # 4. Minimalstes Problem (m_i) dieser Iteration speichern
