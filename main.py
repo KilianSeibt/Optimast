@@ -140,15 +140,20 @@ def main():
     print("    STARTE META-OPTIMIERUNG (EPSILON & RADIUS)")
     print("=" * 60)
     
+    """=50000m, L=18500m ---
+      -> Teste Epsilon 1/5: Offset X:4405m, Y:4278m... Kosten: 29.99 GE
+      -> Teste Epsilon 2/5: Offset X:4007m, Y:1880m... Kosten: 29.99 GE
+      -> Teste Epsilon 3/5: Offset X:407m, Y:2006m... Kosten: 29.99 GE
+    """
     grid_density = 5_000
     
     # Startwerte für die Radien
-    t_1 = 50_000  # small
-    t_2 = 60_000  # large
+    t_1 = 18_500  # small
+    t_2 = 50_000  # large
     
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 15     # Wie oft sollen t_1 und t_2 angepasst werden?
-    N_EPSILONS = 5         # Wie viele Epsilons pro Iteration testen?
+    MAX_ITERATIONS = 1     # Wie oft sollen t_1 und t_2 angepasst werden?
+    N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
     STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
     
     best_overall_costs = float('inf')
@@ -213,6 +218,11 @@ def main():
             # Zufälliger Schritt (+ oder - STEP_SIZE)
             t_1 += random.choice([-STEP_SIZE, STEP_SIZE])
             t_2 += random.choice([-STEP_SIZE, STEP_SIZE])
+            if t_1 > t_2:
+                c = t_1
+                t_1 = t_2
+                t_2 = c
+                
         else:
             print(f"  [x] Keine Verbesserung. Bleibe beim Bisherigen besten.")
             # Wir haben uns verschlechtert! Gehe zurück zu den besten Werten und probiere 
