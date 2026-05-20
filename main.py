@@ -1,128 +1,11 @@
-from models import *
-from pulp import *
+
 from osm import *
 from plot_radii import *
-import time
-import timeit
+from Problem import *
 import random
 
 
-def calculate_density(cities_small_radius: set[City], cities_large_radius: set[City],
-                      costs_small: float, costs_large: float, uncovered_cities: set[City]) -> tuple[float, str]:
-
-    NO_UNCOVERED_VALUE = float("-inf")
-
-    def density(cities: set[City], scale: float) -> float:
-
-        intersection = cities & uncovered_cities
-        the_rest = cities - uncovered_cities
-
-        if not intersection:
-            return NO_UNCOVERED_VALUE
-
-        score = len(intersection)
-        score -= len(the_rest)
-
-        return score / scale
-
-    density_small = density(cities_small_radius, costs_small)
-    density_large = density(cities_large_radius, costs_large)
-
-    if density_small == NO_UNCOVERED_VALUE and density_large != NO_UNCOVERED_VALUE:
-        return density_large, "large"
-
-    if density_small == NO_UNCOVERED_VALUE and density_large == NO_UNCOVERED_VALUE:
-        return NO_UNCOVERED_VALUE, "small"
-
-    return (density_large, 'large') if density_large >= density_small else (density_small, 'small')
-
-
-def heuristic_approach(problem: Problem) -> tuple[set[Tower], set[Tower]]:
-
-    grid_points_to_density = {}
-
-    tower_coords: dict = {'small': set(), 'large': set()}
-
-    uncovered_cities: set = problem.cities.copy()
-
-    for point in problem.grid:
-        density = calculate_density(problem.grids_to_cities['small'][point],
-                                    problem.grids_to_cities['large'][point],
-                                    problem.costs['small'], problem.costs['large'], uncovered_cities)
-        if density != float('-inf'):
-            grid_points_to_density[point] = density
-
-    while uncovered_cities:
-
-        best = max(grid_points_to_density.items(), key=lambda x: x[1][0])
-
-        best_point: Point = best[0]
-        small_or_large = best[1][1]
-        radius = problem.radius[small_or_large]
-        tower = Tower(x=best_point.x, y=best_point.y, radius=radius)
-
-        tower_coords[small_or_large].add(tower)
-
-        points_to_update = set()
-        for city in problem.grids_to_cities[small_or_large][best_point]:
-            uncovered_cities.discard(city)
-            points_to_update |= problem.cities_to_grids['large'][city]
-        for grid_point in points_to_update:
-            density = calculate_density(problem.grids_to_cities['small'][grid_point],
-                                        problem.grids_to_cities['large'][grid_point],
-                                        problem.costs['small'], problem.costs['large'], uncovered_cities)
-            if density == float("-inf"):
-                grid_points_to_density.pop(grid_point)
-            else:
-                grid_points_to_density[grid_point] = density
-
-    return tower_coords['small'], tower_coords['large']
-
-
-def MILP_approach(problem: Problem) -> tuple[set[Tower], set[Tower]]:
-
-    pulp_problem = LpProblem("TowerPlacement", LpMinimize)
-
-    x = {}
-
-    for g in problem.grid:
-        for t in ["small", "large"]:
-            x[g, t] = LpVariable(f"x_{g.x}_{g.y}_{t}", cat="Binary")
-
-    pulp_problem += lpSum(
-        problem.costs[t] * x[g, t]
-        for g in problem.grid
-        for t in ['small', 'large']
-    )
-
-    for city in problem.cities:
-        # Sicherheitsnetz: Holt sich eine leere Liste [], falls die Stadt durch das Epsilon unerreichbar wurde
-        grids_small = problem.cities_to_grids['small'].get(city, [])
-        grids_large = problem.cities_to_grids['large'].get(city, [])
-        
-        if not grids_small and not grids_large:
-            print(f"Warnung: Die Stadt {city.name} kann vom aktuellen Raster (mit Epsilon-Verschiebung) nicht abgedeckt werden!")
-            continue # Überspringt diese Stadt, damit das Programm nicht crasht
-            
-        pulp_problem += lpSum(
-            x[g, t]
-            for t in ['small', 'large']
-            for g in problem.cities_to_grids[t].get(city, [])
-        ) >= 1
-
-    # Suppress solver output (CBC only)
-    pulp_problem.solve(PULP_CBC_CMD(msg=False))
-
-    tower_coords: dict = {'small': set(), 'large': set()}
-
-    for t in ['small', 'large']:
-        for g in problem.grid:
-            if value(x[g, t]) > 0.5:
-                tower_coords[t].add(Tower(x=g.x, y=g.y, radius=problem.radius[t]))
-
-    return tower_coords['small'], tower_coords['large']
-
-def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = None):
+def write_txt_file(small_towers: set[Tower], large_towers: set[Tower]):
 
     with open("solution.txt", "w") as file:
 
@@ -161,8 +44,6 @@ def main():
     best_epsilon = (0, 0)
     best_small_towers, best_large_towers = set(), set()
     best_problem = None
-    
-    start_total_time = time.time()
 
     points_to_plot = []
     
@@ -189,7 +70,7 @@ def main():
             
             # 2. Problem erstellen und MILP lösen
             problem = Problem(t_1, t_2, grid_density, eps_x, eps_y)
-            towers_small, towers_large = MILP_approach(problem)
+            towers_small, towers_large = problem.solve()
             
             # 3. Kosten berechnen
             costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large']
@@ -242,8 +123,6 @@ def main():
     
     print("\n" + "=" * 60)
     print("               FINALE ERGEBNIS-ZUSAMMENFASSUNG")
-    print("=" * 60)
-    print(f" Gesamte Programmlaufzeit:     {time.time() - start_total_time:.2f} Sekunden")
     print("-" * 60)
     print(f" BESTE RADIEN:                  S={best_t_1}m, L={best_t_2}m")
     print(f" BESTES EPSILON (X, Y):         ({best_epsilon[0]}m, {best_epsilon[1]}m)")

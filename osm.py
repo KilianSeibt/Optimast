@@ -2,7 +2,6 @@ import folium
 from folium.plugins import FastMarkerCluster
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-from abc import ABC, abstractmethod
 def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
     """
     Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
