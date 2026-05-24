@@ -1,12 +1,13 @@
 from pulp import *
 from pathlib import Path
 from models import *
+import traceback
 
 
 class Problem:
 
     # Füge epsilon_x und epsilon_y mit Standardwert 0 hinzu
-    def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0):
+    def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0, penalty=0):
 
         self.cities: set[City] = set()
         self.nr_of_cities: int = 0
@@ -19,6 +20,8 @@ class Problem:
         self.grid_density = grid_density
         self.epsilon_x = epsilon_x
         self.epsilon_y = epsilon_y
+
+        self.penalty = penalty
 
         self.load_cities()
         self.create_grid(step_size=self.grid_density)
@@ -107,18 +110,21 @@ class Problem:
 
             y += step_size
 
-    def solve(self) -> tuple[set[Tower], set[Tower]]:
+    def solve(self) -> tuple[set[Tower], set[Tower], float]:
 
         pulp_problem = LpProblem("TowerPlacement", LpMinimize)
 
         x = {}
+        covered_cities = {}
+        constant_cost = len(self.cities)
 
         for g in self.grid:
             for t in ["small", "large"]:
                 x[g, t] = LpVariable(f"x_{g.x}_{g.y}_{t}", cat="Binary")
+                covered_cities[g, t] = len(self.grids_to_cities[t][g])
 
         pulp_problem += lpSum(
-            self.costs[t] * x[g, t]
+            self.costs[t] * x[g, t] + covered_cities[g, t] * x[g, t] * self.penalty
             for g in self.grid
             for t in ['small', 'large']
         )
@@ -139,14 +145,32 @@ class Problem:
                 for g in self.cities_to_grids[t].get(city, [])
             ) >= 1
 
-        # Suppress solver output (CBC only)
-        pulp_problem.solve(PULP_CBC_CMD(msg=False))
+        solver = PULP_CBC_CMD(
+            msg=False,
+            logPath="cbc.log"
+        )
+
+        try:
+            status = pulp_problem.solve(solver)
+
+            status_str = LpStatus[status]
+
+            if status_str != "Optimal":
+                pulp_problem.writeLP("failed_model.lp")
+                raise RuntimeError(f"Solver status: {status_str}")
+
+        except Exception:
+            pulp_problem.writeLP("crash_model.lp")
+            traceback.print_exc()
+            raise
 
         tower_coords: dict = {'small': set(), 'large': set()}
+        interference_cost = -constant_cost * self.penalty
 
         for t in ['small', 'large']:
             for g in self.grid:
                 if value(x[g, t]) > 0.5:
                     tower_coords[t].add(Tower(x=g.x, y=g.y, radius=self.radius[t]))
+                    interference_cost += (value(x[g, t]) * covered_cities[g, t]) * self.penalty
 
-        return tower_coords['small'], tower_coords['large']
+        return tower_coords['small'], tower_coords['large'], interference_cost

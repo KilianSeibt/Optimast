@@ -5,7 +5,7 @@ def plot_radii(results):
     
     t_1_values = [res['t_1'] for res in results]
     t_2_values = [res['t_2'] for res in results]
-    costs = [res['cost'] for res in results]
+    costs = [res['costs'] for res in results]
 
     # Center plot on last result (minimal cost)
     center_t1 = results[-1]['t_1']

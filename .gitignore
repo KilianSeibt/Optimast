@@ -21,3 +21,6 @@ __pycache__/
 # Operating System Files
 .DS_Store
 Thumbs.db
+
+# Dont commit the maps
+*.html

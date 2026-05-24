@@ -2,7 +2,7 @@ import folium
 from folium.plugins import FastMarkerCluster
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-from abc import ABC, abstractmethod
+
 def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
     """
     Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
@@ -23,12 +23,14 @@ def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
 
     return lat, lon
 
-def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, output_html="abdeckung_karte.html"):
+def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, size_small, size_large, output_html="abdeckung_karte"):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten 
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
     """
     print("\n[OSM] Generiere optimierte interaktive OSM-Abdeckungskarte...")
+
+    output_html = f'{output_html}_{str(size_small)}_{str(size_large)}.html'
     
     # 1. OSM-Karte zentriert auf die Mitte Deutschlands erstellen
     m = folium.Map(location=[51.165691, 10.451526], zoom_start=6)
