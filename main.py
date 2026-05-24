@@ -40,12 +40,10 @@ def main():
     
     # Hyperparameter für die Meta-Optimierung
     MAX_ITERATIONS = 15     # Wie oft sollen t_1 und t_2 angepasst werden?
-    N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
     STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
     
-    best_overall_costs = float('inf')
+    best_costs = float('inf')
     best_t_1, best_t_2 = t_1, t_2
-    best_epsilon = (0, 0)
     best_small_towers, best_large_towers = set(), set()
     best_problem = None
 
@@ -58,35 +56,24 @@ def main():
         print(f"\n--- [Iteration {iteration+1}/{MAX_ITERATIONS}] Teste Radien: S={t_1}m, L={t_2}m ---")
         
         current_iter_best_costs = float('inf')
-        current_iter_best_eps = (0, 0)
         current_iter_small, current_iter_large = set(), set()
         current_iter_problem = None
-        
-        # =========================================================
-        # INNERE SCHLEIFE: Teste N verschiedene Epsilons
-        # =========================================================
-        for i in range(N_EPSILONS):
-            # 1. Zufälliges Epsilon würfeln (zwischen 0 und grid_density)
-            eps_x = random.randint(0, grid_density)
-            eps_y = random.randint(0, grid_density)
-            
-            print(f"  -> Teste Epsilon {i+1}/{N_EPSILONS}: Offset X:{eps_x}m, Y:{eps_y}m... ", end="", flush=True)
-            
-            # 2. Problem erstellen und MILP lösen
-            problem = Problem(t_1, t_2, grid_density, eps_x, eps_y)
-            towers_small, towers_large = problem.solve()
-            
-            # 3. Kosten berechnen
-            costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large']
-            print(f"Kosten: {costs:.2f} GE")
-            
-            # 4. Minimalstes Problem (m_i) dieser Iteration speichern
-            if costs < current_iter_best_costs:
-                current_iter_best_costs = costs
-                points_to_plot.append({'t_1': t_1, 't_2': t_2, 'cost': current_iter_best_costs})
-                current_iter_best_eps = (eps_x, eps_y)
-                current_iter_small, current_iter_large = towers_small, towers_large
-                current_iter_problem = problem
+
+        # 2. Problem erstellen und MILP lösen
+        problem = Problem(t_1, t_2, grid_density)
+        towers_small, towers_large = problem.solve()
+
+        # 3. Kosten berechnen
+        costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large']
+        print(f"Kosten: {costs:.2f} GE")
+
+        # 4. Minimalstes Problem (m_i) dieser Iteration speichern
+        if costs < current_iter_best_costs:
+            current_iter_best_costs = costs
+            points_to_plot.append({'t_1': t_1, 't_2': t_2, 'cost': current_iter_best_costs})
+            current_iter_best_eps = (eps_x, eps_y)
+            current_iter_small, current_iter_large = towers_small, towers_large
+            current_iter_problem = problem
 
         # =========================================================
         # UPDATE-REGEL (Stochastic Hill Climbing / Pseudo-Gradient)
