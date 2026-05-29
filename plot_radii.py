@@ -8,8 +8,8 @@ def plot_radii(results):
     costs = [res['costs'] for res in results]
 
     # Center plot on last result (minimal cost)
-    center_t1 = results[-1]['t_1']
-    center_t2 = results[-1]['t_2']
+    center_t1 = 50_000
+    center_t2 = 50_000
 
     plt.figure(figsize=(10, 6))
     scatter = plt.scatter(t_1_values, t_2_values, c=costs, cmap='coolwarm_r', s=100)

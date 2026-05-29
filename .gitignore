@@ -24,3 +24,5 @@ Thumbs.db
 
 # Dont commit the maps
 *.html
+
+*.json

@@ -1,6 +1,7 @@
 from osm import *
 from plot_radii import *
 from Problem import *
+import json
 
 CACHE: dict[tuple[int, int], dict] = {}
 
@@ -118,36 +119,50 @@ def main():
     print("    STARTE META-OPTIMIERUNG (EPSILON & RADIUS)")
     print("=" * 60)
     
-    grid_density = 4_000
+    grid_density = 5_000
 
-    t1, t2 = 19875, 30188
-    t1 += 94
-    t2 -= 94
-    problem = Problem(t1, t2, grid_density)
-    problem.solve()
-    print('Fertig')
-    
+    points = range(5_000, 100_000, 5_000)
+    points_to_plot = []
+
+    for point1 in points:
+        for point2 in points:
+            if point1<point2:
+                try:
+                    print(f'Checke point = ({point1},{point2})')
+                    problem = Problem(point1, point2, grid_density)
+                    towers_s, towers_l, _ = problem.solve()
+                    costs = len(towers_s) * problem.costs['small'] + len(towers_l) * problem.costs['large']
+                    points_to_plot.append({'t_1': point1, 't_2': point2, 'costs': costs})
+                    points_to_plot.append({'t_1': point2, 't_2': point1, 'costs': costs})
+                except Exception:
+                    pass
+
+    plot_radii(points_to_plot)
+    """
     # Startwerte für die Radien
-    starting_points = [(15,30), (15,40), (15,50), (15,50), (15,60),
-             (20,30), (20,40), (20,40), (20,50), (20,60),
-             (25,40), (25,50), (25,60), (30,40), (30,50), (30,60)]
+    starting_points = [(15,50), (15,55), (15,60),
+                       (20,30), (20,35), (20,40), (20,45), (20,50), (20,55), (20,60),
+                       (25,35), (25,40), (25,45), (25,50), (25,55), (25,60),
+                       (30,40), (30,45), (30,50), (30,55), (30,60)
+                       ]
 
     starting_points = [(t1*1000, t2*1000) for (t1,t2) in starting_points]
     
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 15     # Wie oft sollen t_1 und t_2 angepasst werden?
+    MAX_ITERATIONS = 20     # Wie oft sollen t_1 und t_2 angepasst werden?
     step_size = 3_000      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
-
+    
     for starting_point in starting_points:
+        print(f'STARTING POINT {starting_point}')
         points_to_plot, best = find_minimum(starting_point[0], starting_point[1], grid_density, MAX_ITERATIONS, step_size)
 
         write_txt_file(best['small_towers'], best['large_towers'])
-        plot_radii(points_to_plot)
+        #plot_radii(points_to_plot)
 
         print_results(best)
     
         # OSM-Visualisierung für das absolut beste gefundene Set
         visualize_coverage_on_osm(best['problem'], best['small_towers'], best['large_towers'], best['t_1'], best['t_2'])
-
+"""
 if __name__ == "__main__":
     main()

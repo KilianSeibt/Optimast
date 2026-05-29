@@ -76,7 +76,7 @@ class Problem:
             if not grid_point in self.grids_to_cities['small']:
                 self.grids_to_cities['small'][grid_point] = set()
 
-    def create_grid(self, step_size: int, pattern: str = 'square') -> None:
+    def create_grid(self, step_size: int, pattern: str = 'square', country: str='Germany') -> None:
 
         x_min, x_max = (285_000, 915_000)
         y_min, y_max = (5215_000, 6115_000)
