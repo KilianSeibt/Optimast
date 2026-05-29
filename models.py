@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import math
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-from load_germany import  GER_lat_lon_prep, GER_xy_prep
+from load_countries import  COUNTRY_DATA
 
 
 @dataclass(slots=True, frozen=True)
@@ -152,12 +152,27 @@ def cost_function(radius: float) -> float:
     else:
         raise ValueError
 
-def is_in_Germany(point: tuple[float, float], unit: str) -> bool:
+def is_in_country(
+    point: tuple[float, float],
+    country: str,
+    unit: str
+) -> bool:
+
+    country_info = COUNTRY_DATA[country]
+
     if unit == 'lon_lat':
+
         lat, lon = point
-        return GER_lat_lon_prep.contains(ShapelyPoint(lon, lat))
+        return country_info["latlon_prep"].contains(
+            ShapelyPoint(lon, lat)
+        )
     elif unit == 'xy':
         x, y = point
-        return GER_xy_prep.contains(ShapelyPoint(x, y))
+
+        return country_info["xy_prep"].contains(
+            ShapelyPoint(x, y)
+        )
     else:
-        raise ValueError
+        raise ValueError(
+            "unit must be 'lon_lat' or 'xy'"
+        )

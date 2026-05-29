@@ -1,12 +1,13 @@
 from pulp import *
 from pathlib import Path
 from models import *
+from load_countries import COUNTRY_DATA
 
 
 class Problem:
 
     # Füge epsilon_x und epsilon_y mit Standardwert 0 hinzu
-    def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0, penalty: float = 0):
+    def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0, penalty: float = 0, country: str = 'Germany'):
 
         self.cities: set[City] = set()
         self.nr_of_cities: int = 0
@@ -22,14 +23,23 @@ class Problem:
 
         self.penalty = penalty
 
+        self.country = country
+
         self.load_cities()
-        self.create_grid(step_size=self.grid_density)
+        self.create_grid()
 
         self.get_points_in_circles()
 
     def load_cities(self):
 
-        file_path = Path("input_files/cities_de_50k.txt")
+        if self.country == 'Germany':
+            file_path = Path("input_files/cities_de_50k.txt")
+        elif self.country == 'France':
+            file_path = Path("input_files/cities_de_50k.txt")
+        elif self.country == 'USA':
+            file_path = Path("input_files/cities_de_50k.txt")
+        else:
+            raise ValueError
         with open(file_path, "r", encoding="utf-8") as file:
             for line in file:
                 # Separate each line at the commas
@@ -73,40 +83,51 @@ class Problem:
             if not grid_point in self.grids_to_cities['small']:
                 self.grids_to_cities['small'][grid_point] = set()
 
+    def create_grid(self, pattern: str = 'square', country: str = 'Germany') -> None:
 
+        if country not in COUNTRY_DATA:
+            raise ValueError(f"Unsupported country: {country}")
 
-    def create_grid(self, step_size: int, pattern: str = 'square') -> None:
+        step_size = self.grid_density
 
-        x_min, x_max = (285_000, 915_000)
-        y_min, y_max = (5215_000, 6115_000)
+        x_min, x_max, y_min, y_max = (COUNTRY_DATA[country]["bounds"])
 
-        # --- NEU: Epsilon auf den Startwert addieren ---
         start_x = x_min + self.epsilon_x
         start_y = y_min + self.epsilon_y
 
-        x, y = (start_x, start_y)
+        x = start_x
+        y = start_y
+
         shift = 0.5 * step_size
         even = True
 
         while y <= y_max:
             while x <= x_max:
-                if is_in_Germany((x, y), 'xy'):
+                if is_in_country((x, y), country, 'xy'):
                     self.grid.add(Point(x=x, y=y))
+
                 x += step_size
 
-            # X muss für die neue Zeile auf den EPSILON-Startwert zurückgesetzt werden!
+            # -----------------------------------
+            # reset x for next row
+            # -----------------------------------
+
             if pattern == 'hexagon':
                 if even:
                     x = start_x + shift
                     even = False
+
                 else:
-                    even = True
                     x = start_x
+                    even = True
+
             elif pattern == 'square':
                 x = start_x
-            else:
-                raise ValueError
 
+            else:
+                raise ValueError(
+                    "pattern must be square or hexagon"
+                )
             y += step_size
 
     def solve(self) -> tuple[set[Tower], set[Tower], float]:
