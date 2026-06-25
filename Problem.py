@@ -6,7 +6,6 @@ from load_countries import COUNTRY_DATA
 
 class Problem:
 
-    # Füge epsilon_x und epsilon_y mit Standardwert 0 hinzu
     def __init__(self, R_small, R_large, grid_density, epsilon_x=0, epsilon_y=0, penalty: float = 0, country: str = 'Germany'):
 
         self.cities: set[City] = set()
@@ -35,9 +34,7 @@ class Problem:
         if self.country == 'Germany':
             file_path = Path("input_files/cities_de_50k.txt")
         elif self.country == 'France':
-            file_path = Path("input_files/cities_de_50k.txt")
-        elif self.country == 'USA':
-            file_path = Path("input_files/cities_de_50k.txt")
+            file_path = Path("input_files/cities_fr_30k.txt")
         else:
             raise ValueError
         with open(file_path, "r", encoding="utf-8") as file:
@@ -50,7 +47,7 @@ class Problem:
                 lat = float(parts[1])
                 lon = float(parts[2])
                 # Calculate the utm coords right away so we have them ready for later
-                x,  y = latlon_to_utm((lat, lon))
+                x,  y = latlon_to_utm((lat, lon), self.country)
                 city = City(name=name, lat=lat, lon=lon, x=x, y=y)
                 self.cities.add(city)
                 self.nr_of_cities += 1
@@ -83,14 +80,14 @@ class Problem:
             if not grid_point in self.grids_to_cities['small']:
                 self.grids_to_cities['small'][grid_point] = set()
 
-    def create_grid(self, pattern: str = 'square', country: str = 'Germany') -> None:
+    def create_grid(self, pattern: str = 'square') -> None:
 
-        if country not in COUNTRY_DATA:
-            raise ValueError(f"Unsupported country: {country}")
+        if self.country not in COUNTRY_DATA:
+            raise ValueError(f"Unsupported country: {self.country}")
 
         step_size = self.grid_density
 
-        x_min, x_max, y_min, y_max = (COUNTRY_DATA[country]["bounds"])
+        x_min, x_max, y_min, y_max = (COUNTRY_DATA[self.country]["bounds"])
 
         start_x = x_min + self.epsilon_x
         start_y = y_min + self.epsilon_y
@@ -103,7 +100,7 @@ class Problem:
 
         while y <= y_max:
             while x <= x_max:
-                if is_in_country((x, y), country, 'xy'):
+                if is_in_country((x, y), self.country, 'utm'):
                     self.grid.add(Point(x=x, y=y))
 
                 x += step_size

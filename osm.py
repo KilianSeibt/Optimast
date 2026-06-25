@@ -2,7 +2,11 @@ import folium
 from folium.plugins import FastMarkerCluster
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-from abc import ABC, abstractmethod
+
+from Problem import Problem
+from models import Tower
+
+
 def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
     """
     Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
@@ -23,7 +27,7 @@ def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
 
     return lat, lon
 
-def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, output_html="abdeckung_karte.html"):
+def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower], large_towers: set[Tower]):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten 
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
@@ -52,7 +56,7 @@ def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, outp
     fast_cluster = FastMarkerCluster(data=city_coords, name="Städte (Dynamisch gruppiert)")
     fast_cluster.add_to(m)
 
-    # 4. MASTEN PLOTTEN (Direkt aus den Programmvariablen)
+    # 4. MASTEN PLOTTEN
     print(f"[OSM] Plotte Masten (Klein: {len(small_towers)}, Groß: {len(large_towers)})...")
     
     # Kleine Masten zeichnen
@@ -120,5 +124,6 @@ def visualize_coverage_on_osm(problem_instance, small_towers, large_towers, outp
     folium.LayerControl().add_to(m)
     
     # Speichern
-    m.save(output_html)
-    print(f"[OSM] Erfolg! Die optimierte Karte wurde als '{output_html}' gespeichert.")
+    file_name = f"osm_coverage_{problem_instance.country}_{problem_instance.radius['small']}_{problem_instance.radius['large']}.html"
+    m.save(file_name)
+    print(f"[OSM] Erfolg! Die optimierte Karte wurde als '{file_name}' gespeichert.")

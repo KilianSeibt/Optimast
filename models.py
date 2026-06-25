@@ -21,34 +21,50 @@ class Tower(Point):
 class City(Point):
     name: str = None
 
-def latlon_to_utm(point: tuple[float, float]) -> tuple[float, float]:
+def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, float]:
     """
-    Converts a point from lat/lon (EPSG:4326) to UTM (EPSG:32632).
+    Converts a point from lat/lon to UTM.
 
+    :param country:
     :param point: (x, y) in meters (UTM)
     :return: (lat, lon)
         """
+    if country == 'Germany' or country == 'France':
+        epsg = 32632
+    elif country == 'USA':
+        epsg = 5070
+    else:
+        raise ValueError
+
     lat, lon = point
     gdf = gpd.GeoDataFrame(
         geometry=[ShapelyPoint(lon, lat)],
         crs="EPSG:4326"
     )
-    gdf_utm = gdf.to_crs(epsg=32632)
+    gdf_utm = gdf.to_crs(epsg=epsg)
     p = gdf_utm.geometry.iloc[0]
     return p.x, p.y
 
-def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
+def utm_to_latlon(point: tuple[float, float], country: str) -> tuple[float, float]:
     """
     Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
 
+    :param country:
     :param point: (x, y) in meters (UTM)
     :return: (lat, lon)
     """
+
+    if country == 'Germany' or country == 'France':
+        epsg = 32632
+    elif country == 'USA':
+        epsg = 5070
+    else:
+        raise ValueError
     x, y = point
 
     gdf = gpd.GeoDataFrame(
         geometry=[ShapelyPoint(x, y)],
-        crs="EPSG:32632"
+        crs=f"EPSG:{epsg}"
     )
 
     gdf_latlon = gdf.to_crs(epsg=4326)
@@ -152,11 +168,7 @@ def cost_function(radius: float) -> float:
     else:
         raise ValueError
 
-def is_in_country(
-    point: tuple[float, float],
-    country: str,
-    unit: str
-) -> bool:
+def is_in_country(point: tuple[float, float], country: str, unit: str) -> bool:
 
     country_info = COUNTRY_DATA[country]
 
@@ -166,10 +178,10 @@ def is_in_country(
         return country_info["latlon_prep"].contains(
             ShapelyPoint(lon, lat)
         )
-    elif unit == 'xy':
+    elif unit == 'utm':
         x, y = point
 
-        return country_info["xy_prep"].contains(
+        return country_info["utm_prep"].contains(
             ShapelyPoint(x, y)
         )
     else:

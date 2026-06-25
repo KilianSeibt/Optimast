@@ -4,14 +4,14 @@ from Problem import *
 import random
 
 
-def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = None):
+def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = None, country = 'Germany'):
 
     with open("solution.txt", "w") as file:
 
         for tower in small_towers | large_towers:
 
             if tower.lat is None:
-                lat, lon = utm_to_latlon((tower.x, tower.y))
+                lat, lon = utm_to_latlon((tower.x, tower.y), country)
                 file.write(f'{str(lat)}, {str(lon)}, {tower.radius}\n')
             else:
                 file.write(f'{str(tower.lat)}, {str(tower.lon)}, {tower.radius}\n')
@@ -31,8 +31,10 @@ def main():
     print("=" * 60)
     print("    STARTE META-OPTIMIERUNG (EPSILON & RADIUS)")
     print("=" * 60)
-    
-    grid_density = 5_000
+
+    country = 'France' #Either 'Germany' or 'France'
+
+    grid_density = 30_000
     
     # Startwerte für die Radien
     t_1 = 20_000  # small
@@ -73,7 +75,7 @@ def main():
             print(f"  -> Teste Epsilon {i+1}/{N_EPSILONS}: Offset X:{eps_x}m, Y:{eps_y}m... ", end="", flush=True)
             
             # 2. Problem erstellen und MILP lösen
-            problem = Problem(t_1, t_2, grid_density, eps_x, eps_y)
+            problem = Problem(t_1, t_2, grid_density, epsilon_x=0, epsilon_y=0, country=country)
             towers_small, towers_large, interference_cost = problem.solve()
             
             # 3. Kosten berechnen
@@ -110,14 +112,14 @@ def main():
             t_1 = best_t_1 + random.choice([-STEP_SIZE, STEP_SIZE])
             t_2 = best_t_2 + random.choice([-STEP_SIZE, STEP_SIZE])
             
-        # Sicherheits-Check: Radien dürfen nicht zu klein werden
+        # Safety-Check: Radien dürfen nicht zu klein werden
         t_1 = max(5_000, t_1)
         t_2 = min(20_000, t_2)
 
     # =========================================================
     # ENDE DER OPTIMIERUNG - ERGEBNISSE AUSGEBEN
     # =========================================================
-    write_txt_file(best_small_towers, best_large_towers)
+    write_txt_file(best_small_towers, best_large_towers, country=country)
     plot_radii(points_to_plot)
 
     print_results(best_t_1, best_t_2, best_epsilon, best_small_towers, best_large_towers, best_overall_costs)

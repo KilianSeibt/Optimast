@@ -1,4 +1,6 @@
 import geopandas as gpd
+from shapely.geometry.geo import box
+from shapely.ops import unary_union
 from shapely.prepared import prep
 
 # ---------------------------------------------------------
@@ -16,9 +18,6 @@ _world_lat_lon = gpd.read_file(
 # Europe (Germany + France)
 _world_europe_utm = _world_lat_lon.to_crs(epsg=32632)
 
-# USA
-_world_usa_utm = _world_lat_lon.to_crs(epsg=5070)
-
 # ---------------------------------------------------------
 # COUNTRY CONFIGURATION
 # ---------------------------------------------------------
@@ -33,13 +32,17 @@ ger_latlon_row = _world_lat_lon[
     _world_lat_lon["NAME"] == "Germany"
 ].iloc[0]
 
-ger_xy_row = _world_europe_utm[
+ger_utm_row = _world_europe_utm[
     _world_europe_utm["NAME"] == "Germany"
 ].iloc[0]
 
 COUNTRY_DATA["Germany"] = {
+    "latlon_plot": gpd.GeoSeries([ger_latlon_row.geometry],crs=_world_lat_lon.crs),
+
+    "utm_plot": gpd.GeoSeries([ger_utm_row.geometry],crs=_world_europe_utm.crs),
+
     "latlon_prep": prep(ger_latlon_row.geometry),
-    "xy_prep": prep(ger_xy_row.geometry),
+    "utm_prep": prep(ger_utm_row.geometry),
 
     # UTM-like bounds
     "bounds": (
@@ -54,46 +57,29 @@ COUNTRY_DATA["Germany"] = {
 # FRANCE
 # =========================================================
 
-fra_latlon_row = _world_lat_lon[
-    _world_lat_lon["NAME"] == "France"
-].iloc[0]
+fra = _world_lat_lon[_world_lat_lon["NAME"] == "France"]
 
-fra_xy_row = _world_europe_utm[
-    _world_europe_utm["NAME"] == "France"
-].iloc[0]
+parts = fra.explode(index_parts=False)
+
+parts = parts[parts.intersects(box(-10, 40, 15, 55))]
+
+parts_utm = parts.to_crs(32632)
+
+fra_geom_latlon = unary_union(parts.geometry)
+fra_geom_utm = unary_union(parts_utm.geometry)
 
 COUNTRY_DATA["France"] = {
-    "latlon_prep": prep(fra_latlon_row.geometry),
-    "xy_prep": prep(fra_xy_row.geometry),
+    "latlon_plot": gpd.GeoSeries([fra_geom_latlon], crs=_world_lat_lon.crs),
+
+    "utm_plot": gpd.GeoSeries([fra_geom_utm], crs=_world_europe_utm.crs),
+
+    "latlon_prep": prep(fra_geom_latlon),
+    "utm_prep": prep(fra_geom_utm),
 
     "bounds": (
-        -200_000,
-        1_200_000,
-        4_600_000,
-        5_700_000
-    )
-}
-
-# =========================================================
-# USA
-# =========================================================
-
-usa_latlon_row = _world_lat_lon[
-    _world_lat_lon["NAME"] == "United States of America"
-].iloc[0]
-
-usa_xy_row = _world_usa_utm[
-    _world_usa_utm["NAME"] == "United States of America"
-].iloc[0]
-
-COUNTRY_DATA["USA"] = {
-    "latlon_prep": prep(usa_latlon_row.geometry),
-    "xy_prep": prep(usa_xy_row.geometry),
-
-    "bounds": (
-        -2_600_000,
-        2_600_000,
-        1_300_000,
-        3_200_000
+        -678_983,
+        584_102,
+        4_634_280,
+        5_854_153,
     )
 }
