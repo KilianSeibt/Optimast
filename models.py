@@ -31,8 +31,6 @@ def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, floa
         """
     if country == 'Germany' or country == 'France':
         epsg = 32632
-    elif country == 'USA':
-        epsg = 5070
     else:
         raise ValueError
 
