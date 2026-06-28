@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import math
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-from load_germany import  GER_lat_lon_prep, GER_xy_prep
+from load_countries import  COUNTRY_DATA
 
 
 @dataclass(slots=True, frozen=True)
