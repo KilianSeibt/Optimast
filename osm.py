@@ -2,9 +2,7 @@ import folium
 from folium.plugins import FastMarkerCluster
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
-
-from Problem import Problem
-from models import Tower
+from models import Tower, load_cities
 
 
 def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
@@ -27,7 +25,7 @@ def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
 
     return lat, lon
 
-def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower], large_towers: set[Tower]):
+def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten 
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
@@ -42,7 +40,7 @@ def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower
     
     # 3. STÄDTE SAMMELN UND OPTIMIERT CLUSTERN (Verhindert Browser-Lag)
     city_coords = []
-    cities = problem_instance.cities
+    cities, _ = load_cities(country)
     print(f"[OSM] Bereite {len(cities)} Städte für das hocheffiziente Rendering vor...")
     
     for city in cities:
@@ -57,26 +55,24 @@ def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower
     fast_cluster.add_to(m)
 
     # 4. MASTEN PLOTTEN
-    print(f"[OSM] Plotte Masten (Klein: {len(small_towers)}, Groß: {len(large_towers)})...")
+    print(f"[OSM] Plotte Masten (Klein: {len(towers[0])}, Groß: {len(towers[1])})...")
     
     # Kleine Masten zeichnen
-    for tower in small_towers:
+    for tower in towers[0]:
         lat, lon = tower.lat, tower.lon
         if lat is None or lon is None:
             lat, lon = utm_to_latlon((tower.x, tower.y))
-            
-        radius = tower.radius if (hasattr(tower, 'radius') and tower.radius is not None) else problem_instance.radius['small']
         
         # Funkradius (schön dezent transparent)
         folium.Circle(
             location=[lat, lon],
-            radius=radius,
+            radius=radius[0],
             color="#2980B9",
             weight=1,
             fill=True,
             fill_color="#2980B9",
             fill_opacity=0.15,
-            tooltip=f"<b>Kleiner Mast</b><br>Radius: {radius/1000} km"
+            tooltip=f"<b>Kleiner Mast</b><br>Radius: {radius[0]/1000} km"
         ).add_to(fg_towers)
         
         # Exakter Standortpunkt
@@ -90,23 +86,21 @@ def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower
         ).add_to(fg_towers)
 
     # Große Masten zeichnen
-    for tower in large_towers:
+    for tower in towers[1]:
         lat, lon = tower.lat, tower.lon
         if lat is None or lon is None:
             lat, lon = utm_to_latlon((tower.x, tower.y))
-            
-        radius = tower.radius if (hasattr(tower, 'radius') and tower.radius is not None) else problem_instance.radius['large']
         
         # Funkradius
         folium.Circle(
             location=[lat, lon],
-            radius=radius,
+            radius=radius[1],
             color="#8E44AD",
             weight=1,
             fill=True,
             fill_color="#8E44AD",
             fill_opacity=0.15,
-            tooltip=f"<b>Großer Mast</b><br>Radius: {radius/1000} km"
+            tooltip=f"<b>Großer Mast</b><br>Radius: {radius[1]/1000} km"
         ).add_to(fg_towers)
         
         # Exakter Standortpunkt
@@ -124,6 +118,6 @@ def visualize_coverage_on_osm(problem_instance: Problem, small_towers: set[Tower
     folium.LayerControl().add_to(m)
     
     # Speichern
-    file_name = f"osm_coverage_{problem_instance.country}_{problem_instance.radius['small']}_{problem_instance.radius['large']}.html"
+    file_name = f"osm_coverage_{country}_{radius[0]}_{radius[1]}.html"
     m.save(file_name)
     print(f"[OSM] Erfolg! Die optimierte Karte wurde als '{file_name}' gespeichert.")

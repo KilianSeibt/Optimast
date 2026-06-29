@@ -34,14 +34,14 @@ def main():
 
     country = 'France' #Either 'Germany' or 'France'
 
-    grid_density = 30_000
+    grid_density = 5_000
     
     # Startwerte für die Radien
     t_1 = 20_000  # small
     t_2 = 50_000  # large
     
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 1     # Wie oft sollen t_1 und t_2 angepasst werden?
+    MAX_ITERATIONS = 5     # Wie oft sollen t_1 und t_2 angepasst werden?
     N_EPSILONS = 1         # Wie viele Epsilons pro Iteration testen?
     STEP_SIZE = 1_500      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
     
@@ -49,9 +49,13 @@ def main():
     best_t_1, best_t_2 = t_1, t_2
     best_epsilon = (0, 0)
     best_small_towers, best_large_towers = set(), set()
-    best_problem = None
 
     points_to_plot = []
+
+    # CHANGED: The problem instance does not save the tower sizes anymore.
+    # We create ONE problem at the start and then write problem.solve(t_1, t_2) where we provide the tower sizes.
+    # This way, we only have one problem instance, and we save a ton of memory bc we only have one grid, cities, etc
+    problem = Problem(grid_density, country=country)
     
     # =========================================================
     # ÄUSSERE SCHLEIFE: Passe die Tower-Größen an (t_1, t_2)
@@ -62,7 +66,6 @@ def main():
         current_iter_best_costs = float('inf')
         current_iter_best_eps = (0, 0)
         current_iter_small, current_iter_large = set(), set()
-        current_iter_problem = None
         
         # =========================================================
         # INNERE SCHLEIFE: Teste N verschiedene Epsilons
@@ -75,11 +78,9 @@ def main():
             print(f"  -> Teste Epsilon {i+1}/{N_EPSILONS}: Offset X:{eps_x}m, Y:{eps_y}m... ", end="", flush=True)
             
             # 2. Problem erstellen und MILP lösen
-            problem = Problem(t_1, t_2, grid_density, epsilon_x=0, epsilon_y=0, country=country)
-            towers_small, towers_large, interference_cost = problem.solve()
+            towers_small, towers_large, costs = problem.solve(t_1, t_2)
             
-            # 3. Kosten berechnen
-            costs = len(towers_small) * problem.costs['small'] + len(towers_large) * problem.costs['large'] + interference_cost
+
             print(f"Kosten: {costs:.2f} GE")
             
             # 4. Minimalstes Problem (m_i) dieser Iteration speichern
@@ -88,7 +89,6 @@ def main():
                 points_to_plot.append({'t_1': t_1, 't_2': t_2, 'cost': current_iter_best_costs})
                 current_iter_best_eps = (eps_x, eps_y)
                 current_iter_small, current_iter_large = towers_small, towers_large
-                current_iter_problem = problem
 
         # =========================================================
         # UPDATE-REGEL (Stochastic Hill Climbing / Pseudo-Gradient)
@@ -99,7 +99,6 @@ def main():
             best_t_1, best_t_2 = t_1, t_2
             best_epsilon = current_iter_best_eps
             best_small_towers, best_large_towers = current_iter_small, current_iter_large
-            best_problem = current_iter_problem
             
             # Wir sind auf einem guten Weg! Verändere die Radien leicht für die nächste Runde.
             # Zufälliger Schritt (+ oder - STEP_SIZE)
@@ -125,7 +124,8 @@ def main():
     print_results(best_t_1, best_t_2, best_epsilon, best_small_towers, best_large_towers, best_overall_costs)
     
     # OSM-Visualisierung für das absolut beste gefundene Set
-    visualize_coverage_on_osm(best_problem, best_small_towers, best_large_towers)
+    visualize_coverage_on_osm(country, (best_t_1, best_t_2), (best_small_towers, best_large_towers))
 
 if __name__ == "__main__":
+    print('Hello')
     main()
