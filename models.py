@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import math
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
+from pathlib import Path
 from load_countries import  COUNTRY_DATA
 
 
@@ -21,34 +22,48 @@ class Tower(Point):
 class City(Point):
     name: str = None
 
-def latlon_to_utm(point: tuple[float, float]) -> tuple[float, float]:
+def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, float]:
     """
-    Converts a point from lat/lon (EPSG:4326) to UTM (EPSG:32632).
+    Converts a point from lat/lon to UTM.
 
+    :param country:
     :param point: (x, y) in meters (UTM)
     :return: (lat, lon)
         """
+    if country == 'Germany' or country == 'France':
+        epsg = 32632
+    else:
+        raise ValueError
+
     lat, lon = point
     gdf = gpd.GeoDataFrame(
         geometry=[ShapelyPoint(lon, lat)],
         crs="EPSG:4326"
     )
-    gdf_utm = gdf.to_crs(epsg=32632)
+    gdf_utm = gdf.to_crs(epsg=epsg)
     p = gdf_utm.geometry.iloc[0]
     return p.x, p.y
 
-def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
+def utm_to_latlon(point: tuple[float, float], country: str) -> tuple[float, float]:
     """
     Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
 
+    :param country:
     :param point: (x, y) in meters (UTM)
     :return: (lat, lon)
     """
+
+    if country == 'Germany' or country == 'France':
+        epsg = 32632
+    elif country == 'USA':
+        epsg = 5070
+    else:
+        raise ValueError
     x, y = point
 
     gdf = gpd.GeoDataFrame(
         geometry=[ShapelyPoint(x, y)],
-        crs="EPSG:32632"
+        crs=f"EPSG:{epsg}"
     )
 
     gdf_latlon = gdf.to_crs(epsg=4326)
@@ -170,5 +185,30 @@ def is_in_country(point: tuple[float, float], country: str, unit: str) -> bool:
         )
     else:
         raise ValueError(
-            "unit must be 'lon_lat' or 'utm'"
+            "unit must be 'lon_lat' or 'xy'"
         )
+
+def load_cities(country: str = 'Germany') -> tuple[set[City], int]:
+    if country == 'Germany':
+        file_path = Path("input_files/cities_de_50k.txt")
+    elif country == 'France':
+        file_path = Path("input_files/cities_fr_30k.txt")
+    else:
+        raise ValueError
+    cities: set[City] = set()
+    nr_of_cities = 0
+    with open(file_path, "r", encoding="utf-8") as file:
+        for line in file:
+            # Separate each line at the commas
+            parts: list = line.strip().split(",")
+
+            # Latitude is the second entry in parts, longitude is the third entry in parts
+            name = parts[0]
+            lat = float(parts[1])
+            lon = float(parts[2])
+            # Calculate the utm coords right away so we have them ready for later
+            x, y = latlon_to_utm((lat, lon), country)
+            city = City(name=name, lat=lat, lon=lon, x=x, y=y)
+            cities.add(city)
+            nr_of_cities += 1
+    return cities, nr_of_cities
