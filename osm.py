@@ -31,7 +31,6 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
     """
-    print("\n[OSM] Generiere optimierte interaktive OSM-Abdeckungskarte...")
 
     # 1. OSM-Karte zentriert auf die Mitte Deutschlands erstellen
     m = folium.Map(location=[51.165691, 10.451526], zoom_start=6)
@@ -42,7 +41,6 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     # 3. STÄDTE SAMMELN UND OPTIMIERT CLUSTERN (Verhindert Browser-Lag)
     city_coords = []
     cities, _ = load_cities(country)
-    print(f"[OSM] Bereite {len(cities)} Städte für das hocheffiziente Rendering vor...")
 
     for city in cities:
         lat, lon = city.lat, city.lon
@@ -56,8 +54,6 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     fast_cluster.add_to(m)
 
     # 4. MASTEN PLOTTEN
-    print(f"[OSM] Plotte Masten (Klein: {len(towers[0])}, Groß: {len(towers[1])})...")
-
     # Kleine Masten zeichnen
     for tower in towers[0]:
         lat, lon = tower.lat, tower.lon
@@ -121,4 +117,3 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     # Speichern
     file_name = f"osm_coverage_{country}_{radius[0]}_{radius[1]}.html"
     m.save(file_name)
-    print(f"[OSM] Erfolg! Die optimierte Karte wurde als '{file_name}' gespeichert.")
