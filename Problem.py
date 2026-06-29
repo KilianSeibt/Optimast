@@ -91,7 +91,7 @@ class Problem:
 
         while y <= y_max:
             while x <= x_max:
-                if is_in_Germany((x, y), 'xy'):
+                if is_in_country((x, y), 'Germany', 'utm'):
                     self.grid.add(Point(x=x, y=y))
                 x += step_size
 

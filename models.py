@@ -152,12 +152,23 @@ def cost_function(radius: float) -> float:
     else:
         raise ValueError
 
-def is_in_Germany(point: tuple[float, float], unit: str) -> bool:
+def is_in_country(point: tuple[float, float], country: str, unit: str) -> bool:
+
+    country_info = COUNTRY_DATA[country]
+
     if unit == 'lon_lat':
+
         lat, lon = point
-        return GER_lat_lon_prep.contains(ShapelyPoint(lon, lat))
-    elif unit == 'xy':
+        return country_info["latlon_prep"].contains(
+            ShapelyPoint(lon, lat)
+        )
+    elif unit == 'utm':
         x, y = point
-        return GER_xy_prep.contains(ShapelyPoint(x, y))
+
+        return country_info["utm_prep"].contains(
+            ShapelyPoint(x, y)
+        )
     else:
-        raise ValueError
+        raise ValueError(
+            "unit must be 'lon_lat' or 'utm'"
+        )
