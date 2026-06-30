@@ -125,17 +125,17 @@ def main():
     logging.info("=" * 60)
     country = 'Germany'
     logging.info(f'COUNTRY: {country}')
-    grid_density = 20_000
+    grid_density = 2_000
     logging.info(f'GRID DENSITY: {grid_density}')
 
 
     # Startwerte für die Radien
-    starting_points = [(t1*1000,t2*1000) for t1 in range(5, 80, 5) for t2 in range(t1+5, 100, 5)]
+    starting_points = [(t1*1000,t2*1000) for t1 in range(15, 80, 5) for t2 in range(t1+5, 90, 5)]
 
 
     # Hyperparameter für die Meta-Optimierung
-    MAX_ITERATIONS = 40     # Wie oft sollen t_1 und t_2 angepasst werden?
-    step_size = 2_000      # Um wie viele Meter sollen t_1/t_2 pro Schritt variieren?
+    MAX_ITERATIONS = 40
+    step_size = 2_000
 
     problem = Problem(grid_density, country=country)
 

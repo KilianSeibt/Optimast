@@ -6,7 +6,7 @@ import time
 # 1. Configure the log file and the minimum logging level
 logging.basicConfig(
     filename='results_gradient_search.log',
-    filemode='w',
+    filemode='a',
     encoding='utf-8',
     level=logging.INFO,
     format="%(message)s",
