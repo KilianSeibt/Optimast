@@ -2,6 +2,7 @@ from osm import *
 from Problem import *
 from logger import *
 
+# Newest Version for Bekky
 CACHE: dict[tuple[int, int], dict] = {}
 
 def write_txt_file(small_towers: set[Tower] = None, large_towers: set[Tower] = None):
