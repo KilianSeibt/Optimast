@@ -1,0 +1,41 @@
+Asunción, -25.28, -57.6344
+Ciudad del Este, -25.5167, -54.6167
+San José Obrero, -25.25, -56.8667
+Luque, -25.27, -57.4872
+Capiatá, -25.35, -57.42
+San Lorenzo, -25.3431, -57.5094
+Coronel Oviedo, -25.4481, -56.4411
+Limpio, -25.1683, -57.4942
+Pedro Juan Caballero, -22.5667, -55.7167
+Lambaré, -25.33, -57.64
+Ñemby, -25.3935, -57.5443
+Fernando de la Mora, -25.32, -57.54
+Encarnación, -27.3333, -55.8667
+Presidente Franco, -25.5333, -54.6167
+Mariano Roque Alonso, -25.2122, -57.5331
+Itauguá, -25.3833, -57.3333
+Itá, -25.4833, -57.35
+San Antonio, -25.3797, -57.6097
+Areguá, -25.3, -57.4169
+Ypané, -25.45, -57.53
+Horqueta, -23.3442, -57.0436
+Caacupé, -25.3861, -57.1408
+Villa Curuguaty, -24.48, -55.71
+San Estanislao, -24.65, -56.4333
+J. Augusto Saldívar, -25.45, -57.4
+Villa Elisa, -25.37, -57.62
+San Ignacio, -26.8867, -57.0283
+Villa Hayes, -25.0925, -57.53
+Concepción, -23.4025, -57.4414
+Villarrica, -25.7495, -56.4352
+San Juan Nepomuceno, -26.1, -55.9333
+Doctor Juan Eulogio Estigarribia, -25.3733, -55.7042
+Salto del Guairá, -24.0639, -54.3089
+Villeta, -25.51, -57.56
+San Pedro de Ycuamandiyú, -24.1, -57.0833
+Yhú, -25.05, -55.9167
+San Juan Bautista, -26.6333, -57.1667
+Pilar, -26.8569, -58.3039
+Abaí, -26.03, -55.94
+Yaguarón, -25.5621, -57.284
+Yby Yaú, -22.9631, -56.5358

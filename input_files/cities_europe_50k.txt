@@ -1,0 +1,1917 @@
+Berat, 40.70583, 19.95222, Albania
+Durrës, 41.32355, 19.45469, Albania
+Elbasan, 41.11138, 20.08224, Albania
+Fier, 40.7251, 19.55823, Albania
+Fier-Çifçi, 40.71667, 19.56667, Albania
+Korçë, 40.61861, 20.78083, Albania
+Krujë, 41.50917, 19.79278, Albania
+Lushnjë, 40.94194, 19.705, Albania
+Shkodër, 42.06828, 19.51258, Albania
+Tirana, 41.32744, 19.81866, Albania
+Vlorë, 40.4696, 19.48379, Albania
+Aspern, 48.21806, 16.48306, Austria
+Brigittenau, 48.24275, 16.37551, Austria
+Donaustadt, 48.2333, 16.46002, Austria
+Döbling, 48.25, 16.33333, Austria
+Favoriten, 48.16116, 16.38233, Austria
+Floridsdorf, 48.25, 16.4, Austria
+Fünfhaus, 48.19596, 16.3183, Austria
+Graz, 47.06733, 15.44197, Austria
+Hernals, 48.22544, 16.30871, Austria
+Hietzing, 48.18623, 16.2965, Austria
+Innsbruck, 47.26266, 11.39454, Austria
+Klagenfurt am Wörthersee, 46.62472, 14.30528, Austria
+Landstraße, 48.2019, 16.38792, Austria
+Linz, 48.30639, 14.28611, Austria
+Margareten, 48.1855, 16.35373, Austria
+Meidling, 48.16667, 16.33333, Austria
+Ottakring, 48.21667, 16.3, Austria
+Penzing, 48.2, 16.26667, Austria
+Salzburg, 47.79941, 13.04399, Austria
+Simmering, 48.18333, 16.43333, Austria
+Vienna, 48.20849, 16.37208, Austria
+Villach, 46.61028, 13.85583, Austria
+Währing, 48.22611, 16.34484, Austria
+Banja Luka, 44.77879, 17.20629, Bosnia
+Bihać, 44.81694, 15.87083, Bosnia
+Ilidža, 43.83148, 18.30697, Bosnia
+Mostar, 43.34333, 17.80806, Bosnia
+Sarajevo, 43.84864, 18.35644, Bosnia
+Tuzla, 44.53842, 18.66709, Bosnia
+Zenica, 44.20169, 17.90397, Bosnia
+Aalst, 50.93604, 4.0355, Belgium
+Anderlecht, 50.83619, 4.31454, Belgium
+Antwerpen, 51.22047, 4.40026, Belgium
+Brugge, 51.20892, 3.22424, Belgium
+Brussels, 50.85045, 4.34878, Belgium
+Charleroi, 50.41136, 4.44448, Belgium
+Deurne, 51.22134, 4.46595, Belgium
+Forest, 50.81678, 4.32775, Belgium
+Genk, 50.965, 5.50082, Belgium
+Gent, 51.05, 3.71667, Belgium
+Hasselt, 50.93106, 5.33781, Belgium
+Ixelles, 50.83333, 4.36667, Belgium
+Jette, 50.87309, 4.33419, Belgium
+Kortrijk, 50.82803, 3.26487, Belgium
+La Louvière, 50.48657, 4.18785, Belgium
+Leuven, 50.87959, 4.70093, Belgium
+Liège, 50.63373, 5.56749, Belgium
+Mechelen, 51.02574, 4.47762, Belgium
+Molenbeek-Saint-Jean, 50.8499, 4.31248, Belgium
+Mons, 50.45413, 3.95229, Belgium
+Mouscron, 50.74497, 3.20639, Belgium
+Namur, 50.4669, 4.86746, Belgium
+Ostend, 51.21551, 2.927, Belgium
+Roeselare, 50.94653, 3.12269, Belgium
+Saint-Gilles, 50.82763, 4.34389, Belgium
+Schaerbeek, 50.86935, 4.37737, Belgium
+Seraing, 50.58362, 5.50115, Belgium
+Sint-Niklaas, 51.16509, 4.1437, Belgium
+Tournai, 50.60715, 3.38932, Belgium
+Uccle, 50.80225, 4.33943, Belgium
+Verviers, 50.58907, 5.86241, Belgium
+Woluwe-Saint-Lambert, 50.84389, 4.42912, Belgium
+Asenovgrad, 42.01667, 24.86667, Bulgaria
+Blagoevgrad, 42.01457, 23.09804, Bulgaria
+Burgas, 42.50651, 27.46886, Bulgaria
+Dobrich, 43.56491, 27.83138, Bulgaria
+Haskovo, 41.93415, 25.55557, Bulgaria
+Pazardzhik, 42.19934, 24.33318, Bulgaria
+Pernik, 42.59671, 23.03318, Bulgaria
+Pleven, 43.41791, 24.61666, Bulgaria
+Plovdiv, 42.15387, 24.75001, Bulgaria
+Ruse, 43.84872, 25.9534, Bulgaria
+Shumen, 43.27064, 26.92286, Bulgaria
+Sliven, 42.68607, 26.32558, Bulgaria
+Sofia, 42.69751, 23.32415, Bulgaria
+Stara Zagora, 42.43205, 25.64262, Bulgaria
+Varna, 43.21912, 27.91024, Bulgaria
+Veliko Tŭrnovo, 43.08124, 25.62904, Bulgaria
+Yambol, 42.48243, 26.50006, Bulgaria
+Baranovichi, 53.13253, 26.00774, Belarus
+Barysaw, 54.2279, 28.505, Belarus
+Bobruysk, 53.14636, 29.20552, Belarus
+Brest, 52.10894, 23.71749, Belarus
+Homyel', 52.4345, 30.9754, Belarus
+Horad Zhodzina, 54.0985, 28.3331, Belarus
+Hrodna, 53.6758, 23.82887, Belarus
+Kobryn, 52.21173, 24.3563, Belarus
+Lida, 53.88333, 25.29972, Belarus
+Mahilyow, 53.90876, 30.34044, Belarus
+Maladziečna, 54.3167, 26.854, Belarus
+Mazyr, 52.04162, 29.21631, Belarus
+Minsk, 53.90019, 27.56653, Belarus
+Novopolotsk, 55.52618, 28.59308, Belarus
+Orsha, 54.51362, 30.40365, Belarus
+Pinsk, 52.12153, 26.06726, Belarus
+Polotsk, 55.4879, 28.7856, Belarus
+Rechytsa, 52.3617, 30.3916, Belarus
+Slutsk, 53.01522, 27.54159, Belarus
+Soligorsk, 52.78981, 27.53583, Belarus
+Svetlogorsk, 52.6329, 29.7389, Belarus
+Vitebsk, 55.1904, 30.2049, Belarus
+Zhlobin, 52.8926, 30.024, Belarus
+Basel, 47.55839, 7.57327, Switzerland
+Bern, 46.94809, 7.44744, Switzerland
+Biel/Bienne, 47.13713, 7.24608, Switzerland
+Genève, 46.20222, 6.14569, Switzerland
+Lausanne, 46.516, 6.63282, Switzerland
+Lugano, 46.01008, 8.96004, Switzerland
+Luzern, 47.05048, 8.30635, Switzerland
+Sankt Gallen, 47.42391, 9.37477, Switzerland
+Winterthur, 47.50564, 8.72413, Switzerland
+Zürich, 47.36667, 8.55, Switzerland
+Zürich (Kreis 11), 47.42326, 8.52166, Switzerland
+Larnaca, 34.9221, 33.62794, Cyprus
+Limassol, 34.68406, 33.03794, Cyprus
+Nicosia, 35.17284, 33.35397, Cyprus
+Stróvolos, 35.14867, 33.33384, Cyprus
+Brno, 49.19522, 16.60796, Czechia
+Brno střed, 49.19343, 16.60712, Czechia
+Chodov, 50.03669, 14.50444, Czechia
+Frýdek-Místek, 49.68333, 18.35, Czechia
+Havířov, 49.77984, 18.43688, Czechia
+Hradec Králové, 50.20923, 15.83277, Czechia
+Jihlava, 49.3961, 15.59124, Czechia
+Kladno, 50.14734, 14.10285, Czechia
+Liberec, 50.76711, 15.05619, Czechia
+Most, 50.50301, 13.63617, Czechia
+Olomouc, 49.59552, 17.25175, Czechia
+Opava, 49.93866, 17.90257, Czechia
+Ostrava, 49.83465, 18.28204, Czechia
+Pardubice, 50.04075, 15.77659, Czechia
+Pilsen, 49.74747, 13.37759, Czechia
+Prague, 50.08804, 14.42076, Czechia
+Stodůlky, 50.05, 14.31667, Czechia
+Teplice, 50.6404, 13.82451, Czechia
+Zlín, 49.22645, 17.67065, Czechia
+Ústí nad Labem, 50.6607, 14.03227, Czechia
+České Budějovice, 48.97447, 14.47434, Czechia
+Žižkov, 50.08333, 14.45, Czechia
+Aachen, 50.77664, 6.08342, Germany
+Aalen, 48.83777, 10.0933, Germany
+Ahlen, 51.76338, 7.8887, Germany
+Alt-Hohenschönhausen, 52.54608, 13.5013, Germany
+Altona, 53.55, 9.93333, Germany
+Arnsberg, 51.38333, 8.08333, Germany
+Aschaffenburg, 49.97704, 9.15214, Germany
+Augsburg, 48.37154, 10.89851, Germany
+Bad Homburg vor der Höhe, 50.22683, 8.61816, Germany
+Bad Salzuflen, 52.0862, 8.74434, Germany
+Baden-Baden, 48.7606, 8.23975, Germany
+Bamberg, 49.89873, 10.90067, Germany
+Bayreuth, 49.94782, 11.57893, Germany
+Bergedorf, 53.48462, 10.22904, Germany
+Bergheim, 50.95572, 6.63986, Germany
+Bergisch Gladbach, 50.9856, 7.13298, Germany
+Bergkamen, 51.61633, 7.64451, Germany
+Berlin, 52.52437, 13.41053, Germany
+Berlin Köpenick, 52.44254, 13.58228, Germany
+Bielefeld, 52.03333, 8.53333, Germany
+Billstedt, 53.55, 10.13333, Germany
+Bocholt, 51.83879, 6.61531, Germany
+Bochum, 51.48165, 7.21648, Germany
+Bogenhausen, 48.15221, 11.61585, Germany
+Bonn, 50.73438, 7.09549, Germany
+Bottrop, 51.52392, 6.9285, Germany
+Brandenburg an der Havel, 52.41667, 12.55, Germany
+Braunschweig, 52.26594, 10.52673, Germany
+Bremen, 53.07582, 8.80717, Germany
+Bremerhaven, 53.55357, 8.57553, Germany
+Castrop-Rauxel, 51.55657, 7.31155, Germany
+Celle, 52.62264, 10.08047, Germany
+Charlottenburg, 52.51667, 13.28333, Germany
+Chemnitz, 50.8357, 12.92922, Germany
+Cottbus, 51.75769, 14.32888, Germany
+Cuxhaven, 53.86828, 8.69902, Germany
+Darmstadt, 49.87167, 8.65027, Germany
+Delmenhorst, 53.0511, 8.63091, Germany
+Dessau, 51.83864, 12.24555, Germany
+Detmold, 51.93855, 8.87318, Germany
+Dinslaken, 51.56227, 6.7434, Germany
+Dormagen, 51.09683, 6.83167, Germany
+Dorsten, 51.66166, 6.96514, Germany
+Dortmund, 51.51494, 7.466, Germany
+Dresden, 51.05089, 13.73832, Germany
+Duisburg, 51.43247, 6.76516, Germany
+Düren, 50.80434, 6.49299, Germany
+Düsseldorf, 51.22172, 6.77616, Germany
+Eimsbüttel, 53.57416, 9.95679, Germany
+Emden, 53.36592, 7.20846, Germany
+Erftstadt, 50.81481, 6.79387, Germany
+Erfurt, 50.97734, 11.03536, Germany
+Erlangen, 49.59099, 11.00783, Germany
+Eschweiler, 50.81854, 6.27184, Germany
+Essen, 51.45657, 7.01228, Germany
+Esslingen, 48.73961, 9.30473, Germany
+Euskirchen, 50.66057, 6.78722, Germany
+Flensburg, 54.78805, 9.43722, Germany
+Frankfurt (Oder), 52.34714, 14.55062, Germany
+Frankfurt am Main, 50.11552, 8.68417, Germany
+Freiburg, 47.9959, 7.85222, Germany
+Friedrichsfelde, 52.50575, 13.50812, Germany
+Friedrichshafen, 47.65689, 9.47554, Germany
+Friedrichshain, 52.51559, 13.45482, Germany
+Fulda, 50.55162, 9.67518, Germany
+Fürth, 49.47593, 10.98856, Germany
+Garbsen, 52.41371, 9.5899, Germany
+Gelsenkirchen, 51.50508, 7.09654, Germany
+Gera, 50.88029, 12.08187, Germany
+Gesundbrunnen, 52.55035, 13.39139, Germany
+Gießen, 50.58727, 8.67554, Germany
+Gladbeck, 51.57077, 6.98593, Germany
+Grevenbroich, 51.09102, 6.5827, Germany
+Gummersbach, 51.02608, 7.56473, Germany
+Göppingen, 48.70354, 9.65209, Germany
+Görlitz, 51.15518, 14.98853, Germany
+Göttingen, 51.53443, 9.93228, Germany
+Gütersloh, 51.90693, 8.37853, Germany
+Hagen, 51.36081, 7.47168, Germany
+Halle (Saale), 51.48158, 11.97947, Germany
+Hamburg, 53.55073, 9.99302, Germany
+Hamburg-Mitte, 53.55, 10.01667, Germany
+Hamburg-Nord, 53.58935, 9.984, Germany
+Hameln, 52.10397, 9.35623, Germany
+Hamm, 51.68033, 7.82089, Germany
+Hanau am Main, 50.13423, 8.91418, Germany
+Hannover, 52.37052, 9.73322, Germany
+Harburg, 53.46057, 9.98388, Germany
+Hattingen, 51.39894, 7.18557, Germany
+Heidelberg, 49.40768, 8.69079, Germany
+Heidenheim an der Brenz, 48.67798, 10.15162, Germany
+Heilbronn, 49.13995, 9.22054, Germany
+Hellersdorf, 52.53319, 13.6088, Germany
+Herford, 52.11457, 8.67343, Germany
+Herne, 51.5388, 7.22572, Germany
+Herten, 51.59638, 7.14387, Germany
+Hilden, 51.16818, 6.93093, Germany
+Hildesheim, 52.15077, 9.95112, Germany
+Hürth, 50.87079, 6.86761, Germany
+Ibbenbueren, 52.27964, 7.71457, Germany
+Ingolstadt, 48.76508, 11.42372, Germany
+Iserlohn, 51.37547, 7.70281, Germany
+Jena, 50.92878, 11.5899, Germany
+Kaiserslautern, 49.443, 7.77161, Germany
+Karlsruhe, 49.00937, 8.40444, Germany
+Kassel, 51.31667, 9.5, Germany
+Kempten (Allgäu), 47.72674, 10.31389, Germany
+Kerpen, 50.86991, 6.69691, Germany
+Kiel, 54.32133, 10.13489, Germany
+Koblenz, 50.35357, 7.57883, Germany
+Konstanz, 47.66033, 9.17582, Germany
+Krefeld, 51.33645, 6.55381, Germany
+Kreuzberg, 52.49973, 13.40338, Germany
+Köln, 50.93333, 6.95, Germany
+Köpenick, 52.4455, 13.57455, Germany
+Landshut, 48.52961, 12.16179, Germany
+Langenfeld, 51.10821, 6.94831, Germany
+Langenhagen, 52.44758, 9.73741, Germany
+Leipzig, 51.33962, 12.37129, Germany
+Leverkusen, 51.0303, 6.98432, Germany
+Lichtenrade, 52.39844, 13.40637, Germany
+Lichterfelde, 52.4333, 13.30762, Germany
+Lingen, 52.52143, 7.31845, Germany
+Lippstadt, 51.67369, 8.34482, Germany
+Ludwigsburg, 48.89731, 9.19161, Germany
+Ludwigshafen am Rhein, 49.48121, 8.44641, Germany
+Lübeck, 53.86893, 10.68729, Germany
+Lüdenscheid, 51.21977, 7.6273, Germany
+Lüneburg, 53.25122, 10.41548, Germany
+Lünen, 51.61634, 7.52872, Germany
+Magdeburg, 52.13129, 11.63189, Germany
+Mainz, 49.98185, 8.28008, Germany
+Mannheim, 49.4891, 8.46694, Germany
+Marburg an der Lahn, 50.80904, 8.77069, Germany
+Mariendorf, 52.4378, 13.38109, Germany
+Marienthal, 53.56667, 10.08333, Germany
+Marl, 51.65671, 7.09038, Germany
+Marzahn, 52.54525, 13.56983, Germany
+Meerbusch, 51.25268, 6.68807, Germany
+Menden, 51.44337, 7.77825, Germany
+Minden, 52.28953, 8.91455, Germany
+Mitte, 52.52003, 13.40489, Germany
+Moabit, 52.52635, 13.33903, Germany
+Moers, 51.45342, 6.6326, Germany
+Munich, 48.13743, 11.57549, Germany
+Mönchengladbach, 51.18539, 6.44172, Germany
+Mülheim, 51.43218, 6.87967, Germany
+Münster, 51.96236, 7.62571, Germany
+Neu-Hohenschönhausen, 52.56681, 13.51255, Germany
+Neu-Ulm, 48.39279, 10.01112, Germany
+Neubrandenburg, 53.55735, 13.26105, Germany
+Neubrück, 51.13434, 6.63857, Germany
+Neue Neustadt, 52.15, 11.63333, Germany
+Neukölln, 52.47719, 13.43126, Germany
+Neumünster, 54.07399, 9.98456, Germany
+Neuss, 51.19807, 6.68504, Germany
+Neustadt an der Weinstraße, 49.35009, 8.13886, Germany
+Neuwied, 50.4336, 7.47057, Germany
+Nippes, 50.96545, 6.95314, Germany
+Norderstedt, 53.70177, 9.99328, Germany
+Nordhorn, 52.43081, 7.06833, Germany
+Nürnberg, 49.45421, 11.07752, Germany
+Oberhausen, 51.47805, 6.8625, Germany
+Offenbach, 50.10061, 8.76647, Germany
+Offenburg, 48.47377, 7.94495, Germany
+Oldenburg, 53.14039, 8.21479, Germany
+Osnabrück, 52.27264, 8.0498, Germany
+Paderborn, 51.71905, 8.75439, Germany
+Pankow, 52.56926, 13.40186, Germany
+Passau, 48.5665, 13.43122, Germany
+Pforzheim, 48.88436, 8.69892, Germany
+Plauen, 50.4973, 12.13782, Germany
+Porz am Rhein, 50.88637, 7.0583, Germany
+Potsdam, 52.39886, 13.06566, Germany
+Prenzlauer Berg, 52.53878, 13.42443, Germany
+Pulheim, 50.99965, 6.80632, Germany
+Rahlstedt, 53.60194, 10.15667, Germany
+Ratingen, 51.29724, 6.84929, Germany
+Recklinghausen, 51.61379, 7.19738, Germany
+Regensburg, 49.01513, 12.10161, Germany
+Reinickendorf, 52.56395, 13.33552, Germany
+Remscheid, 51.17983, 7.1925, Germany
+Reutlingen, 48.49144, 9.20427, Germany
+Rheine, 52.28509, 7.44055, Germany
+Rheinhausen, 51.40055, 6.71187, Germany
+Rodenkirchen, 50.89328, 6.99481, Germany
+Rosenheim, 47.85637, 12.12247, Germany
+Rostock, 54.0887, 12.14049, Germany
+Rüsselsheim am Main, 49.98955, 8.42251, Germany
+Saarbrücken, 49.23262, 7.00982, Germany
+Salzgitter, 52.15705, 10.4154, Germany
+Sankt Augustin, 50.77538, 7.197, Germany
+Schweinfurt, 50.04937, 10.22175, Germany
+Schwerin, 53.62937, 11.41316, Germany
+Schwerte, 51.44387, 7.5675, Germany
+Schwäbisch Gmünd, 48.79947, 9.79809, Germany
+Schöneberg, 52.49801, 13.3443, Germany
+Siegen, 50.87481, 8.02431, Germany
+Sindelfingen, 48.7, 9.01667, Germany
+Solingen, 51.17343, 7.0845, Germany
+Speyer, 49.32083, 8.43111, Germany
+Steglitz, 52.45606, 13.332, Germany
+Stolberg, 50.77368, 6.22595, Germany
+Stralsund, 54.30911, 13.0818, Germany
+Stuttgart, 48.78232, 9.17702, Germany
+Tempelhof, 52.46667, 13.4, Germany
+Treptow, 52.49376, 13.44469, Germany
+Trier, 49.75565, 6.63935, Germany
+Troisdorf, 50.80901, 7.14968, Germany
+Tübingen, 48.52266, 9.05222, Germany
+Ulm, 48.39841, 9.99155, Germany
+Universitäts- und Hansestadt Greifswald, 54.08905, 13.40244, Germany
+Unna, 51.53795, 7.68969, Germany
+Velbert, 51.33537, 7.04348, Germany
+Viersen, 51.25435, 6.39441, Germany
+Villingen-Schwenningen, 48.06226, 8.49358, Germany
+Waiblingen, 48.83241, 9.31641, Germany
+Wandsbek, 53.58334, 10.08305, Germany
+Wedding, 52.54734, 13.35594, Germany
+Weimar, 50.9803, 11.32903, Germany
+Wesel, 51.6669, 6.62037, Germany
+Wetzlar, 50.56109, 8.50495, Germany
+Wiesbaden, 50.08601, 8.24435, Germany
+Wilhelmsburg, 53.49624, 10.01712, Germany
+Wilhelmshaven, 53.5476, 8.10395, Germany
+Willich, 51.26371, 6.54734, Germany
+Wilmersdorf, 52.48333, 13.31667, Germany
+Winterhude, 53.59368, 10.01123, Germany
+Witten, 51.44362, 7.35258, Germany
+Wolfenbüttel, 52.16442, 10.54095, Germany
+Wolfsburg, 52.42452, 10.7815, Germany
+Worms, 49.63278, 8.35916, Germany
+Wuppertal, 51.25627, 7.14816, Germany
+Würzburg, 49.79391, 9.95121, Germany
+Zehlendorf, 52.43333, 13.25, Germany
+Zwickau, 50.72724, 12.48839, Germany
+Aalborg, 57.048, 9.9187, Denmark
+Avedøre, 55.62722, 12.45644, Denmark
+Copenhagen, 55.67594, 12.56553, Denmark
+Esbjerg, 55.47028, 8.45187, Denmark
+Frederiksberg, 55.67938, 12.53463, Denmark
+Herning, 56.13615, 8.97662, Denmark
+Horsens, 55.86066, 9.85034, Denmark
+Hvidovre, 55.64297, 12.47708, Denmark
+Klinteby Frihed, 55.19705, 11.59603, Denmark
+Kolding, 55.4904, 9.47216, Denmark
+Odense, 55.39594, 10.38831, Denmark
+Randers, 56.4607, 10.03639, Denmark
+Roskilde, 55.64152, 12.08035, Denmark
+Vejle, 55.70927, 9.5357, Denmark
+Århus, 56.15674, 10.21076, Denmark
+Narva, 59.37722, 28.19028, Estonia
+Tallinn, 59.43696, 24.75353, Estonia
+Tartu, 58.38062, 26.72509, Estonia
+A Coruña, 43.37135, -8.396, Spain
+Albacete, 38.99424, -1.85643, Spain
+Alcalá de Guadaira, 37.33791, -5.83951, Spain
+Alcalá de Henares, 40.48205, -3.35996, Spain
+Alcobendas, 40.54746, -3.64197, Spain
+Alcorcón, 40.34582, -3.82487, Spain
+Alcoy, 38.70545, -0.47432, Spain
+Algeciras, 36.13326, -5.45051, Spain
+Algorta, 43.34927, -3.0094, Spain
+Alicante, 38.34517, -0.48149, Spain
+Almería, 36.83814, -2.45974, Spain
+Aluche, 40.39191, -3.75669, Spain
+Aranjuez, 40.03108, -3.60246, Spain
+Arganda, 40.30076, -3.43722, Spain
+Arganzuela, 40.40021, -3.69618, Spain
+Arona, 28.09962, -16.68102, Spain
+Arrecife, 28.96302, -13.54769, Spain
+Avilés, 43.55473, -5.92483, Spain
+Badajoz, 38.87789, -6.97061, Spain
+Badalona, 41.45004, 2.24741, Spain
+Barakaldo, 43.29639, -2.98813, Spain
+Barcelona, 41.38879, 2.15899, Spain
+Barri de Sant Andreu, 41.43693, 2.19022, Spain
+Benalmádena, 36.5961, -4.57267, Spain
+Benidorm, 38.53816, -0.13098, Spain
+Bilbao, 43.26271, -2.92528, Spain
+Boadilla del Monte, 40.405, -3.87835, Spain
+Burgos, 42.34106, -3.70184, Spain
+Cadiz, 36.52672, -6.2891, Spain
+Calvià, 39.5657, 2.50621, Spain
+Campiña, 38.21896, -2.98069, Spain
+Carabanchel, 40.39094, -3.7242, Spain
+Cartagena, 37.60197, -0.98397, Spain
+Castelldefels, 41.27794, 1.97033, Spain
+Castelló de la Plana, 39.98567, -0.04935, Spain
+Centro, 28.1272, -15.4314, Spain
+Cerdanyola del Vallès, 41.49109, 2.14079, Spain
+Ceuta, 35.88919, -5.32042, Spain
+Chamartín, 40.46206, -3.6766, Spain
+Chamberí, 40.43404, -3.70379, Spain
+Chiclana de la Frontera, 36.41976, -6.14367, Spain
+Ciudad Lineal, 40.44505, -3.65132, Spain
+Ciudad Real, 38.98626, -3.92907, Spain
+Ciutat Vella, 41.38022, 2.17319, Spain
+Collado-Villalba, 40.63506, -4.00486, Spain
+Cornellà de Llobregat, 41.35, 2.08333, Spain
+Coslada, 40.42378, -3.56129, Spain
+Cuenca, 40.06667, -2.13333, Spain
+Cáceres, 39.47649, -6.37224, Spain
+Córdoba, 37.89155, -4.77275, Spain
+Delicias, 41.64928, -0.90757, Spain
+Donostia / San Sebastián, 43.31283, -1.97499, Spain
+Dos Hermanas, 37.28287, -5.92088, Spain
+Eixample, 41.38896, 2.16179, Spain
+El Ejido, 36.77629, -2.81456, Spain
+El Prat de Llobregat, 41.32784, 2.09472, Spain
+El Puerto de Santa María, 36.59389, -6.23298, Spain
+Elche, 38.26218, -0.70107, Spain
+Elda, 38.47783, -0.79157, Spain
+Estepona, 36.42764, -5.14589, Spain
+Ferrol, 43.48451, -8.23293, Spain
+Fuencarral, 40.5, -3.68333, Spain
+Fuencarral-El Pardo, 40.4984, -3.7314, Spain
+Fuengirola, 36.53998, -4.62473, Spain
+Fuenlabrada, 40.28419, -3.79415, Spain
+Gamonal, 42.35664, -3.67321, Spain
+Gandia, 38.96667, -0.18333, Spain
+Gasteiz / Vitoria, 42.84998, -2.67268, Spain
+Getafe, 40.30571, -3.73295, Spain
+Getxo, 43.35689, -3.01146, Spain
+Gijón, 43.53573, -5.66152, Spain
+Girona, 41.98311, 2.82493, Spain
+Granada, 37.18817, -3.60667, Spain
+Granollers, 41.60797, 2.28773, Spain
+Grao de Murviedro, 39.64167, -0.23889, Spain
+Gràcia, 41.40237, 2.15641, Spain
+Guadalajara, 40.62862, -3.16185, Spain
+Horta-Guinardó, 41.41849, 2.1677, Spain
+Hortaleza, 40.47444, -3.6411, Spain
+Huelva, 37.26638, -6.94004, Spain
+Huesca, 42.13615, -0.4087, Spain
+Irun, 43.33904, -1.78938, Spain
+Jaén, 37.76922, -3.79028, Spain
+Jerez de la Frontera, 36.68645, -6.13606, Spain
+L'Hospitalet de Llobregat, 41.35967, 2.10028, Spain
+La Laguna, 28.4853, -16.32014, Spain
+La Línea de la Concepción, 36.16809, -5.34777, Spain
+Las Palmas de Gran Canaria, 28.10178, -15.41573, Spain
+Las Rozas de Madrid, 40.49292, -3.87371, Spain
+Las Águilas, 40.3818, -3.77109, Spain
+Latina, 40.38897, -3.74569, Spain
+Leganés, 40.32718, -3.7635, Spain
+Les Corts, 41.38712, 2.13007, Spain
+León, 42.60003, -5.57032, Spain
+Linares, 38.09519, -3.63602, Spain
+Lleida, 41.61674, 0.62218, Spain
+Logroño, 42.46615, -2.45115, Spain
+Lorca, 37.67119, -1.7017, Spain
+Lugo, 43.00992, -7.55602, Spain
+Madrid, 40.4165, -3.70256, Spain
+Madrid Centro, 40.41831, -3.70275, Spain
+Majadahonda, 40.47353, -3.87182, Spain
+Manresa, 41.72815, 1.82399, Spain
+Marbella, 36.51543, -4.88583, Spain
+Mataró, 41.54211, 2.4445, Spain
+Melilla, 35.29369, -2.93833, Spain
+Mijas, 36.59575, -4.63728, Spain
+Molina de Segura, 38.05456, -1.20763, Spain
+Mollet del Vallès, 41.54026, 2.21306, Spain
+Moncloa-Aravaca, 40.43547, -3.7317, Spain
+Moratalaz, 40.40742, -3.64935, Spain
+Motril, 36.75066, -3.5179, Spain
+Murcia, 37.98704, -1.13004, Spain
+Málaga, 36.72016, -4.42034, Spain
+Mérida, 38.91802, -6.34292, Spain
+Móstoles, 40.32234, -3.86496, Spain
+Nou Barris, 41.44163, 2.17727, Spain
+Orihuela, 38.08483, -0.94401, Spain
+Ourense, 42.33669, -7.86407, Spain
+Oviedo, 43.36029, -5.84476, Spain
+Palencia, 42.00955, -4.52406, Spain
+Palma, 39.56939, 2.65024, Spain
+Pamplona, 42.81687, -1.64323, Spain
+Parla, 40.23604, -3.76752, Spain
+Paterna, 39.50263, -0.44079, Spain
+Pinar del Rey, 40.4724, -3.64709, Spain
+Ponferrada, 42.54664, -6.59619, Spain
+Pontevedra, 42.431, -8.64435, Spain
+Pozuelo de Alarcón, 40.43293, -3.81338, Spain
+Pueblo Nuevo, 40.42629, -3.63546, Spain
+Puente de Vallecas, 40.39354, -3.662, Spain
+Puertollano, 38.68712, -4.10734, Spain
+Retiro, 40.41317, -3.68307, Spain
+Reus, 41.15612, 1.10687, Spain
+Rivas-Vaciamadrid, 40.32605, -3.51089, Spain
+Roquetas de Mar, 36.76419, -2.61475, Spain
+Rubí, 41.49226, 2.03305, Spain
+Sabadell, 41.54329, 2.10942, Spain
+Sagrada Família, 41.40408, 2.17332, Spain
+Sagunto, 39.68333, -0.26667, Spain
+Salamanca, 40.96882, -5.66388, Spain
+Salamanca, 40.42972, -3.67975, Spain
+San Bartolomé de Tirajana, 27.92481, -15.57329, Spain
+San Blas-Canillejas, 40.43893, -3.61537, Spain
+San Fernando, 36.4759, -6.19817, Spain
+San Sebastián de los Reyes, 40.55555, -3.62733, Spain
+San Vicent del Raspeig, 38.3964, -0.5255, Spain
+Sanlúcar de Barrameda, 36.77808, -6.3515, Spain
+Sant Andreu, 41.43541, 2.18982, Spain
+Sant Boi de Llobregat, 41.34357, 2.03659, Spain
+Sant Cugat del Vallès, 41.47063, 2.08611, Spain
+Sant Martí, 41.41814, 2.19933, Spain
+Santa Coloma de Gramenet, 41.45152, 2.2081, Spain
+Santa Cruz de Tenerife, 28.46824, -16.25462, Spain
+Santa Lucía, 27.91174, -15.54071, Spain
+Santander, 43.46589, -3.80493, Spain
+Santiago de Compostela, 42.88052, -8.54569, Spain
+Sants-Montjuïc, 41.37263, 2.1546, Spain
+Santutxu, 43.25347, -2.9161, Spain
+Sarrià-Sant Gervasi, 41.40104, 2.1394, Spain
+Segovia, 40.94808, -4.11839, Spain
+Sevilla, 37.38283, -5.97317, Spain
+Talavera de la Reina, 39.96348, -4.83076, Spain
+Tarragona, 41.11905, 1.24544, Spain
+Telde, 27.99243, -15.41915, Spain
+Terrassa, 41.56667, 2.01667, Spain
+Tetuán de las Victorias, 40.45975, -3.6975, Spain
+Toledo, 39.8581, -4.02263, Spain
+Torrejón de Ardoz, 40.45535, -3.46973, Spain
+Torrelavega, 43.34943, -4.04785, Spain
+Torremolinos, 36.62035, -4.49976, Spain
+Torrent, 39.43705, -0.46546, Spain
+Torrevieja, 37.97872, -0.68222, Spain
+Usera, 40.38866, -3.70035, Spain
+Utrera, 37.18516, -5.78093, Spain
+Valdefuentes, 40.49367, -3.6359, Spain
+Valdemoro, 40.19081, -3.67887, Spain
+Valencia, 39.47391, -0.37966, Spain
+Valladolid, 41.65541, -4.72353, Spain
+Vallecas, 40.38333, -3.61667, Spain
+Valverde, 40.50024, -3.67877, Spain
+Ventas, 40.42248, -3.64741, Spain
+Vicálvaro, 40.4, -3.6, Spain
+Vigo, 42.23282, -8.72264, Spain
+Vila-real, 39.9383, -0.10087, Spain
+Viladecans, 41.31405, 2.01427, Spain
+Vilanova i la Geltrú, 41.22392, 1.72511, Spain
+Villa de Vallecas, 40.36695, -3.60146, Spain
+Villaverde, 40.35, -3.7, Spain
+Vélez-Málaga, 36.78107, -4.10266, Spain
+Zamora, 41.50633, -5.74456, Spain
+Zaragoza, 41.65606, -0.87734, Spain
+la Nova Esquerra de l'Eixample, 41.38309, 2.149, Spain
+la Vila de Gràcia, 41.40315, 2.15687, Spain
+Ávila, 40.65724, -4.69951, Spain
+East Helsinki, 60.21043, 25.08289, Finland
+Espoo, 60.2052, 24.6522, Finland
+Helsinki, 60.16952, 24.93545, Finland
+Hämeenlinna, 60.99596, 24.46434, Finland
+Joensuu, 62.60118, 29.76316, Finland
+Jyväskylä, 62.24147, 25.72088, Finland
+Kotka, 60.4664, 26.94582, Finland
+Kouvola, 60.86667, 26.7, Finland
+Kuopio, 62.89238, 27.67703, Finland
+Lahti, 60.98267, 25.66151, Finland
+Lappeenranta, 61.05871, 28.18871, Finland
+Mikkeli, 61.68857, 27.27227, Finland
+Oulu, 65.01236, 25.46816, Finland
+Pori, 61.48072, 21.78518, Finland
+Porvoo, 60.39233, 25.66507, Finland
+Rovaniemi, 66.49897, 25.68867, Finland
+Salo, 60.38333, 23.13333, Finland
+Seinäjoki, 62.79446, 22.82822, Finland
+Tampere, 61.49911, 23.78712, Finland
+Turku, 60.45148, 22.26869, Finland
+Vaasa, 63.096, 21.61577, Finland
+Vantaa, 60.29414, 25.04099, Finland
+Aix-en-Provence, 43.5283, 5.44973, France
+Ajaccio, 41.91886, 8.73812, France
+Albi, 43.9298, 2.148, France
+Amiens, 49.9, 2.3, France
+Angers, 47.47156, -0.55202, France
+Antibes, 43.58127, 7.12487, France
+Antony, 48.75329, 2.29668, France
+Argenteuil, 48.94788, 2.24744, France
+Arles, 43.67681, 4.63031, France
+Asnières-sur-Seine, 48.91667, 2.28333, France
+Aubervilliers, 48.91667, 2.38333, France
+Aulnay-sous-Bois, 48.93814, 2.49402, France
+Avignon, 43.94834, 4.80892, France
+Beauvais, 49.43333, 2.08333, France
+Belfort, 47.64218, 6.85385, France
+Besançon, 47.24878, 6.01815, France
+Blois, 47.59432, 1.32912, France
+Bordeaux, 44.84124, -0.58046, France
+Boulogne-Billancourt, 48.83545, 2.24128, France
+Bourges, 47.08333, 2.4, France
+Brest, 48.39029, -4.48628, France
+Brive-la-Gaillarde, 45.1589, 1.53326, France
+Béziers, 43.34122, 3.21402, France
+Caen, 49.18585, -0.35912, France
+Calais, 50.95194, 1.85635, France
+Cannes, 43.55135, 7.01275, France
+Cergy, 49.03645, 2.07613, France
+Cergy-Pontoise, 49.03894, 2.07805, France
+Chambéry, 45.56628, 5.92079, France
+Champigny-sur-Marne, 48.81642, 2.49366, France
+Charleville-Mézières, 49.7685, 4.72487, France
+Cholet, 47.05893, -0.87974, France
+Châlons-en-Champagne, 48.95393, 4.36724, France
+Châteauroux, 46.81248, 1.69362, France
+Clamart, 48.80299, 2.26692, France
+Clermont-Ferrand, 45.77969, 3.08682, France
+Clichy, 48.90018, 2.30952, France
+Colmar, 48.08078, 7.35584, France
+Colombes, 48.91882, 2.25404, France
+Courbevoie, 48.89672, 2.25666, France
+Créteil, 48.79266, 2.46569, France
+Dijon, 47.31344, 5.01391, France
+Drancy, 48.92578, 2.44533, France
+Dunkerque, 51.0344, 2.37681, France
+Fontenay-sous-Bois, 48.85442, 2.48268, France
+Fréjus, 43.43325, 6.73555, France
+Gare, 48.83337, 2.37513, France
+Grenoble, 45.17869, 5.71479, France
+Hyères, 43.12038, 6.12857, France
+Issy-les-Moulineaux, 48.82104, 2.27718, France
+Ivry-sur-Seine, 48.81568, 2.38487, France
+La Roche-sur-Yon, 46.66974, -1.42757, France
+La Rochelle, 46.16308, -1.15222, France
+La Seyne-sur-Mer, 43.10322, 5.87816, France
+Laval, 48.07247, -0.77019, France
+Le Havre, 49.49346, 0.10785, France
+Le Mans, 48.0021, 0.20251, France
+Levallois-Perret, 48.89389, 2.28864, France
+Lille, 50.63391, 3.05512, France
+Limoges, 45.83362, 1.24759, France
+Lorient, 47.74817, -3.37177, France
+Lyon, 45.74906, 4.84789, France
+Lyon 03, 45.76124, 4.85184, France
+Lyon 06, 45.76788, 4.85064, France
+Lyon 07, 45.74525, 4.84197, France
+Lyon 08, 45.73626, 4.86866, France
+Lyon 09, 45.77255, 4.80326, France
+Maison Blanche, 48.82586, 2.3508, France
+Maisons-Alfort, 48.81171, 2.43945, France
+Marne La Vallée, 48.83584, 2.64241, France
+Marseille, 43.29695, 5.38107, France
+Marseille 08, 43.27083, 5.3821, France
+Marseille 09, 43.25433, 5.4057, France
+Marseille 10, 43.27889, 5.41523, France
+Marseille 11, 43.2907, 5.4384, France
+Marseille 12, 43.29614, 5.43617, France
+Marseille 13, 43.31856, 5.40836, France
+Marseille 14, 43.34447, 5.38004, France
+Marseille 15, 43.37224, 5.35386, France
+Meaux, 48.96014, 2.87885, France
+Metz, 49.11911, 6.17269, France
+Montauban, 44.01759, 1.3542, France
+Montpellier, 43.61093, 3.87635, France
+Montreuil, 48.86415, 2.44322, France
+Mulhouse, 47.75205, 7.32866, France
+Mérignac, 44.84247, -0.64512, France
+Nancy, 48.68439, 6.18496, France
+Nanterre, 48.89198, 2.20675, France
+Nantes, 47.21725, -1.55336, France
+Narbonne, 43.18396, 3.00141, France
+Neuilly-sur-Seine, 48.8846, 2.26965, France
+Nice, 43.70313, 7.26608, France
+Niort, 46.32313, -0.45877, France
+Noisy-le-Grand, 48.84979, 2.56266, France
+Nîmes, 43.83665, 4.35788, France
+Orléans, 47.90248, 1.90407, France
+Pantin, 48.89437, 2.40935, France
+Paris, 48.85341, 2.3488, France
+Paris 10e Arrondissement, 48.87668, 2.35904, France
+Paris 11e Arrondissement, 48.85834, 2.37952, France
+Paris 12e Arrondissement, 48.83523, 2.43505, France
+Paris 13e Arrondissement, 48.8262, 2.35986, France
+Pau, 43.31117, -0.35583, France
+Perpignan, 42.69764, 2.89541, France
+Pessac, 44.80565, -0.6324, France
+Picpus, 48.84258, 2.40014, France
+Poitiers, 46.58261, 0.34348, France
+Quimper, 47.99597, -4.09795, France
+Reims, 49.26526, 4.02853, France
+Rennes, 48.11109, -1.67431, France
+Roubaix, 50.69421, 3.17456, France
+Rouen, 49.44313, 1.09932, France
+Rueil-Malmaison, 48.8765, 2.18967, France
+Saint-Brieuc, 48.51513, -2.76838, France
+Saint-Denis, 48.93564, 2.35387, France
+Saint-Malo, 48.64738, -2.00877, France
+Saint-Maur-des-Fossés, 48.79395, 2.49323, France
+Saint-Nazaire, 47.27506, -2.2179, France
+Saint-Quentin, 49.84889, 3.28757, France
+Saint-Quentin-en-Yvelines, 48.77186, 2.01891, France
+Saint-Étienne, 45.43389, 4.39, France
+Sarcelles, 48.99739, 2.37821, France
+Sartrouville, 48.9482, 2.19169, France
+Strasbourg, 48.58392, 7.74553, France
+Tarbes, 43.23407, 0.07139, France
+Toulon, 43.12442, 5.92836, France
+Toulouse, 43.60426, 1.44367, France
+Tourcoing, 50.72391, 3.16117, France
+Tours, 47.39484, 0.70398, France
+Troyes, 48.30073, 4.08524, France
+Valence, 44.9256, 4.90956, France
+Vannes, 47.65688, -2.76205, France
+Versailles, 48.80359, 2.13424, France
+Villeneuve-d'Ascq, 50.61669, 3.16664, France
+Villeurbanne, 45.76601, 4.8795, France
+Vitry-sur-Seine, 48.78716, 2.40332, France
+Vénissieux, 45.69706, 4.88593, France
+Évreux, 49.02414, 1.15082, France
+Évry, 48.6328, 2.44049, France
+Aberdeen, 57.14369, -2.09814, United Kingdom
+Acton, 51.50901, -0.2762, United Kingdom
+Aldershot, 51.24827, -0.76389, United Kingdom
+Archway, 51.56733, -0.13415, United Kingdom
+Ashford, 51.14648, 0.87376, United Kingdom
+Aylesbury, 51.81665, -0.81458, United Kingdom
+Bangor, 54.66079, -5.66802, United Kingdom
+Barking, 51.53333, 0.08333, United Kingdom
+Barnsley, 53.55, -1.48333, United Kingdom
+Barry, 51.39979, -3.2838, United Kingdom
+Basildon, 51.56844, 0.45782, United Kingdom
+Basingstoke, 51.26249, -1.08708, United Kingdom
+Bath, 51.3751, -2.36172, United Kingdom
+Batley, 53.70291, -1.6337, United Kingdom
+Battersea, 51.47475, -0.15547, United Kingdom
+Beckenham, 51.40878, -0.02526, United Kingdom
+Becontree, 51.5529, 0.129, United Kingdom
+Bedford, 52.13459, -0.46632, United Kingdom
+Belfast, 54.59682, -5.92541, United Kingdom
+Bexley, 51.44162, 0.14866, United Kingdom
+Birkenhead, 53.39337, -3.01479, United Kingdom
+Birmingham, 52.48142, -1.89983, United Kingdom
+Blackburn, 53.75, -2.48333, United Kingdom
+Blackpool, 53.81667, -3.05, United Kingdom
+Bletchley, 51.99334, -0.73471, United Kingdom
+Bognor Regis, 50.78206, -0.67978, United Kingdom
+Bolton, 53.58333, -2.43333, United Kingdom
+Bootle, 53.46667, -3.01667, United Kingdom
+Bournemouth, 50.72048, -1.8795, United Kingdom
+Bracknell, 51.41363, -0.75054, United Kingdom
+Bradford, 53.79391, -1.75206, United Kingdom
+Braintree, 51.87819, 0.55292, United Kingdom
+Brent, 51.55306, -0.3023, United Kingdom
+Brentwood, 51.62127, 0.30556, United Kingdom
+Brighton, 50.82838, -0.13947, United Kingdom
+Bristol, 51.45523, -2.59665, United Kingdom
+Brixton, 51.46593, -0.10652, United Kingdom
+Buckley, 53.16667, -3.08333, United Kingdom
+Burnley, 53.8, -2.23333, United Kingdom
+Burton upon Trent, 52.80728, -1.64263, United Kingdom
+Bury, 53.6, -2.3, United Kingdom
+Cambridge, 52.2, 0.11667, United Kingdom
+Canary Wharf, 51.50519, -0.02085, United Kingdom
+Cannock, 52.69045, -2.03085, United Kingdom
+Canterbury, 51.27904, 1.07992, United Kingdom
+Cardiff, 51.48, -3.18, United Kingdom
+Carlisle, 54.8951, -2.9382, United Kingdom
+Castleford, 53.72587, -1.36256, United Kingdom
+Castlereagh, 54.5735, -5.88472, United Kingdom
+Chatham, 51.37891, 0.52786, United Kingdom
+Chelmsford, 51.73575, 0.46958, United Kingdom
+Chelsea, 51.48755, -0.16936, United Kingdom
+Cheltenham, 51.90006, -2.07972, United Kingdom
+Cheshunt, 51.7002, -0.03026, United Kingdom
+Chester, 53.1905, -2.89189, United Kingdom
+Chesterfield, 53.25, -1.41667, United Kingdom
+Chingford, 51.63033, 0.00051, United Kingdom
+City of Westminster, 51.4975, -0.1357, United Kingdom
+Clacton-on-Sea, 51.78967, 1.15597, United Kingdom
+Colchester, 51.88921, 0.90421, United Kingdom
+Corby, 52.49637, -0.68939, United Kingdom
+Coventry, 52.40656, -1.51217, United Kingdom
+Craigavon, 54.44709, -6.387, United Kingdom
+Crawley, 51.11303, -0.18312, United Kingdom
+Crewe, 53.09787, -2.44161, United Kingdom
+Cricklewood, 51.5567, -0.21549, United Kingdom
+Croydon, 51.38333, -0.1, United Kingdom
+Cumbernauld, 55.94685, -3.99051, United Kingdom
+Dagenham, 51.55, 0.16667, United Kingdom
+Darlington, 54.52429, -1.55039, United Kingdom
+Dartford, 51.44657, 0.21423, United Kingdom
+Derby, 52.92277, -1.47663, United Kingdom
+Derry, 54.9981, -7.30934, United Kingdom
+Dewsbury, 53.69076, -1.62907, United Kingdom
+Doncaster, 53.52285, -1.13116, United Kingdom
+Dudley, 52.5, -2.08333, United Kingdom
+Dundee, 56.46913, -2.97489, United Kingdom
+Dunfermline, 56.07156, -3.45887, United Kingdom
+Dunstable, 51.88571, -0.52288, United Kingdom
+East Kilbride, 55.76412, -4.17669, United Kingdom
+Eastbourne, 50.76871, 0.28453, United Kingdom
+Eastleigh, 50.96667, -1.35, United Kingdom
+Edinburgh, 55.95206, -3.19648, United Kingdom
+Edmonton, 51.62561, -0.05798, United Kingdom
+Ellesmere Port Town, 53.27875, -2.90134, United Kingdom
+Enfield Town, 51.65147, -0.08497, United Kingdom
+Esher, 51.36969, -0.36693, United Kingdom
+Exeter, 50.7236, -3.52751, United Kingdom
+Fareham, 50.85162, -1.17929, United Kingdom
+Farnborough, 51.29424, -0.75565, United Kingdom
+Finchley, 51.60096, -0.19518, United Kingdom
+Folkestone, 51.08169, 1.16734, United Kingdom
+Fulham, 51.48026, -0.1993, United Kingdom
+Fylde, 53.83333, -2.91667, United Kingdom
+Gateshead, 54.96209, -1.60168, United Kingdom
+Gillingham, 51.38914, 0.54863, United Kingdom
+Glasgow, 55.86515, -4.25763, United Kingdom
+Gloucester, 51.86568, -2.2431, United Kingdom
+Gosport, 50.79509, -1.12902, United Kingdom
+Gravesend, 51.44206, 0.37106, United Kingdom
+Grays, 51.47566, 0.32521, United Kingdom
+Great Yarmouth, 52.60831, 1.73052, United Kingdom
+Grimsby, 53.56539, -0.07553, United Kingdom
+Guildford, 51.23536, -0.57427, United Kingdom
+Halesowen, 52.44859, -2.04938, United Kingdom
+Halifax, 53.71667, -1.85, United Kingdom
+Hamilton, 55.76667, -4.03333, United Kingdom
+Harlow, 51.77655, 0.11158, United Kingdom
+Harrogate, 53.99078, -1.5373, United Kingdom
+Harrow, 51.57835, -0.33208, United Kingdom
+Hartlepool, 54.68554, -1.21028, United Kingdom
+Hastings, 50.85568, 0.58009, United Kingdom
+Hayes, 51.51579, -0.4234, United Kingdom
+Hemel Hempstead, 51.75368, -0.44975, United Kingdom
+Hereford, 52.05684, -2.71482, United Kingdom
+High Peak, 53.36797, -1.84536, United Kingdom
+High Wycombe, 51.62907, -0.74934, United Kingdom
+Horsham, 51.06314, -0.32757, United Kingdom
+Hounslow, 51.46839, -0.36092, United Kingdom
+Hove, 50.83088, -0.1672, United Kingdom
+Huddersfield, 53.64904, -1.78416, United Kingdom
+Huyton, 53.4115, -2.83935, United Kingdom
+Ilford, 51.55765, 0.07278, United Kingdom
+Ipswich, 52.05917, 1.15545, United Kingdom
+Islington, 51.53622, -0.10304, United Kingdom
+Keighley, 53.86791, -1.90664, United Kingdom
+Kettering, 52.39836, -0.72571, United Kingdom
+Kidderminster, 52.38819, -2.25, United Kingdom
+Kingston upon Hull, 53.7446, -0.33525, United Kingdom
+Kingswood, 51.45278, -2.50833, United Kingdom
+Leeds, 53.79648, -1.54785, United Kingdom
+Leicester, 52.6386, -1.13169, United Kingdom
+Leytonstone, 51.56856, 0.00768, United Kingdom
+Lincoln, 53.22683, -0.53792, United Kingdom
+Lisburn, 54.52337, -6.03527, United Kingdom
+Littlehampton, 50.81137, -0.54078, United Kingdom
+Liverpool, 53.41058, -2.97794, United Kingdom
+Livingston, 55.90288, -3.52261, United Kingdom
+London, 51.50853, -0.12574, United Kingdom
+Londonderry County Borough, 54.99721, -7.30917, United Kingdom
+Loughborough, 52.76667, -1.2, United Kingdom
+Lowestoft, 52.47523, 1.75167, United Kingdom
+Luton, 51.87967, -0.41748, United Kingdom
+Macclesfield, 53.26023, -2.12564, United Kingdom
+Maidenhead, 51.52279, -0.71986, United Kingdom
+Maidstone, 51.26667, 0.51667, United Kingdom
+Manchester, 53.48095, -2.23743, United Kingdom
+Mansfield, 53.13333, -1.2, United Kingdom
+Margate, 51.38132, 1.38617, United Kingdom
+Meikle Earnock, 55.75, -4.03333, United Kingdom
+Mendip, 51.2372, -2.6266, United Kingdom
+Middlesbrough, 54.57623, -1.23483, United Kingdom
+Milton Keynes, 52.04172, -0.75583, United Kingdom
+Mitcham, 51.40322, -0.16831, United Kingdom
+Morecambe, 54.06835, -2.86108, United Kingdom
+Morley, 53.74013, -1.59877, United Kingdom
+Newcastle under Lyme, 53.0, -2.23333, United Kingdom
+Newcastle upon Tyne, 54.97328, -1.61396, United Kingdom
+Newport, 51.58774, -2.99835, United Kingdom
+Newtownabbey, 54.65983, -5.90858, United Kingdom
+Northampton, 52.25, -0.88333, United Kingdom
+Norwich, 52.62783, 1.29834, United Kingdom
+Nottingham, 52.9536, -1.15047, United Kingdom
+Nuneaton, 52.52323, -1.46523, United Kingdom
+Oldham, 53.54051, -2.1183, United Kingdom
+Oxford, 51.75222, -1.25596, United Kingdom
+Paisley, 55.83173, -4.43254, United Kingdom
+Peckham, 51.47403, -0.06969, United Kingdom
+Peterborough, 52.57364, -0.24777, United Kingdom
+Plymouth, 50.37153, -4.14305, United Kingdom
+Poole, 50.71429, -1.98458, United Kingdom
+Portsmouth, 50.79899, -1.09125, United Kingdom
+Preston, 53.76282, -2.70452, United Kingdom
+Purley, 51.33678, -0.11201, United Kingdom
+Putney, 51.46072, -0.21814, United Kingdom
+Reading, 51.45625, -0.97113, United Kingdom
+Redditch, 52.3065, -1.94569, United Kingdom
+Redhill, 51.24048, -0.17044, United Kingdom
+Reigate, 51.23736, -0.20582, United Kingdom
+Rhondda, 51.65896, -3.44885, United Kingdom
+Rochdale, 53.61766, -2.1552, United Kingdom
+Romford, 51.57515, 0.18582, United Kingdom
+Rossendale, 53.68456, -2.2769, United Kingdom
+Rotherham, 53.43012, -1.35678, United Kingdom
+Royal Leamington Spa, 52.2852, -1.52, United Kingdom
+Royal Tunbridge Wells, 51.13321, 0.26256, United Kingdom
+Rugby, 52.37092, -1.26417, United Kingdom
+Runcorn, 53.34174, -2.73124, United Kingdom
+Saint Peters, 51.36667, 1.41667, United Kingdom
+Sale, 53.42519, -2.32443, United Kingdom
+Salford, 53.48771, -2.29042, United Kingdom
+Scarborough, 54.27966, -0.40443, United Kingdom
+Scunthorpe, 53.57905, -0.65437, United Kingdom
+Sheffield, 53.38297, -1.4659, United Kingdom
+Shrewsbury, 52.71009, -2.75208, United Kingdom
+Slough, 51.50949, -0.59541, United Kingdom
+Solihull, 52.41426, -1.78094, United Kingdom
+South Croydon, 51.36217, -0.09421, United Kingdom
+South Shields, 54.99859, -1.4323, United Kingdom
+Southall, 51.50896, -0.3713, United Kingdom
+Southampton, 50.90395, -1.40428, United Kingdom
+Southend-on-Sea, 51.53782, 0.71433, United Kingdom
+Southport, 53.64581, -3.01008, United Kingdom
+St Albans, 51.75, -0.33333, United Kingdom
+St Helens, 53.45, -2.73333, United Kingdom
+Stafford, 52.80521, -2.11636, United Kingdom
+Staines, 51.43092, -0.50606, United Kingdom
+Stamford Hill, 51.56872, -0.07334, United Kingdom
+Stevenage, 51.90224, -0.20256, United Kingdom
+Stockport, 53.40979, -2.15761, United Kingdom
+Stockton-on-Tees, 54.56848, -1.3187, United Kingdom
+Stoke-on-Trent, 53.00415, -2.18538, United Kingdom
+Stourbridge, 52.45608, -2.14317, United Kingdom
+Streatham, 51.42897, -0.13184, United Kingdom
+Stroud, 51.75, -2.2, United Kingdom
+Sunderland, 54.90465, -1.38222, United Kingdom
+Sutton, 51.35, -0.2, United Kingdom
+Sutton Coldfield, 52.56667, -1.81667, United Kingdom
+Swansea, 51.62079, -3.94323, United Kingdom
+Swindon, 51.55797, -1.78116, United Kingdom
+Tamworth, 52.63399, -1.69587, United Kingdom
+Taunton, 51.01494, -3.10293, United Kingdom
+Telford, 52.67659, -2.44926, United Kingdom
+Tonypandy, 51.62202, -3.45544, United Kingdom
+Torquay, 50.46198, -3.52522, United Kingdom
+Tottenham, 51.60373, -0.06794, United Kingdom
+Uxbridge, 51.5489, -0.48211, United Kingdom
+Wakefield, 53.68331, -1.49768, United Kingdom
+Wallasey, 53.42324, -3.06497, United Kingdom
+Walsall, 52.58528, -1.98396, United Kingdom
+Walthamstow, 51.59067, -0.02077, United Kingdom
+Warrington, 53.39254, -2.58024, United Kingdom
+Washington, 54.9, -1.51667, United Kingdom
+Waterlooville, 50.88067, -1.0304, United Kingdom
+Watford, 51.65531, -0.39602, United Kingdom
+Wellingborough, 52.30273, -0.69446, United Kingdom
+Welwyn Garden City, 51.80174, -0.20691, United Kingdom
+Wembley, 51.55242, -0.29686, United Kingdom
+West Bromwich, 52.51868, -1.9945, United Kingdom
+Weston-super-Mare, 51.34603, -2.97665, United Kingdom
+Weymouth, 50.61448, -2.45991, United Kingdom
+Widnes, 53.3618, -2.73406, United Kingdom
+Wigan, 53.54296, -2.63706, United Kingdom
+Wimbledon, 51.42212, -0.20805, United Kingdom
+Woking, 51.31903, -0.55893, United Kingdom
+Wolverhampton, 52.58547, -2.12296, United Kingdom
+Worcester, 52.18935, -2.22001, United Kingdom
+Worthing, 50.81795, -0.37538, United Kingdom
+Wrexham, 53.04664, -2.99132, United Kingdom
+York, 53.95763, -1.08271, United Kingdom
+Acharnés, 38.08333, 23.73333, Greece
+Agios Dimitrios, 37.93333, 23.73333, Greece
+Agía Paraskeví, 38.01667, 23.83333, Greece
+Aigáleo, 37.98333, 23.68333, Greece
+Alexandroupoli, 40.84995, 25.87644, Greece
+Athens, 37.98376, 23.72784, Greece
+Chalkída, 38.46354, 23.60284, Greece
+Chaniá, 35.51124, 24.02921, Greece
+Galátsi, 38.01667, 23.75, Greece
+Glyfáda, 37.86289, 23.75802, Greece
+Ilioúpoli, 37.93149, 23.76779, Greece
+Ioánnina, 39.66341, 20.85187, Greece
+Irákleion, 35.32787, 25.14341, Greece
+Kalamariá, 40.5825, 22.95028, Greece
+Kalamata, 37.03913, 22.11265, Greece
+Kallithéa, 37.95, 23.7, Greece
+Kateríni, 40.26956, 22.50608, Greece
+Kavála, 40.93959, 24.40687, Greece
+Keratsíni, 37.9625, 23.61972, Greece
+Khalándrion, 38.02369, 23.80068, Greece
+Korydallós, 37.98468, 23.64711, Greece
+Lamía, 38.89947, 22.4335, Greece
+Lárisa, 39.62847, 22.42112, Greece
+Maroúsi, 38.05, 23.8, Greece
+Néa Ionía, 38.0357, 23.75733, Greece
+Néa Smýrni, 37.94504, 23.71416, Greece
+Níkaia, 37.96667, 23.65, Greece
+Palaió Fáliro, 37.92812, 23.70105, Greece
+Peristéri, 38.01539, 23.69187, Greece
+Petroúpolis, 38.04187, 23.68494, Greece
+Piraeus, 37.94203, 23.64619, Greece
+Políchni, 40.66671, 22.94881, Greece
+Pátra, 38.2462, 21.73508, Greece
+Ródos, 36.43556, 28.22199, Greece
+Sérres, 41.08499, 23.54757, Greece
+Thessaloníki, 40.64072, 22.93493, Greece
+Tríkala, 39.55493, 21.76837, Greece
+Volos, 39.36923, 22.94769, Greece
+Výronas, 37.96105, 23.753, Greece
+Zográfos, 37.97574, 23.76911, Greece
+Évosmos, 40.67056, 22.90833, Greece
+Ílion, 38.03333, 23.7, Greece
+Osijek, 45.55066, 18.6942, Croatia
+Pula, 44.86833, 13.84806, Croatia
+Rijeka, 45.32673, 14.44241, Croatia
+Sesvete, 45.83111, 16.11639, Croatia
+Split, 43.50891, 16.43915, Croatia
+Zadar, 44.11578, 15.22514, Croatia
+Zagreb, 45.81444, 15.97798, Croatia
+Angyalföld, 47.54765, 19.07973, Hungary
+Budapest, 47.49835, 19.04045, Hungary
+Budapest II. kerület, 47.51984, 19.02218, Hungary
+Budapest III. kerület, 47.54157, 19.04501, Hungary
+Budapest IV. kerület, 47.56182, 19.08909, Hungary
+Budapest VIII. kerület, 47.48919, 19.07012, Hungary
+Budapest XI. kerület, 47.47603, 19.03605, Hungary
+Budapest XII. kerület, 47.49192, 19.01493, Hungary
+Budapest XIII. kerület, 47.52978, 19.08068, Hungary
+Budapest XIX. kerület, 47.45293, 19.14943, Hungary
+Budapest XV. kerület, 47.56263, 19.11681, Hungary
+Budapest XVI. kerület, 47.51482, 19.17028, Hungary
+Budapest XVII. kerület, 47.47997, 19.25388, Hungary
+Budapest XVIII. kerület, 47.44417, 19.17595, Hungary
+Budapest XX. kerület, 47.43674, 19.10093, Hungary
+Budapest XXI. kerület, 47.42215, 19.06641, Hungary
+Budapest XXII. kerület, 47.42698, 19.04016, Hungary
+Békéscsaba, 46.68333, 21.1, Hungary
+Debrecen, 47.53167, 21.62444, Hungary
+Dunaújváros, 46.96479, 18.93974, Hungary
+Eger, 47.90265, 20.37329, Hungary
+Erzsébetváros, 47.50207, 19.07218, Hungary
+Ferencváros, 47.47754, 19.09081, Hungary
+Győr, 47.68333, 17.63512, Hungary
+Józsefváros, 47.48938, 19.07292, Hungary
+Kaposvár, 46.36667, 17.8, Hungary
+Kecskemét, 46.90618, 19.69128, Hungary
+Kelenföld, 47.46614, 19.03102, Hungary
+Kispest, 47.4515, 19.14017, Hungary
+Kőbánya, 47.48427, 19.13913, Hungary
+Miskolc, 48.10327, 20.77806, Hungary
+Nyíregyháza, 47.95539, 21.71671, Hungary
+Pestlőrinc, 47.42977, 19.21592, Hungary
+Pécs, 46.07617, 18.22814, Hungary
+Sopron, 47.68501, 16.59049, Hungary
+Szeged, 46.253, 20.14824, Hungary
+Szolnok, 47.18066, 20.19835, Hungary
+Szombathely, 47.23088, 16.62155, Hungary
+Székesfehérvár, 47.18995, 18.41034, Hungary
+Tatabánya, 47.59247, 18.38099, Hungary
+Veszprém, 47.09327, 17.91149, Hungary
+Zalaegerszeg, 46.83695, 16.84401, Hungary
+Zugló, 47.51758, 19.10549, Hungary
+Érd, 47.39489, 18.91361, Hungary
+Újpest, 47.56863, 19.08456, Hungary
+Cork, 51.89797, -8.47061, Ireland
+Dublin, 53.33306, -6.24889, Ireland
+Galway, 53.27245, -9.05095, Ireland
+Limerick, 52.66472, -8.62306, Ireland
+South Dublin, 53.29026, -6.34151, Ireland
+Tallaght, 53.2859, -6.37344, Ireland
+Waterford, 52.25833, -7.11194, Ireland
+Reykjavík, 64.13548, -21.89541, Iceland
+Acerra, 40.94477, 14.3714, Italy
+Acilia-Castel Fusano-Ostia Antica, 41.76337, 12.33078, Italy
+Afragola, 40.92298, 14.30935, Italy
+Alessandria, 44.90924, 8.61007, Italy
+Altamura, 40.82664, 16.54952, Italy
+Ancona, 43.60717, 13.5103, Italy
+Andria, 41.23117, 16.29797, Italy
+Aprilia, 41.59452, 12.65419, Italy
+Arenella, 40.85734, 14.2228, Italy
+Arezzo, 43.46276, 11.88068, Italy
+Asti, 44.90162, 8.20751, Italy
+Aversa, 40.97259, 14.20745, Italy
+Bagheria, 38.07892, 13.51237, Italy
+Bari, 41.12066, 16.86982, Italy
+Barletta, 41.31429, 16.28165, Italy
+Barriera di Lanzo, 45.10981, 7.65126, Italy
+Barriera di Milano, 45.09228, 7.69399, Italy
+Benevento, 41.1307, 14.77816, Italy
+Bergamo, 45.69601, 9.66721, Italy
+Bisceglie, 41.24264, 16.50104, Italy
+Bitonto, 41.11006, 16.69086, Italy
+Bologna, 44.49381, 11.33875, Italy
+Bolzano, 46.49067, 11.33982, Italy
+Brescia, 45.53558, 10.21472, Italy
+Brindisi, 40.63215, 17.93607, Italy
+Busto Arsizio, 45.61128, 8.84914, Italy
+Cagliari, 39.23054, 9.11917, Italy
+Caltanissetta, 37.49025, 14.06216, Italy
+Campo di Marte, 43.77693, 11.27707, Italy
+Carpi, 44.78237, 10.8777, Italy
+Carrara, 44.07926, 10.09789, Italy
+Caserta, 41.07262, 14.33231, Italy
+Casoria, 40.90751, 14.293, Italy
+Castellammare di Stabia, 40.70211, 14.48685, Italy
+Catania, 37.49223, 15.07041, Italy
+Catanzaro, 38.88247, 16.60086, Italy
+Cava Dè Tirreni, 40.69954, 14.70773, Italy
+Cerignola, 41.26523, 15.89559, Italy
+Cesena, 44.1391, 12.24315, Italy
+Cinisello Balsamo, 45.55823, 9.21495, Italy
+Como, 45.80819, 9.0832, Italy
+Cosenza, 39.2989, 16.25307, Italy
+Cremona, 45.13325, 10.02129, Italy
+Crotone, 39.08077, 17.12764, Italy
+Cuneo, 44.39071, 7.54828, Italy
+Ercolano, 40.80783, 14.35012, Italy
+Fano, 43.84052, 13.01665, Italy
+Ferrara, 44.83804, 11.62057, Italy
+Florence, 43.77925, 11.24626, Italy
+Foggia, 41.45845, 15.55188, Italy
+Foligno, 42.95488, 12.70268, Italy
+Forlì, 44.22177, 12.04144, Italy
+Fuorigrotta, 40.83333, 14.2, Italy
+Gallarate, 45.66019, 8.79164, Italy
+Gela, 37.07381, 14.24038, Italy
+Genoa, 44.40478, 8.94439, Italy
+Giugliano in Campania, 40.92849, 14.20197, Italy
+Grosseto, 42.76296, 11.10941, Italy
+Guidonia Montecelio, 41.99362, 12.72238, Italy
+Imola, 44.35916, 11.7132, Italy
+La Spezia, 44.103, 9.82375, Italy
+Lamezia Terme, 38.96255, 16.30938, Italy
+Latina, 41.46614, 12.9043, Italy
+Lecce, 40.35481, 18.17244, Italy
+Legnano, 45.59788, 8.91506, Italy
+Lido di Ostia, 41.73212, 12.27654, Italy
+Livorno, 43.54427, 10.32615, Italy
+Lucca, 43.84369, 10.50447, Italy
+Manfredonia, 41.63065, 15.91876, Italy
+Marsala, 37.7992, 12.4367, Italy
+Massa, 44.03541, 10.13927, Italy
+Matera, 40.66599, 16.60463, Italy
+Mazara del Vallo, 37.65535, 12.58986, Italy
+Messina, 38.19394, 15.55256, Italy
+Mestre, 45.49167, 12.24538, Italy
+Milan, 45.46427, 9.18951, Italy
+Modena, 44.64783, 10.92539, Italy
+Modica, 36.85868, 14.75966, Italy
+Molfetta, 41.20036, 16.59905, Italy
+Moncalieri, 44.9994, 7.68236, Italy
+Montesilvano, 42.5114, 14.14507, Italy
+Monza, 45.58005, 9.27246, Italy
+Naples, 40.85216, 14.26811, Italy
+Novara, 45.44694, 8.62118, Italy
+Olbia, 40.92337, 9.49802, Italy
+Padova, 45.40797, 11.88586, Italy
+Palermo, 38.1166, 13.3636, Italy
+Parma, 44.79935, 10.32618, Italy
+Pavia, 45.19205, 9.15917, Italy
+Perugia, 43.1122, 12.38878, Italy
+Pesaro, 43.90921, 12.9164, Italy
+Pescara, 42.4584, 14.20283, Italy
+Piacenza, 45.05242, 9.69342, Italy
+Pianura, 40.85907, 14.17314, Italy
+Pisa, 43.70853, 10.4036, Italy
+Pistoia, 43.93064, 10.92365, Italy
+Ponticelli, 40.8542, 14.33038, Italy
+Portici, 40.81563, 14.33716, Italy
+Potenza, 40.64175, 15.80794, Italy
+Pozzo Strada, 45.06837, 7.62503, Italy
+Pozzuoli, 40.84394, 14.0952, Italy
+Prato, 43.8805, 11.09699, Italy
+Quarto Oggiaro, 45.51314, 9.14343, Italy
+Quartu Sant'Elena, 39.22935, 9.25004, Italy
+Ragusa, 36.92574, 14.72443, Italy
+Ravenna, 44.41344, 12.20121, Italy
+Reggio Calabria, 38.11047, 15.66129, Italy
+Reggio nell'Emilia, 44.69825, 10.63125, Italy
+Rimini, 44.05755, 12.56528, Italy
+Rome, 41.89193, 12.51133, Italy
+Rovigo, 45.06982, 11.79022, Italy
+Salerno, 40.67545, 14.79328, Italy
+San Carlo All'Arena, 40.86511, 14.26291, Italy
+San Severo, 41.68564, 15.38148, Italy
+Sassari, 40.72586, 8.55552, Italy
+Savona, 44.30905, 8.47715, Italy
+Sesto San Giovanni, 45.53329, 9.22585, Italy
+Siena, 43.31822, 11.33064, Italy
+Siracusa, 37.07542, 15.28664, Italy
+Taranto, 40.46438, 17.24707, Italy
+Teramo, 42.66123, 13.69901, Italy
+Terni, 42.56335, 12.64329, Italy
+Torre del Greco, 40.78931, 14.36806, Italy
+Trani, 41.27733, 16.41011, Italy
+Trapani, 38.0176, 12.53617, Italy
+Trento, 46.06787, 11.12108, Italy
+Treviso, 45.66673, 12.2416, Italy
+Trieste, 45.64953, 13.77678, Italy
+Turin, 45.07049, 7.68682, Italy
+Udine, 46.0693, 13.23715, Italy
+Varese, 45.82058, 8.82511, Italy
+Velletri, 41.68573, 12.77753, Italy
+Venice, 45.43713, 12.33265, Italy
+Verona, 45.43854, 10.9938, Italy
+Viareggio, 43.86693, 10.2502, Italy
+Vicenza, 45.54672, 11.5475, Italy
+Vigevano, 45.31407, 8.85437, Italy
+Vittoria, 36.95151, 14.52788, Italy
+Dainava (Kaunas), 54.91525, 23.96831, Lithuania
+Kaunas, 54.90156, 23.90909, Lithuania
+Klaipėda, 55.7068, 21.13912, Lithuania
+Panevėžys, 55.73186, 24.35983, Lithuania
+Vilnius, 54.68916, 25.2798, Lithuania
+Šiauliai, 55.93333, 23.31667, Lithuania
+Luxembourg, 49.60982, 6.13268, Luxembourg
+Daugavpils, 55.88333, 26.53333, Latvia
+Jelgava, 56.65, 23.71278, Latvia
+Jūrmala, 56.968, 23.77038, Latvia
+Liepāja, 56.50474, 21.01085, Latvia
+Riga, 56.946, 24.10589, Latvia
+Bender, 46.83158, 29.47671, Moldova
+Bălţi, 47.76291, 27.92854, Moldova
+Chisinau, 47.00902, 28.85938, Moldova
+Rîbniţa, 47.76817, 29.01, Moldova
+Tiraspol, 46.84275, 29.6284, Moldova
+Nikšić, 42.7731, 18.94446, Montenegro
+Podgorica, 42.44124, 19.26309, Montenegro
+Bitola, 41.03226, 21.33553, North Macedonia
+Gostivar, 41.79627, 20.90799, North Macedonia
+Kisela Voda, 41.94889, 21.50278, North Macedonia
+Kumanovo, 42.13279, 21.71585, North Macedonia
+Prilep, 41.34558, 21.5537, North Macedonia
+Skopje, 41.99646, 21.43141, North Macedonia
+Tetovo, 42.00989, 20.97138, North Macedonia
+Veles, 41.71719, 21.77196, North Macedonia
+Čair, 42.01528, 21.44111, North Macedonia
+'s-Hertogenbosch, 51.69917, 5.30417, Netherlands
+Alkmaar, 52.63167, 4.74861, Netherlands
+Almelo, 52.35667, 6.6625, Netherlands
+Almere Stad, 52.37025, 5.21413, Netherlands
+Alphen aan den Rijn, 52.12917, 4.65546, Netherlands
+Amersfoort, 52.155, 5.3875, Netherlands
+Amstelveen, 52.30083, 4.86389, Netherlands
+Amsterdam, 52.37403, 4.88969, Netherlands
+Amsterdam-Zuidoost, 52.3075, 4.97222, Netherlands
+Apeldoorn, 52.21, 5.96944, Netherlands
+Arnhem, 51.98, 5.91111, Netherlands
+Assen, 52.99667, 6.5625, Netherlands
+Bergen op Zoom, 51.495, 4.29167, Netherlands
+Breda, 51.58656, 4.77596, Netherlands
+Capelle aan den IJssel, 51.92917, 4.57778, Netherlands
+Delft, 52.00667, 4.35556, Netherlands
+Den Helder, 52.95988, 4.75933, Netherlands
+Deventer, 52.255, 6.16389, Netherlands
+Dordrecht, 51.81, 4.67361, Netherlands
+Ede, 52.03333, 5.65833, Netherlands
+Eindhoven, 51.44083, 5.47778, Netherlands
+Emmen, 52.77917, 6.90694, Netherlands
+Enschede, 52.21833, 6.89583, Netherlands
+Gouda, 52.01667, 4.70833, Netherlands
+Groningen, 53.21917, 6.56667, Netherlands
+Haarlem, 52.38084, 4.63683, Netherlands
+Hardenberg, 52.57583, 6.61944, Netherlands
+Heerlen, 50.88365, 5.98154, Netherlands
+Helmond, 51.48167, 5.66111, Netherlands
+Hengelo, 52.26583, 6.79306, Netherlands
+Hilversum, 52.22333, 5.17639, Netherlands
+Hoofddorp, 52.3025, 4.68889, Netherlands
+Hoorn, 52.6425, 5.05972, Netherlands
+Leeuwarden, 53.20271, 5.80973, Netherlands
+Leiden, 52.15833, 4.49306, Netherlands
+Lelystad, 52.50833, 5.475, Netherlands
+Maastricht, 50.84833, 5.68889, Netherlands
+Nieuwegein, 52.02917, 5.08056, Netherlands
+Nijmegen, 51.8425, 5.85278, Netherlands
+Oosterhout, 51.645, 4.85972, Netherlands
+Oss, 51.765, 5.51806, Netherlands
+Purmerend, 52.505, 4.95972, Netherlands
+Roosendaal, 51.53083, 4.46528, Netherlands
+Rotterdam, 51.9225, 4.47917, Netherlands
+Schiedam, 51.91917, 4.38889, Netherlands
+Spijkenisse, 51.845, 4.32917, Netherlands
+The Hague, 52.07667, 4.29861, Netherlands
+Tilburg, 51.55551, 5.0913, Netherlands
+Utrecht, 52.09083, 5.12222, Netherlands
+Veenendaal, 52.02863, 5.55891, Netherlands
+Velsen-Zuid, 52.46, 4.65, Netherlands
+Venlo, 51.37, 6.16806, Netherlands
+Vlaardingen, 51.9125, 4.34167, Netherlands
+Zaandam, 52.43854, 4.82643, Netherlands
+Zaanstad, 52.45313, 4.81356, Netherlands
+Zeist, 52.09, 5.23333, Netherlands
+Zoetermeer, 52.0575, 4.49306, Netherlands
+Zwolle, 52.5125, 6.09444, Netherlands
+Asker, 59.83333, 10.43721, Norway
+Bergen, 60.39299, 5.32415, Norway
+Drammen, 59.74389, 10.20449, Norway
+Fredrikstad, 59.2181, 10.9298, Norway
+Kristiansand, 58.14671, 7.9956, Norway
+Lillestrøm, 59.95597, 11.04918, Norway
+Oslo, 59.91273, 10.74609, Norway
+Sandefjord, 59.13118, 10.21665, Norway
+Sandnes, 58.85244, 5.73521, Norway
+Sarpsborg, 59.28391, 11.10962, Norway
+Skien, 59.20962, 9.60897, Norway
+Stavanger, 58.97005, 5.73332, Norway
+Trondheim, 63.43049, 10.39506, Norway
+Tønsberg, 59.26754, 10.40762, Norway
+Ålesund, 62.47225, 6.15492, Norway
+Bemowo, 52.2546, 20.90844, Poland
+Bełchatów, 51.36883, 19.35671, Poland
+Biała Podlaska, 52.03238, 23.11652, Poland
+Białołeka, 52.32127, 20.97204, Poland
+Białystok, 53.13333, 23.16433, Poland
+Bielany, 52.29242, 20.93531, Poland
+Bielsko-Biala, 49.82245, 19.04686, Poland
+Bydgoszcz, 53.1235, 18.00762, Poland
+Bytom, 50.34802, 18.93282, Poland
+Będzin, 50.32607, 19.12565, Poland
+Chełm, 51.14312, 23.4716, Poland
+Chorzów, 50.30582, 18.9742, Poland
+Częstochowa, 50.79646, 19.12409, Poland
+Dąbrowa Górnicza, 50.33394, 19.20479, Poland
+Elbląg, 54.1522, 19.40884, Poland
+Ełk, 53.82824, 22.36469, Poland
+Fordon, 53.14821, 18.17036, Poland
+Gdańsk, 54.35227, 18.64912, Poland
+Gdynia, 54.51889, 18.53188, Poland
+Gliwice, 50.29761, 18.67658, Poland
+Gniezno, 52.53481, 17.58259, Poland
+Gorzów Wielkopolski, 52.73371, 15.22505, Poland
+Grudziądz, 53.48411, 18.75366, Poland
+Głogów, 51.66361, 16.0845, Poland
+Inowrocław, 52.79886, 18.26387, Poland
+Jastrzębie Zdrój, 49.95542, 18.57479, Poland
+Jaworzno, 50.20528, 19.27498, Poland
+Jelenia Góra, 50.89973, 15.72899, Poland
+Kalisz, 51.76109, 18.09102, Poland
+Katowice, 50.2597, 19.02173, Poland
+Kielce, 50.87033, 20.62752, Poland
+Konin, 52.22338, 18.25121, Poland
+Koszalin, 54.19438, 16.17222, Poland
+Kraków, 50.06143, 19.93658, Poland
+Kędzierzyn-Koźle, 50.34984, 18.22606, Poland
+Legionowo, 52.40149, 20.92664, Poland
+Legnica, 51.21006, 16.1619, Poland
+Leszno, 51.84034, 16.57494, Poland
+Lubin, 51.40089, 16.20149, Poland
+Lublin, 51.25058, 22.57009, Poland
+Mielec, 50.28709, 21.4239, Poland
+Mokotów, 52.1934, 21.03487, Poland
+Mysłowice, 50.20745, 19.16668, Poland
+Nowy Sącz, 49.62177, 20.69705, Poland
+Ochota, 52.22096, 20.98526, Poland
+Olsztyn, 53.78376, 20.49272, Poland
+Opole, 50.67119, 17.92604, Poland
+Ostrowiec Świętokrzyski, 50.92936, 21.38525, Poland
+Ostrołęka, 53.08621, 21.57566, Poland
+Ostrów Wielkopolski, 51.65501, 17.80686, Poland
+Pabianice, 51.66446, 19.35473, Poland
+Piekary Śląskie, 50.38017, 18.92653, Poland
+Piotrków Trybunalski, 51.40547, 19.70321, Poland
+Piła, 53.15145, 16.73782, Poland
+Poznań, 52.40692, 16.92993, Poland
+Praga Południe, 52.24424, 21.08545, Poland
+Praga Północ, 52.25443, 21.03472, Poland
+Pruszków, 52.17072, 20.81214, Poland
+Przemyśl, 49.78498, 22.76728, Poland
+Psie Pole, 51.14595, 17.03519, Poland
+Płock, 52.54682, 19.70638, Poland
+Racibórz, 50.09195, 18.21928, Poland
+Radom, 51.40253, 21.14714, Poland
+Ruda Śląska, 50.2584, 18.85632, Poland
+Rybnik, 50.09713, 18.54179, Poland
+Rzeszów, 50.04132, 21.99901, Poland
+Siedlce, 52.16772, 22.29006, Poland
+Siemianowice Śląskie, 50.32738, 19.02901, Poland
+Sosnowiec, 50.28682, 19.10385, Poland
+Stalowa Wola, 50.58286, 22.05334, Poland
+Starachowice, 51.0374, 21.07126, Poland
+Stargard, 53.33672, 15.0499, Poland
+Suwałki, 54.11175, 22.93087, Poland
+Szczecin, 53.42894, 14.55302, Poland
+Słupsk, 54.46405, 17.02872, Poland
+Targówek, 52.29185, 21.04845, Poland
+Tarnobrzeg, 50.57304, 21.67937, Poland
+Tarnowskie Góry, 50.44548, 18.86147, Poland
+Tarnów, 50.01381, 20.98698, Poland
+Tczew, 54.09242, 18.77787, Poland
+Tomaszów Mazowiecki, 51.53131, 20.00855, Poland
+Toruń, 53.01375, 18.59814, Poland
+Tychy, 50.13717, 18.96641, Poland
+Ursynów, 52.15051, 21.05041, Poland
+Warsaw, 52.22977, 21.01178, Poland
+Wawer, 52.19656, 21.17752, Poland
+Wałbrzych, 50.77141, 16.28432, Poland
+Wola, 52.23477, 20.96004, Poland
+Wrocław, 51.10286, 17.03006, Poland
+Wrzeszcz, 54.37648, 18.60753, Poland
+Włocławek, 52.64817, 19.0678, Poland
+Zabrze, 50.32492, 18.78576, Poland
+Zamość, 50.72314, 23.25196, Poland
+Zawiercie, 50.48766, 19.41679, Poland
+Zgierz, 51.85561, 19.40623, Poland
+Zielona Góra, 51.93548, 15.50643, Poland
+Łomża, 53.17806, 22.05935, Poland
+Łódź, 51.77058, 19.47395, Poland
+Śródmieście, 52.22904, 21.01644, Poland
+Śródmieście, 51.11316, 17.08145, Poland
+Świdnica, 50.84378, 16.48859, Poland
+Świętochłowice, 50.29636, 18.91726, Poland
+Żoliborz, 52.26896, 20.98644, Poland
+Żory, 50.04523, 18.70062, Poland
+Algueirão, 38.79764, -9.3437, Portugal
+Amadora, 38.75382, -9.23083, Portugal
+Amora, 38.62961, -9.11557, Portugal
+Aveiro, 40.64575, -8.64643, Portugal
+Barreiro, 38.66314, -9.0724, Portugal
+Braga, 41.5514, -8.42311, Portugal
+Cacém, 38.76698, -9.29793, Portugal
+Coimbra, 40.20686, -8.41996, Portugal
+Corroios, 38.64004, -9.1508, Portugal
+Faro, 37.01869, -7.92716, Portugal
+Felgueiras, 41.36806, -8.19396, Portugal
+Funchal, 32.66568, -16.92547, Portugal
+Leiria, 39.74362, -8.80705, Portugal
+Lisbon, 38.72509, -9.1498, Portugal
+Loures, 38.83091, -9.16845, Portugal
+Monsanto, 39.46203, -8.7118, Portugal
+Odivelas, 38.79269, -9.1838, Portugal
+Porto, 41.1485, -8.61097, Portugal
+Queluz, 38.75657, -9.25451, Portugal
+Rio de Mouro, 38.76613, -9.32804, Portugal
+Setúbal, 38.5244, -8.8882, Portugal
+Vila Nova de Gaia, 41.12401, -8.61241, Portugal
+Viseu, 40.66165, -7.90905, Portugal
+Évora, 38.56587, -7.90405, Portugal
+Alba Iulia, 46.06667, 23.58333, Romania
+Arad, 46.18333, 21.31667, Romania
+Bacău, 46.56718, 26.91384, Romania
+Baia Mare, 47.65729, 23.56808, Romania
+Bistriţa, 47.13316, 24.50011, Romania
+Botoşani, 47.75, 26.66667, Romania
+Braşov, 45.64861, 25.60613, Romania
+Brăila, 45.27152, 27.97429, Romania
+Bucharest, 44.43225, 26.10626, Romania
+Buzău, 45.15, 26.83333, Romania
+Bârlad, 46.23175, 27.66907, Romania
+Cluj-Napoca, 46.76667, 23.6, Romania
+Constanţa, 44.18073, 28.63432, Romania
+Craiova, 44.31667, 23.8, Romania
+Deva, 45.88333, 22.9, Romania
+Drobeta-Turnu Severin, 44.62693, 22.65288, Romania
+Focșani, 45.7, 27.18333, Romania
+Galaţi, 45.43687, 28.05028, Romania
+Giurgiu, 43.88664, 25.9627, Romania
+Hunedoara, 45.75, 22.9, Romania
+Iaşi, 47.16667, 27.6, Romania
+Mediaş, 46.16667, 24.35, Romania
+Oradea, 47.0458, 21.91833, Romania
+Piatra Neamţ, 46.91667, 26.33333, Romania
+Piteşti, 44.85, 24.86667, Romania
+Ploieşti, 44.95, 26.01667, Romania
+Reşiţa, 45.30083, 21.88917, Romania
+Roman, 46.92119, 26.92646, Romania
+Râmnicu Vâlcea, 45.1, 24.36667, Romania
+Satu Mare, 47.79926, 22.86255, Romania
+Sector 1, 44.49239, 26.04831, Romania
+Sector 2, 44.4528, 26.13321, Romania
+Sector 3, 44.4234, 26.16874, Romania
+Sector 4, 44.37571, 26.12085, Romania
+Sector 5, 44.38808, 26.07144, Romania
+Sector 6, 44.43579, 26.01649, Romania
+Sfântu Gheorghe, 45.86667, 25.78333, Romania
+Sibiu, 45.8, 24.15, Romania
+Slatina, 44.43333, 24.36667, Romania
+Suceava, 47.63333, 26.25, Romania
+Timişoara, 45.75372, 21.22571, Romania
+Tulcea, 45.1787, 28.80501, Romania
+Târgovişte, 44.92543, 25.4567, Romania
+Târgu Jiu, 45.05, 23.28333, Romania
+Târgu Mureş, 46.54245, 24.55747, Romania
+Vaslui, 46.63333, 27.73333, Romania
+Zalău, 47.2, 23.05, Romania
+Belgrade, 44.80401, 20.46513, Serbia
+Kragujevac, 44.01667, 20.91667, Serbia
+Kraljevo, 43.72583, 20.68944, Serbia
+Kruševac, 43.58, 21.33389, Serbia
+Leskovac, 42.99806, 21.94611, Serbia
+Niš, 43.32472, 21.90333, Serbia
+Novi Pazar, 43.13667, 20.51222, Serbia
+Novi Sad, 45.25167, 19.83694, Serbia
+Pančevo, 44.87177, 20.64167, Serbia
+Smederevo, 44.66436, 20.92763, Serbia
+Subotica, 46.1, 19.66667, Serbia
+Užice, 43.85861, 19.84878, Serbia
+Valjevo, 44.27513, 19.89821, Serbia
+Vranje, 42.55139, 21.90028, Serbia
+Zemun, 44.8458, 20.40116, Serbia
+Zrenjanin, 45.38361, 20.38194, Serbia
+Čačak, 43.89139, 20.34972, Serbia
+Šabac, 44.74667, 19.69, Serbia
+Borås, 57.72101, 12.9401, Sweden
+Bromma, 59.34, 17.94, Sweden
+Eskilstuna, 59.36661, 16.5077, Sweden
+Gävle, 60.67452, 17.14174, Sweden
+Göteborg, 57.70716, 11.96679, Sweden
+Halmstad, 56.67446, 12.85676, Sweden
+Haninge, 59.16775, 18.14478, Sweden
+Helsingborg, 56.04673, 12.69437, Sweden
+Huddinge, 59.23705, 17.98192, Sweden
+Jönköping, 57.78145, 14.15618, Sweden
+Karlskrona, 56.16156, 15.58661, Sweden
+Karlstad, 59.3793, 13.50357, Sweden
+Kungsholmen, 59.33183, 18.04118, Sweden
+Linköping, 58.41086, 15.62157, Sweden
+Luleå, 65.58415, 22.15465, Sweden
+Lund, 55.70584, 13.19321, Sweden
+Malmö, 55.60587, 13.00073, Sweden
+Mölndal, 57.6554, 12.01378, Sweden
+Norrköping, 58.59419, 16.1826, Sweden
+Sollentuna, 59.42804, 17.95093, Sweden
+Solna, 59.36004, 18.00086, Sweden
+Stockholm, 59.32938, 18.06871, Sweden
+Sundsvall, 62.39129, 17.3063, Sweden
+Södermalm, 59.31278, 18.07577, Sweden
+Södertälje, 59.19554, 17.62525, Sweden
+Täby, 59.4439, 18.06872, Sweden
+Umeå, 63.82842, 20.25972, Sweden
+Uppsala, 59.85882, 17.63889, Sweden
+Vasastaden, 59.35, 18.03333, Sweden
+Västerås, 59.61617, 16.55276, Sweden
+Växjö, 56.87767, 14.80906, Sweden
+Örebro, 59.27412, 15.2066, Sweden
+Ljubljana, 46.05108, 14.50513, Slovenia
+Maribor, 46.55583, 15.64593, Slovenia
+Banská Bystrica, 48.73947, 19.14932, Slovakia
+Bratislava, 48.14816, 17.10674, Slovakia
+Košice, 48.71441, 21.25802, Slovakia
+Martin, 49.06651, 18.92399, Slovakia
+Nitra, 48.30763, 18.08453, Slovakia
+Petržalka, 48.12331, 17.12866, Slovakia
+Prešov, 48.99923, 21.2355, Slovakia
+Trenčín, 48.89452, 18.04436, Slovakia
+Trnava, 48.37773, 17.58603, Slovakia
+Žilina, 49.22315, 18.73941, Slovakia
+Adana, 36.98615, 35.32531, Turkiye
+Adapazarı, 40.78056, 30.40333, Turkiye
+Adilcevaz, 38.79911, 42.73159, Turkiye
+Adıyaman, 37.76441, 38.27629, Turkiye
+Afyonkarahisar, 38.75667, 30.54333, Turkiye
+Ahlat, 38.7489, 42.48007, Turkiye
+Akhisar, 38.91852, 27.84006, Turkiye
+Aksaray, 38.37255, 34.02537, Turkiye
+Akçapınar, 38.94728, 38.9423, Turkiye
+Akşehir, 38.3575, 31.41639, Turkiye
+Alanya, 36.54375, 31.99982, Turkiye
+Amasya, 40.65333, 35.83306, Turkiye
+Anamur, 36.07508, 32.83691, Turkiye
+Ankara, 39.91987, 32.85427, Turkiye
+Antakya, 36.20655, 36.15722, Turkiye
+Antalya, 36.90812, 30.69556, Turkiye
+Ardeşen, 41.19064, 40.97935, Turkiye
+Arnavutköy, 41.18355, 28.7402, Turkiye
+Arsuz, 36.41305, 35.89033, Turkiye
+Ataşehir, 40.9833, 29.1167, Turkiye
+Aydın, 37.84501, 27.83963, Turkiye
+Ayvalık, 39.31927, 26.69341, Turkiye
+Ağrı, 39.71467, 43.04015, Turkiye
+Bafra, 41.56787, 35.90311, Turkiye
+Bahçelievler, 41.00231, 28.8598, Turkiye
+Balıkesir, 39.64917, 27.88611, Turkiye
+Bandırma, 40.35222, 27.97667, Turkiye
+Bartın, 41.63583, 32.3375, Turkiye
+Batikent, 39.96833, 32.73083, Turkiye
+Batman, 37.88738, 41.13221, Turkiye
+Bağcılar, 41.03903, 28.85671, Turkiye
+Başakşehir, 41.106, 28.791, Turkiye
+Belek, 36.8631, 31.06541, Turkiye
+Bergama, 39.12074, 27.18052, Turkiye
+Beylikdüzü, 40.982, 28.6399, Turkiye
+Biga, 40.22806, 27.24222, Turkiye
+Bilecik, 40.14192, 29.97932, Turkiye
+Bingöl, 38.88472, 40.49389, Turkiye
+Bismil, 37.84514, 40.65931, Turkiye
+Bitlis, 38.40115, 42.10784, Turkiye
+Bolu, 40.73583, 31.60611, Turkiye
+Bolvadin, 38.71111, 31.04861, Turkiye
+Bozüyük, 39.90778, 30.03667, Turkiye
+Burdur, 37.72028, 30.29083, Turkiye
+Bursa, 40.19559, 29.06013, Turkiye
+Büyükçekmece, 41.02072, 28.58502, Turkiye
+Ceyhan, 37.02472, 35.8175, Turkiye
+Cizre, 37.33024, 42.18484, Turkiye
+Denizli, 37.77417, 29.0875, Turkiye
+Derince, 40.75694, 29.81472, Turkiye
+Diyarbakır, 37.91363, 40.21721, Turkiye
+Doğubayazıt, 39.54694, 44.08417, Turkiye
+Dörtyol, 36.83917, 36.23025, Turkiye
+Düzce, 40.83889, 31.16389, Turkiye
+Edirne, 41.67719, 26.55597, Turkiye
+Elazığ, 38.67431, 39.22321, Turkiye
+Elbistan, 38.20591, 37.1983, Turkiye
+Eminönü, 41.01754, 28.97101, Turkiye
+Erbaa, 40.66889, 36.5675, Turkiye
+Erciş, 39.02587, 43.35964, Turkiye
+Ereğli, 37.51333, 34.04672, Turkiye
+Ereğli, 41.28261, 31.41806, Turkiye
+Ergani, 38.26899, 39.75446, Turkiye
+Erzincan, 39.73919, 39.49015, Turkiye
+Erzurum, 39.90861, 41.27694, Turkiye
+Esenler, 41.0435, 28.87619, Turkiye
+Esenyurt, 41.02697, 28.67732, Turkiye
+Eskişehir, 39.77667, 30.52056, Turkiye
+Fatsa, 41.02886, 37.49977, Turkiye
+Fethiye, 36.64038, 29.12758, Turkiye
+Gaziantep, 37.05944, 37.3825, Turkiye
+Gebze, 40.80276, 29.43068, Turkiye
+Gemlik, 40.43094, 29.15969, Turkiye
+Giresun, 40.91698, 38.38741, Turkiye
+Gölbaşı, 39.79043, 32.80903, Turkiye
+Gölcük, 40.71501, 29.81824, Turkiye
+Güngören Merter, 41.00711, 28.88795, Turkiye
+Hakkâri, 37.57444, 43.74083, Turkiye
+Isparta, 37.76444, 30.55222, Turkiye
+Istanbul, 41.01384, 28.94966, Turkiye
+Iğdır, 39.92371, 44.045, Turkiye
+Kadirli, 37.37389, 36.09611, Turkiye
+Kahramanmaraş, 37.5847, 36.92641, Turkiye
+Karabağlar, 38.382, 27.132, Turkiye
+Karabük, 41.20488, 32.62768, Turkiye
+Karaman, 37.18111, 33.215, Turkiye
+Kars, 40.59825, 43.08548, Turkiye
+Karşıyaka, 38.45772, 27.1142, Turkiye
+Kastamonu, 41.37805, 33.77528, Turkiye
+Kavaklı, 41.09258, 28.33172, Turkiye
+Kayseri, 38.73222, 35.48528, Turkiye
+Kilis, 36.71611, 37.115, Turkiye
+Konak, 38.4, 27.1, Turkiye
+Konya, 37.87135, 32.48464, Turkiye
+Kozan, 37.45517, 35.81573, Turkiye
+Kuşadası, 37.86014, 27.25713, Turkiye
+Kâhta, 37.78552, 38.6237, Turkiye
+Körfez, 40.76704, 29.78275, Turkiye
+Kütahya, 39.42417, 29.98333, Turkiye
+Kırklareli, 41.73508, 27.22521, Turkiye
+Kırıkhan, 36.49939, 36.35755, Turkiye
+Kırıkkale, 39.84528, 33.50639, Turkiye
+Kırşehir, 39.14583, 34.16389, Turkiye
+Kızıltepe, 37.18836, 40.57723, Turkiye
+Lüleburgaz, 41.40173, 27.35746, Turkiye
+Malatya, 38.35018, 38.31667, Turkiye
+Maltepe, 40.93567, 29.15507, Turkiye
+Manavgat, 36.78672, 31.44086, Turkiye
+Manisa, 38.61202, 27.42647, Turkiye
+Mardin, 37.31309, 40.74357, Turkiye
+Menemen, 38.60754, 27.06938, Turkiye
+Merkezefendi, 37.80544, 29.04236, Turkiye
+Mersin, 36.81196, 34.63886, Turkiye
+Merter Keresteciler, 41.01295, 28.88593, Turkiye
+Merzifon, 40.87333, 35.46306, Turkiye
+Midyat, 37.41908, 41.33909, Turkiye
+Muratpaşa, 36.89157, 30.76498, Turkiye
+Mustafakemalpaşa, 40.03815, 28.40866, Turkiye
+Muğla, 37.21807, 28.3665, Turkiye
+Muş, 38.73163, 41.48482, Turkiye
+Nazilli, 37.91631, 28.32225, Turkiye
+Nevşehir, 38.625, 34.71222, Turkiye
+Nizip, 37.00972, 37.79417, Turkiye
+Niğde, 37.96583, 34.67935, Turkiye
+Nusaybin, 37.07028, 41.21465, Turkiye
+Ordu, 40.97782, 37.89047, Turkiye
+Orhangazi, 40.48917, 29.30889, Turkiye
+Osmaniye, 37.07417, 36.24778, Turkiye
+Patnos, 39.22493, 42.85693, Turkiye
+Polatlı, 39.57715, 32.14132, Turkiye
+Reyhanlı, 36.26791, 36.56747, Turkiye
+Rize, 41.02083, 40.52194, Turkiye
+Salihli, 38.48258, 28.14774, Turkiye
+Samandağ, 36.08012, 35.97603, Turkiye
+Samsun, 41.27976, 36.3361, Turkiye
+Sancaktepe, 41.00244, 29.23187, Turkiye
+Seydişehir, 37.41926, 31.84527, Turkiye
+Siirt, 37.9293, 41.94134, Turkiye
+Silifke, 36.37778, 33.93444, Turkiye
+Silivri, 41.07393, 28.24644, Turkiye
+Silopi, 37.24379, 42.46345, Turkiye
+Silvan, 38.13708, 41.00817, Turkiye
+Sivas, 39.74833, 37.01611, Turkiye
+Siverek, 37.75503, 39.31667, Turkiye
+Soma, 39.18554, 27.60945, Turkiye
+Sorgun, 39.81012, 35.18596, Turkiye
+Sultanbeyli, 40.96072, 29.27067, Turkiye
+Sultangazi, 41.10652, 28.86847, Turkiye
+Suruç, 36.97612, 38.42533, Turkiye
+Söke, 37.7482, 27.40614, Turkiye
+Tarsus, 36.91766, 34.89277, Turkiye
+Tatvan, 38.49221, 42.28269, Turkiye
+Tavşanlı, 39.54237, 29.49866, Turkiye
+Tekirdağ, 40.9781, 27.51101, Turkiye
+Tokat, 40.31389, 36.55444, Turkiye
+Torbalı, 38.182, 27.335, Turkiye
+Trabzon, 41.005, 39.72694, Turkiye
+Turgutlu, 38.49533, 27.6997, Turkiye
+Turhal, 40.3875, 36.08111, Turkiye
+Umraniye, 41.01643, 29.12476, Turkiye
+Uşak, 38.67351, 29.4058, Turkiye
+Van, 38.49457, 43.38323, Turkiye
+Viranşehir, 37.22349, 39.75519, Turkiye
+Yalova, 40.65501, 29.27693, Turkiye
+Yozgat, 39.82, 34.80444, Turkiye
+Yüksekova, 37.57362, 44.28716, Turkiye
+Zeytinburnu, 40.99441, 28.90417, Turkiye
+Zile, 40.30306, 35.88639, Turkiye
+Zonguldak, 41.45139, 31.79305, Turkiye
+Çanakkale, 40.15552, 26.41271, Turkiye
+Çankaya, 39.9179, 32.86268, Turkiye
+Çankırı, 40.59995, 33.6153, Turkiye
+Çarşamba, 41.19889, 36.72194, Turkiye
+Çerkezköy, 41.28629, 27.99939, Turkiye
+Çiğli, 38.49645, 27.07029, Turkiye
+Çorlu, 41.16069, 27.80093, Turkiye
+Çorum, 40.54889, 34.95333, Turkiye
+Çubuk, 40.23861, 33.03222, Turkiye
+Ödemiş, 38.2278, 27.96955, Turkiye
+Ünye, 41.14049, 37.28851, Turkiye
+Üsküdar, 41.02274, 29.01366, Turkiye
+İnegol, 40.07806, 29.51333, Turkiye
+İskenderun, 36.58718, 36.17347, Turkiye
+İzmir, 38.41273, 27.13838, Turkiye
+İzmit, 40.76499, 29.92928, Turkiye
+Şanlıurfa, 37.16708, 38.79392, Turkiye
+Şişli, 41.06046, 28.98717, Turkiye
+Şırnak, 37.51393, 42.45432, Turkiye
+Alchevsk, 48.46893, 38.81669, Ukraine
+Antratsyt, 48.11503, 39.09128, Ukraine
+Avtozavodskyi, 49.09753, 33.43206, Ukraine
+Bakhmut, 48.59441, 37.99983, Ukraine
+Berdyansk, 46.75578, 36.78815, Ukraine
+Berdychiv, 49.89421, 28.58236, Ukraine
+Berestovskyi, 48.04426, 37.87654, Ukraine
+Bila Tserkva, 49.8004, 30.12851, Ukraine
+Bohodukhivskyi, 47.96688, 37.86255, Ukraine
+Borshchahivka, 50.4316, 30.3899, Ukraine
+Boryspil, 50.35269, 30.95501, Ukraine
+Bosse, 47.95519, 37.8003, Ukraine
+Brovary, 50.51809, 30.80671, Ukraine
+Cherkasy, 49.44452, 32.05738, Ukraine
+Chernihiv, 51.50541, 31.28656, Ukraine
+Chernivtsi, 48.29045, 25.93241, Ukraine
+Chokolivka, 50.42444, 30.44732, Ukraine
+Chornomors’k, 46.29914, 30.65529, Ukraine
+Chumakivskyi, 47.95671, 37.94194, Ukraine
+Chystyakove, 48.03876, 38.59685, Ukraine
+Darnytskyi Masyv, 50.44311, 30.62759, Ukraine
+Darnytsya, 50.41596, 30.69534, Ukraine
+Desna, 50.52207, 30.68228, Ukraine
+Dnipro, 48.46664, 35.04066, Ukraine
+Dniprovskyi, 50.45366, 30.60146, Ukraine
+Donetsk, 48.023, 37.80224, Ukraine
+Dovzhansk, 48.08964, 39.65243, Ukraine
+Drohobych, 49.35196, 23.51121, Ukraine
+Druzhkivka, 48.61897, 37.52704, Ukraine
+Enerhodar, 47.49048, 34.66199, Ukraine
+Feodosiya, 45.03199, 35.38153, Ukraine
+Fortetsya, 48.49865, 32.25365, Ukraine
+Hirnytskyi, 48.0211, 37.96914, Ukraine
+Holosiyiv, 50.34433, 30.55178, Ukraine
+Horlivka, 48.33576, 38.05325, Ukraine
+Hruzkyi, 48.0651, 37.93619, Ukraine
+Inhulets, 47.7301, 33.25189, Ukraine
+Irpin, 50.52175, 30.25055, Ukraine
+Ivano-Frankivsk, 48.92312, 24.71248, Ukraine
+Izmail, 45.35058, 28.83751, Ukraine
+Kadiyivka, 48.56818, 38.64352, Ukraine
+Kalush, 49.02398, 24.37206, Ukraine
+Kalynivskyi, 48.00741, 37.85378, Ukraine
+Kamianets-Podilskyi, 48.67882, 26.58516, Ukraine
+Kamyanske, 48.51716, 34.60617, Ukraine
+Kerch, 45.35675, 36.47542, Ukraine
+Khanzhonkivskyi, 48.09512, 38.04202, Ukraine
+Kharkiv, 49.98177, 36.25475, Ukraine
+Kharkivskyi Masyv, 50.40848, 30.66006, Ukraine
+Khartsyzk, 48.04243, 38.14728, Ukraine
+Kherson, 46.63695, 32.61458, Ukraine
+Khmelnytskyi, 49.41835, 26.97936, Ukraine
+Khrustalnyi, 48.13954, 38.93715, Ukraine
+Kolomyia, 48.52496, 25.03712, Ukraine
+Konotop, 51.24032, 33.20263, Ukraine
+Korosten, 50.9512, 28.63859, Ukraine
+Kostiantynivka, 48.52728, 37.70594, Ukraine
+Kovel, 51.21548, 24.70077, Ukraine
+Kramatorsk, 48.73049, 37.58793, Ukraine
+Kremenchuk, 49.06253, 33.40484, Ukraine
+Kriukiv, 49.02894, 33.43847, Ukraine
+Kropyvnytskyy, 48.50834, 32.26618, Ukraine
+Kryvyy Rih, 47.90572, 33.39404, Ukraine
+Kyiv, 50.45466, 30.5238, Ukraine
+Kyivskyi, 48.04646, 37.77571, Ukraine
+Kyivskyi, 49.60902, 34.52933, Ukraine
+Lozova, 48.88937, 36.31755, Ukraine
+Luhansk, 48.56814, 39.30553, Ukraine
+Lukyanivka, 50.46642, 30.47591, Ukraine
+Lutsk, 50.75784, 25.35024, Ukraine
+Lviv, 49.83826, 24.02324, Ukraine
+Lysychansk, 48.90421, 38.44094, Ukraine
+Makiivka, 48.04782, 37.92576, Ukraine
+Mariupol, 47.09514, 37.54131, Ukraine
+Melitopol, 46.84735, 35.38196, Ukraine
+Mukachevo, 48.44248, 22.718, Ukraine
+Mykilska Borshchahivka, 50.42638, 30.37442, Ukraine
+Mykolayiv, 46.97625, 31.99296, Ukraine
+Nikopol, 47.56826, 34.39126, Ukraine
+Nizhyn, 51.04772, 31.88844, Ukraine
+Nyvky, 50.46461, 30.40593, Ukraine
+Nyzhnyodniprovsk, 48.47546, 35.1167, Ukraine
+Obolon, 50.5132, 30.5055, Ukraine
+Odesa, 46.48572, 30.74383, Ukraine
+Oleksandrivskyi, 47.96788, 37.80335, Ukraine
+Oleksandriya, 48.67466, 33.11761, Ukraine
+Oleksiyivka, 50.04516, 36.19322, Ukraine
+Pavlohrad, 48.53214, 35.86878, Ukraine
+Pechersk, 50.44441, 30.52348, Ukraine
+Pervomaysk, 48.04478, 30.84784, Ukraine
+Podilskyi, 48.50357, 32.28035, Ukraine
+Pokrovsk, 48.2824, 37.17772, Ukraine
+Poltava, 49.58925, 34.55367, Ukraine
+Pozniaky, 50.40259, 30.62352, Ukraine
+Pryluky, 50.59525, 32.38382, Ukraine
+Rayon KTZ, 49.94349, 36.36959, Ukraine
+Rivne, 50.62036, 26.23695, Ukraine
+Rubizhne, 49.00606, 38.38119, Ukraine
+Rutchenkivskyi, 47.97597, 37.69677, Ukraine
+Saltivka, 50.02207, 36.34901, Ukraine
+Samar, 48.62893, 35.2589, Ukraine
+Sevastopol, 44.60795, 33.52134, Ukraine
+Shakhtarsk, 48.05657, 38.43826, Ukraine
+Sheptytskyi, 50.39403, 24.23935, Ukraine
+Shevchenkivskyi, 50.46408, 30.46576, Ukraine
+Shevchenkivskyi, 48.56346, 39.33216, Ukraine
+Shevchenko, 49.5645, 34.53873, Ukraine
+Shostka, 51.86296, 33.4698, Ukraine
+Shulyavka, 50.45356, 30.4531, Ukraine
+Sievierodonetsk, 48.94628, 38.48624, Ukraine
+Simferopol, 44.95719, 34.11079, Ukraine
+Sloviansk, 48.84974, 37.59739, Ukraine
+Smila, 49.23295, 31.88427, Ukraine
+Smolyanskyi, 48.01435, 37.73586, Ukraine
+Snizhne, 48.02612, 38.77225, Ukraine
+Solomyansk, 50.42838, 30.45211, Ukraine
+Sotsmisto, 48.73663, 37.59075, Ukraine
+Stryi, 49.26103, 23.84845, Ukraine
+Sumy, 50.91741, 34.79906, Ukraine
+Svyatoshyn, 50.46341, 30.34612, Ukraine
+Sykhiv, 49.79427, 24.06284, Ukraine
+Tatarka, 50.46941, 30.48649, Ukraine
+Tekstylnyk, 47.94594, 37.69848, Ukraine
+Ternopil, 49.55404, 25.59067, Ukraine
+Tsentralno-Miskyi, 48.06167, 37.97157, Ukraine
+Uman, 48.7501, 30.21944, Ukraine
+Uzhhorod, 48.6242, 22.2947, Ukraine
+Verhunskyi, 48.58573, 39.37158, Ukraine
+Vilkhivskyi, 48.54327, 39.28201, Ukraine
+Vinnytsya, 49.2322, 28.46871, Ukraine
+Voskresenka, 50.48481, 30.6032, Ukraine
+Voznesenskyi, 47.93161, 37.62971, Ukraine
+Vyhurivshchyna-Troieshchyna, 50.51137, 30.60251, Ukraine
+Vynohradar, 50.51429, 30.42452, Ukraine
+Yalta, 44.50218, 34.16624, Ukraine
+Yenakiieve, 48.23857, 38.20403, Ukraine
+Yevpatoriya, 45.20091, 33.36655, Ukraine
+Yuzivskyi, 48.0, 37.80006, Ukraine
+Zaporizhzhya, 47.85167, 35.11714, Ukraine
+Zhytomyr, 50.26235, 28.67913, Ukraine
+Zviahel, 50.59141, 27.60884, Ukraine

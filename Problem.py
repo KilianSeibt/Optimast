@@ -1,69 +1,82 @@
 from pulp import *
 from models import *
-from load_countries import COUNTRY_DATA
 
-def create_grid(grid_density: int, country: str, eps_x: int = 0, eps_y: int = 0, pattern: str = 'square') -> set[Point]:
-
-    if country not in COUNTRY_DATA:
-        raise ValueError(f"Unsupported country: {country}")
-
-    step_size = grid_density
-
-    x_min, x_max, y_min, y_max = (COUNTRY_DATA[country]["bounds"])
-
-    start_x = x_min + eps_x
-    start_y = y_min + eps_y
-
-    x = start_x
-    y = start_y
-
-    shift = 0.5 * step_size
-    even = True
-
-    grid: set[Point] = set()
-
-    while y <= y_max:
-        while x <= x_max:
-            if is_in_country((x, y), country, 'utm'):
-                grid.add(Point(x=x, y=y))
-
-            x += step_size
-
-        # -----------------------------------
-        # reset x for next row
-        # -----------------------------------
-
-        if pattern == 'hexagon':
-            if even:
-                x = start_x + shift
-                even = False
-
-            else:
-                x = start_x
-                even = True
-
-        elif pattern == 'square':
-            x = start_x
-
-        else:
-            raise ValueError(
-                "pattern must be square or hexagon"
-            )
-        y += step_size
-    return grid
-
+"""
+This file creates and solves the LP (See below).
+"""
 
 class Problem:
 
-    def __init__(self, grid_density: int, eps_x: int = 0, eps_y: int = 0,
-                 penalty: float = 0, country: str = 'Germany'):
+    # A problem has a country_data, a grid, cities and a penalty. The tower sizes are given as parameters in Problem.solve()
+    country_data: CountryData
+    grid: set[Point]
+    cities: set[City]
+    nr_of_cities: int
+    penalty: float
 
-        self.cities, self.nr_of_cities = load_cities(country)
-        self.grid: set[Point] = create_grid(grid_density, country, eps_x, eps_y)
+    def __init__(self, grid_density: int, country: str, eps_x: int = 0, eps_y: int = 0,
+                 penalty: float = 0):
+
+        self.country_data: CountryData = create_country_data(country)
+        self.cities, self.nr_of_cities = load_cities(country=country)
+        self.create_grid(grid_density, eps_x, eps_y)
 
         self.penalty = penalty
 
+    def create_grid(self, grid_density: int, eps_x: int, eps_y: int, pattern: str = 'square') -> None:
 
+        """
+        Creates a grid of candidate points. The pattern is either 'square' or 'hexagon'.
+        For a high density, we don't think that it makes much of difference though.
+        eps_x and eps_y are the shift of the grid in x and y direction.
+        We do this to make sure we dont overlook some edge case where one tower can barely reach two cities only if a grid point is at a certain position. (make it more robust)
+        For high grid density, we don't really need that anymore though.
+        """
+
+        step_size = grid_density
+
+        x_min, x_max, y_min, y_max = self.country_data.bounds
+
+        start_x = x_min + eps_x
+        start_y = y_min + eps_y
+
+        x = start_x
+        y = start_y
+
+        shift = 0.5 * step_size
+        even = True
+
+        grid: set[Point] = set()
+
+        while y <= y_max:
+            while x <= x_max:
+                # if is_in_country((x, y), country, 'utm'):
+                grid.add(Point(x=x, y=y))
+
+                x += step_size
+
+            # -----------------------------------
+            # reset x for next row
+            # -----------------------------------
+
+            if pattern == 'hexagon':
+                if even:
+                    x = start_x + shift
+                    even = False
+
+                else:
+                    x = start_x
+                    even = True
+
+            elif pattern == 'square':
+                x = start_x
+
+            else:
+                raise ValueError(
+                    "pattern must be square or hexagon"
+                )
+            y += step_size
+        self.grid = grid
 
     def get_points_in_circles(self, radius_small: int, radius_large: int) -> tuple[dict, dict]:
 
@@ -98,6 +111,10 @@ class Problem:
         return grids_to_cities, cities_to_grids
 
     def solve(self, radius_small: int, radius_large: int) -> tuple[set[Tower], set[Tower], float]:
+        """
+        For given tower sizes we solve the LP using PuLP.
+        We return the set of small towers, the set of large towers and the total costs.
+        """
 
         radius = {'small': radius_small, 'large': radius_large}
         grids_to_cities, cities_to_grids = self.get_points_in_circles(radius_small, radius_large)
@@ -138,6 +155,15 @@ class Problem:
 
         # Suppress solver output (CBC only)
         pulp_problem.solve(PULP_CBC_CMD(msg=False))
+        for city in self.cities:
+            coverage = sum(
+                value(x[g, t])
+                for t in ["small", "large"]
+                for g in cities_to_grids[t].get(city, [])
+            )
+
+            if coverage < 0.5:
+                print(city.name, coverage)
 
         tower_coords: dict = {'small': set(), 'large': set()}
         interference_cost = -constant_cost * self.penalty

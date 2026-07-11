@@ -1,32 +1,13 @@
 import folium
 from folium.plugins import FastMarkerCluster
-import geopandas as gpd
-from shapely.geometry import Point as ShapelyPoint
-from models import Tower, load_cities
+from models import *
 
+"""
+This file does the plotting of the Open-Street-Map-coverage on a map.
+No big logic happening here^^ Just some visualization stuff
+"""
 
-def utm_to_latlon(point: tuple[float, float]) -> tuple[float, float]:
-    """
-    Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
-
-    :param point: (x, y) in meters (UTM)
-    :return: (lat, lon)
-    """
-    x, y = point
-
-    gdf = gpd.GeoDataFrame(
-        geometry=[ShapelyPoint(x, y)],
-        crs="EPSG:32632"
-    )
-
-    gdf_latlon = gdf.to_crs(epsg=4326)
-
-    lon, lat = gdf_latlon.geometry.iloc[0].x, gdf_latlon.geometry.iloc[0].y
-
-    return lat, lon
-
-
-def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
+def visualize_coverage_on_osm(country_data: CountryData, cities: set[City], radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
@@ -38,16 +19,7 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     # 2. Ebene für die Funkmasten anlegen
     fg_towers = folium.FeatureGroup(name="Funkmasten (Abdeckung)", show=True)
 
-    # 3. STÄDTE SAMMELN UND OPTIMIERT CLUSTERN (Verhindert Browser-Lag)
-    city_coords = []
-    cities, _ = load_cities(country)
-
-    for city in cities:
-        lat, lon = city.lat, city.lon
-        if lat is None or lon is None:
-            lat, lon = utm_to_latlon((city.x, city.y))
-        if lat is not None and lon is not None:
-            city_coords.append([lat, lon])
+    city_coords = [[city.lat, city.lon] for city in cities]
 
     # FastMarkerCluster sorgt dafür, dass die Karte blitzschnell lädt
     fast_cluster = FastMarkerCluster(data=city_coords, name="Städte (Dynamisch gruppiert)")
@@ -58,7 +30,7 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     for tower in towers[0]:
         lat, lon = tower.lat, tower.lon
         if lat is None or lon is None:
-            lat, lon = utm_to_latlon((tower.x, tower.y))
+            lat, lon = utm_to_latlon((tower.x, tower.y), epsg=country_data.epsg)
 
         # Funkradius (schön dezent transparent)
         folium.Circle(
@@ -86,7 +58,7 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     for tower in towers[1]:
         lat, lon = tower.lat, tower.lon
         if lat is None or lon is None:
-            lat, lon = utm_to_latlon((tower.x, tower.y))
+            lat, lon = utm_to_latlon((tower.x, tower.y), epsg=country_data.epsg)
 
         # Funkradius
         folium.Circle(
@@ -115,5 +87,5 @@ def visualize_coverage_on_osm(country: str, radius: tuple[int, int], towers: tup
     folium.LayerControl().add_to(m)
 
     # Speichern
-    file_name = f"osm_coverage_{country}_{radius[0]}_{radius[1]}.html"
+    file_name = f"osm_coverage_{country_data.name}_{radius[0]}_{radius[1]}.html"
     m.save(file_name)

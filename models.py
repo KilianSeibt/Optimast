@@ -3,8 +3,16 @@ import math
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
 from pathlib import Path
-from load_countries import  COUNTRY_DATA
 
+from shapely.geometry.geo import box
+from shapely.ops import unary_union
+from shapely.prepared import prep, PreparedGeometry
+
+"""
+This file provides some basic data structures and functions for example, points, towers, cities, calcuate distance,
+calculate cost function, check if a point is in a country, load cities.
+No big logic happening here^^
+"""
 
 @dataclass(slots=True, frozen=True)
 class Point:
@@ -22,6 +30,50 @@ class Tower(Point):
 class City(Point):
     name: str = None
 
+countries = {'Austria', 'Montenegro', 'Turkiye', 'Sweden', 'Switzerland', 'Slovakia', 'Germany',
+             'Albania', 'Romania', 'Bulgaria', 'Norway', 'Finland', 'Ireland', 'North Macedonia',
+             'Estonia', 'Greece', 'Luxembourg', 'United Kingdom', 'Hungary', 'Belgium', 'Cyprus', 'Denmark',
+             'Slovenia', 'Netherlands', 'Poland', 'Iceland', 'Spain', 'Latvia', 'Moldova', 'Bosnia', 'Italy',
+             'Serbia', 'Belarus', 'Czechia', 'Portugal', 'Lithuania', 'Croatia', 'France', 'Ukraine'}
+
+@dataclass(frozen=True)
+class CountryData:
+    name: str
+    latlon_plot: gpd.GeoSeries
+    utm_plot: gpd.GeoSeries
+    latlon_prep: PreparedGeometry
+    utm_prep: PreparedGeometry
+    epsg: int
+    bounds: tuple[int, int, int, int]
+
+# We load the world map from the geopandas library.
+_world_lat_lon = gpd.read_file("input_files/ne_110m_admin_0_countries.shp")
+
+def create_country_data(country: str, epsg: int = 3035) -> CountryData:
+
+    _world_europe_utm = _world_lat_lon.to_crs(epsg=epsg)
+    country_latlon = _world_lat_lon[_world_lat_lon["NAME"] == country.capitalize()]
+
+    parts = country_latlon.explode(index_parts=False)
+    EUROPE_BOX = box(-25, 34, 45, 72)
+    parts = parts[parts.intersects(EUROPE_BOX)]
+
+    country_geometry = unary_union(parts.geometry)
+    country_utm = gpd.GeoSeries([country_geometry],crs=_world_lat_lon.crs).to_crs(epsg=epsg)
+    xmin, ymin, xmax, ymax = country_utm.iloc[0].bounds
+    return CountryData(
+        name = country.capitalize(),
+        latlon_plot = gpd.GeoSeries([country_geometry],crs=_world_lat_lon.crs),
+
+        utm_plot = country_utm,
+
+        latlon_prep = prep(country_geometry),
+        utm_prep = prep(country_utm.iloc[0]),
+        epsg = 3035,
+        bounds = (int(xmin), int(xmax), int(ymin), int(ymax))
+    )
+
+
 def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, float]:
     """
     Converts a point from lat/lon to UTM.
@@ -30,10 +82,10 @@ def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, floa
     :param point: (x, y) in meters (UTM)
     :return: (lat, lon)
         """
-    if country == 'Germany' or country == 'France':
-        epsg = 32632
+    if country == 'Paraguay':
+        epsg = 32721
     else:
-        raise ValueError
+        epsg = 3035
 
     lat, lon = point
     gdf = gpd.GeoDataFrame(
@@ -44,21 +96,8 @@ def latlon_to_utm(point: tuple[float, float], country: str) -> tuple[float, floa
     p = gdf_utm.geometry.iloc[0]
     return p.x, p.y
 
-def utm_to_latlon(point: tuple[float, float], country: str) -> tuple[float, float]:
-    """
-    Converts a point from UTM (EPSG:32632) to lat/lon (EPSG:4326).
+def utm_to_latlon(point: tuple[float, float], epsg: int) -> tuple[float, float]:
 
-    :param country:
-    :param point: (x, y) in meters (UTM)
-    :return: (lat, lon)
-    """
-
-    if country == 'Germany' or country == 'France':
-        epsg = 32632
-    elif country == 'USA':
-        epsg = 5070
-    else:
-        raise ValueError
     x, y = point
 
     gdf = gpd.GeoDataFrame(
@@ -72,8 +111,8 @@ def utm_to_latlon(point: tuple[float, float], country: str) -> tuple[float, floa
 
     return lat, lon
 
-def calculate_distance_m(start: tuple[float, float] | Point = None,
-                          destination: tuple[float, float] | Point = None,
+def calculate_distance_m(start: tuple[float, float] | Point,
+                          destination: tuple[float, float] | Point,
                           unit: str = 'lat_lon'
                           ) -> float:
     """
@@ -167,20 +206,18 @@ def cost_function(radius: float) -> float:
     else:
         raise ValueError
 
-def is_in_country(point: tuple[float, float], country: str, unit: str) -> bool:
-
-    country_info = COUNTRY_DATA[country]
+def is_in_country(point: tuple[float, float], country_data: CountryData, unit: str) -> bool:
 
     if unit == 'lon_lat':
 
         lat, lon = point
-        return country_info["latlon_prep"].contains(
+        return country_data.latlon_prep.contains(
             ShapelyPoint(lon, lat)
         )
     elif unit == 'utm':
         x, y = point
 
-        return country_info["utm_prep"].contains(
+        return country_data.utm_prep.contains(
             ShapelyPoint(x, y)
         )
     else:
@@ -188,27 +225,25 @@ def is_in_country(point: tuple[float, float], country: str, unit: str) -> bool:
             "unit must be 'lon_lat' or 'xy'"
         )
 
-def load_cities(country: str = 'Germany') -> tuple[set[City], int]:
-    if country == 'Germany':
-        file_path = Path("input_files/cities_de_50k.txt")
-    elif country == 'France':
-        file_path = Path("input_files/cities_fr_30k.txt")
-    else:
-        raise ValueError
+def load_cities(country: str = 'DE') -> tuple[set[City], int]:
+
     cities: set[City] = set()
     nr_of_cities = 0
+    file_path = Path(f"input_files/cities_europe_50k.txt")
     with open(file_path, "r", encoding="utf-8") as file:
         for line in file:
             # Separate each line at the commas
-            parts: list = line.strip().split(",")
+            line =  line.strip().split(",")
+            name, lat, lon, cntry = line[0].strip().upper(), float(line[1]), float(line[2]), line[3].strip().upper()
 
-            # Latitude is the second entry in parts, longitude is the third entry in parts
-            name = parts[0]
-            lat = float(parts[1])
-            lon = float(parts[2])
-            # Calculate the utm coords right away so we have them ready for later
-            x, y = latlon_to_utm((lat, lon), country)
-            city = City(name=name, lat=lat, lon=lon, x=x, y=y)
-            cities.add(city)
-            nr_of_cities += 1
+            if cntry == country.strip().upper():
+
+                # Calculate the utm coords right away so we have them ready for later
+                x, y = latlon_to_utm((lat, lon), country)
+                city = City(name=name, lat=lat, lon=lon, x=x, y=y)
+                cities.add(city)
+                nr_of_cities += 1
+    if nr_of_cities == 0:
+        print("No cities found for the given country!")
+        print(f"Please check the country name and try again. The country name is: {country}")
     return cities, nr_of_cities

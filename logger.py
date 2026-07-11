@@ -10,6 +10,7 @@ logging.basicConfig(
     encoding='utf-8',
     level=logging.INFO,
     format="%(message)s",
+    force=True
 )
 
 timestamp_start = datetime.now().strftime("%Y-%m-%d__%H-%M-%S")
