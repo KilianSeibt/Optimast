@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from geopandas import GeoDataFrame
 from models import *
 
-def plot_map(country_data: CountryData,
+def plot_map(country_datas: tuple[CountryData,...],
              city_coords: set[City]|None = None,
              tower_small_coords: set[Tower]|None = None,
              tower_large_coords: set[Tower]|None = None,
@@ -13,7 +13,7 @@ def plot_map(country_data: CountryData,
     """
      Plots the map of Germany including cities, towers, grid, etc.
      Note that the coords of any point can be given in either utm or lat/lon format
-    :param country_data:
+    :param country_datas:
     :param unit:
     :param radius_small:
     :param radius_large:
@@ -26,13 +26,14 @@ def plot_map(country_data: CountryData,
     :return:
     """
     fig, ax = plt.subplots(figsize=(8, 10))
-    if unit == 'latlon':
-        country_map = country_data.latlon_plot
-    elif unit == 'utm':
-        country_map = country_data.utm_plot
-    else:
-        raise ValueError
-    country_map.plot(ax=ax, color="lightgray", edgecolor="black")
+    for country_data in country_datas:
+        if unit == 'latlon':
+            country_map = country_data.latlon_plot
+        elif unit == 'utm':
+            country_map = country_data.utm_plot
+        else:
+            raise ValueError
+        country_map.plot(ax=ax, color="lightgray", edgecolor="black")
 
     def plot_points(points: set[Point], color: str = 'black', marker_size: int = 10) -> GeoDataFrame:
         # Check if the coords are in utm or lat/lon format
@@ -61,8 +62,7 @@ def plot_map(country_data: CountryData,
         circles = points_projected.buffer(radius)
         circles_gdf = gpd.GeoDataFrame(geometry=circles, crs=f'EPSG:{country_data.epsg}')
         circles_gdf = circles_gdf.to_crs(epsg=4326)
-
-        circles_gdf.plot(ax=ax, facecolor=f'lightcoral', edgecolor=color, alpha=0.3)
+        circles_gdf.plot(ax=ax, facecolor='lightcoral', edgecolor=color, alpha=0.3)
 
     if city_coords:
         plot_points(city_coords)

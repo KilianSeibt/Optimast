@@ -14,7 +14,7 @@ class Problem:
     nr_of_cities: int
     penalty: float
 
-    def __init__(self, grid_density: int, country: str, eps_x: int = 0, eps_y: int = 0,
+    def __init__(self, grid_density: int, country: Country, eps_x: int = 0, eps_y: int = 0,
                  penalty: float = 0):
 
         self.country_data: CountryData = create_country_data(country)
@@ -50,8 +50,8 @@ class Problem:
 
         while y <= y_max:
             while x <= x_max:
-                # if is_in_country((x, y), country, 'utm'):
-                grid.add(Point(x=x, y=y))
+                if is_in_country((x, y), self.country_data, 'utm'):
+                    grid.add(Point(x=x, y=y))
 
                 x += step_size
 

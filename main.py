@@ -1,8 +1,10 @@
-from osm import *
-from Problem import *
 from logger import *
 from typing import TypedDict
-from plotting import *
+
+from models import Tower, Country, utm_to_latlon
+from Problem import Problem
+from plotting import plot_map
+from osm import visualize_coverage_on_osm
 
 
 class SearchResult(TypedDict):
@@ -159,25 +161,32 @@ def find_minimum(problem: Problem, starting_point: tuple[int, int],
 
     return points_to_plot, best
 
-def calculate_costs(country: str, grid_density: int, point: tuple[int, int]) -> tuple[set, set, float]:
+def calculate_costs(country: Country, grid_density: int, point: tuple[int, int]) -> tuple[set, set, float]:
 
     problem = Problem(grid_density, country=country)
     towers_small, towers_large, costs = problem.solve(point[0], point[1])
     return towers_small, towers_large, costs
 
 def main():
-    grid_density = 20_000
-
-    for country in countries:
-        log_start(country, grid_density)
-        try:
-            problem = Problem(grid_density, country=country)
-            plot_map(country_data=problem.country_data, grid=problem.grid, headline=country)
-        except Exception as e:
-            print(f'Country: {country} could not be plotted.')
-            print(f"Error: {e}")
-
-    """# Starting points for the gradient search
+    grid_density = 10_000
+    country_datas = []
+    cities = set()
+    positions_small: set[Tower] = set()
+    positions_large: set[Tower] = set()
+    costs: dict[Country, float] = {}
+    for country in Country:
+        problem = Problem(grid_density, country=country)
+        country_datas.append(problem.country_data)
+        cities |= problem.cities
+        towers_small, towers_large, cost = problem.solve(20_000, 50_000)
+        positions_small |= towers_small
+        positions_large |= towers_large
+        costs[country] = cost
+        print(f'Costs for {country}: {cost}')
+    visualize_coverage_on_osm(country_datas, cities, (20_000, 50_000), (positions_small, positions_large))
+    print(f'Total costs: {sum(costs.values())}')
+    """
+    # Starting points for the gradient search
     starting_points = [(13_700, 44_500)]
 
     MAX_ITERATIONS = 40
@@ -207,5 +216,6 @@ def main():
     visualize_coverage_on_osm(country, (best['size_small'], best['size_large']),
                               (best['positions_small'], best['positions_large']))
 """
+
 if __name__ == "__main__":
     main()

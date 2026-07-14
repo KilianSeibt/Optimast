@@ -3,6 +3,7 @@ import math
 import geopandas as gpd
 from shapely.geometry import Point as ShapelyPoint
 from pathlib import Path
+from enum import StrEnum
 
 from shapely.geometry.geo import box
 from shapely.ops import unary_union
@@ -30,11 +31,46 @@ class Tower(Point):
 class City(Point):
     name: str = None
 
-countries = {'Austria', 'Montenegro', 'Turkiye', 'Sweden', 'Switzerland', 'Slovakia', 'Germany',
-             'Albania', 'Romania', 'Bulgaria', 'Norway', 'Finland', 'Ireland', 'North Macedonia',
-             'Estonia', 'Greece', 'Luxembourg', 'United Kingdom', 'Hungary', 'Belgium', 'Cyprus', 'Denmark',
-             'Slovenia', 'Netherlands', 'Poland', 'Iceland', 'Spain', 'Latvia', 'Moldova', 'Bosnia', 'Italy',
-             'Serbia', 'Belarus', 'Czechia', 'Portugal', 'Lithuania', 'Croatia', 'France', 'Ukraine'}
+class Country(StrEnum):
+    ALBANIA = "Albania"
+    AUSTRIA = "Austria"
+    BELARUS = "Belarus"
+    BELGIUM = "Belgium"
+    BOSNIA = "Bosnia and Herz."
+    BULGARIA = "Bulgaria"
+    CROATIA = "Croatia"
+    CYPRUS = "Cyprus"
+    CZECHIA = "Czechia"
+    DENMARK = "Denmark"
+    ESTONIA = "Estonia"
+    FINLAND = "Finland"
+    FRANCE = "France"
+    GERMANY = "Germany"
+    GREECE = "Greece"
+    HUNGARY = "Hungary"
+    ICELAND = "Iceland"
+    IRELAND = "Ireland"
+    ITALY = "Italy"
+    LATVIA = "Latvia"
+    LITHUANIA = "Lithuania"
+    LUXEMBOURG = "Luxembourg"
+    MOLDOVA = "Moldova"
+    MONTENEGRO = "Montenegro"
+    NETHERLANDS = "Netherlands"
+    NORTH_MACEDONIA = "North Macedonia"
+    NORWAY = "Norway"
+    POLAND = "Poland"
+    PORTUGAL = "Portugal"
+    ROMANIA = "Romania"
+    SERBIA = "Serbia"
+    SLOVAKIA = "Slovakia"
+    SLOVENIA = "Slovenia"
+    SPAIN = "Spain"
+    SWEDEN = "Sweden"
+    SWITZERLAND = "Switzerland"
+    TURKIYE = "Turkey"
+    UKRAINE = "Ukraine"
+    UNITED_KINGDOM = "United Kingdom"
 
 @dataclass(frozen=True)
 class CountryData:
@@ -49,10 +85,10 @@ class CountryData:
 # We load the world map from the geopandas library.
 _world_lat_lon = gpd.read_file("input_files/ne_110m_admin_0_countries.shp")
 
-def create_country_data(country: str, epsg: int = 3035) -> CountryData:
+def create_country_data(country: Country, epsg: int = 3035) -> CountryData:
 
     _world_europe_utm = _world_lat_lon.to_crs(epsg=epsg)
-    country_latlon = _world_lat_lon[_world_lat_lon["NAME"] == country.capitalize()]
+    country_latlon = _world_lat_lon[_world_lat_lon["NAME"] == country]
 
     parts = country_latlon.explode(index_parts=False)
     EUROPE_BOX = box(-25, 34, 45, 72)
@@ -61,6 +97,7 @@ def create_country_data(country: str, epsg: int = 3035) -> CountryData:
     country_geometry = unary_union(parts.geometry)
     country_utm = gpd.GeoSeries([country_geometry],crs=_world_lat_lon.crs).to_crs(epsg=epsg)
     xmin, ymin, xmax, ymax = country_utm.iloc[0].bounds
+    buffer = 10_000
     return CountryData(
         name = country.capitalize(),
         latlon_plot = gpd.GeoSeries([country_geometry],crs=_world_lat_lon.crs),
@@ -70,7 +107,7 @@ def create_country_data(country: str, epsg: int = 3035) -> CountryData:
         latlon_prep = prep(country_geometry),
         utm_prep = prep(country_utm.iloc[0]),
         epsg = 3035,
-        bounds = (int(xmin), int(xmax), int(ymin), int(ymax))
+        bounds = (int(xmin)-buffer, int(xmax)+buffer, int(ymin)-buffer, int(ymax)+buffer)
     )
 
 
@@ -225,7 +262,7 @@ def is_in_country(point: tuple[float, float], country_data: CountryData, unit: s
             "unit must be 'lon_lat' or 'xy'"
         )
 
-def load_cities(country: str = 'DE') -> tuple[set[City], int]:
+def load_cities(country: Country) -> tuple[set[City], int]:
 
     cities: set[City] = set()
     nr_of_cities = 0
@@ -234,9 +271,9 @@ def load_cities(country: str = 'DE') -> tuple[set[City], int]:
         for line in file:
             # Separate each line at the commas
             line =  line.strip().split(",")
-            name, lat, lon, cntry = line[0].strip().upper(), float(line[1]), float(line[2]), line[3].strip().upper()
+            name, lat, lon, cntry = line[0].strip(), float(line[1]), float(line[2]), line[3].strip()
 
-            if cntry == country.strip().upper():
+            if cntry == country:
 
                 # Calculate the utm coords right away so we have them ready for later
                 x, y = latlon_to_utm((lat, lon), country)

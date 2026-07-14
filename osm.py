@@ -7,7 +7,7 @@ This file does the plotting of the Open-Street-Map-coverage on a map.
 No big logic happening here^^ Just some visualization stuff
 """
 
-def visualize_coverage_on_osm(country_data: CountryData, cities: set[City], radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
+def visualize_coverage_on_osm(country_datas: list[CountryData], cities: set[City], radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
@@ -25,67 +25,41 @@ def visualize_coverage_on_osm(country_data: CountryData, cities: set[City], radi
     fast_cluster = FastMarkerCluster(data=city_coords, name="Städte (Dynamisch gruppiert)")
     fast_cluster.add_to(m)
 
-    # 4. MASTEN PLOTTEN
-    # Kleine Masten zeichnen
-    for tower in towers[0]:
-        lat, lon = tower.lat, tower.lon
-        if lat is None or lon is None:
-            lat, lon = utm_to_latlon((tower.x, tower.y), epsg=country_data.epsg)
+    def draw_circles(circles: set[Tower], rad: int):
+        for circle in circles:
+            lat, lon = circle.lat, circle.lon
+            if lat is None or lon is None:
+                lat, lon = utm_to_latlon((circle.x, circle.y), epsg=country_datas[0].epsg)
 
-        # Funkradius (schön dezent transparent)
-        folium.Circle(
-            location=[lat, lon],
-            radius=radius[0],
-            color="#2980B9",
-            weight=1,
-            fill=True,
-            fill_color="#2980B9",
-            fill_opacity=0.15,
-            tooltip=f"<b>Kleiner Mast</b><br>Radius: {radius[0] / 1000} km"
-        ).add_to(fg_towers)
+            # Funkradius (schön dezent transparent)
+            folium.Circle(
+                location=[lat, lon],
+                radius=rad,
+                color="#2980B9",
+                weight=1,
+                fill=True,
+                fill_color="#2980B9",
+                fill_opacity=0.15,
+                tooltip=f"<b>Kleiner Mast</b><br>Radius: {rad / 1000} km"
+            ).add_to(fg_towers)
 
-        # Exakter Standortpunkt
-        folium.CircleMarker(
-            location=[lat, lon],
-            radius=3,
-            color="black",
-            fill=True,
-            fill_color="#2980B9",
-            fill_opacity=1.0
-        ).add_to(fg_towers)
+            # Exakter Standortpunkt
+            folium.CircleMarker(
+                location=[lat, lon],
+                radius=3,
+                color="black",
+                fill=True,
+                fill_color="#2980B9",
+                fill_opacity=1.0
+            ).add_to(fg_towers)
 
-    # Große Masten zeichnen
-    for tower in towers[1]:
-        lat, lon = tower.lat, tower.lon
-        if lat is None or lon is None:
-            lat, lon = utm_to_latlon((tower.x, tower.y), epsg=country_data.epsg)
-
-        # Funkradius
-        folium.Circle(
-            location=[lat, lon],
-            radius=radius[1],
-            color="#8E44AD",
-            weight=1,
-            fill=True,
-            fill_color="#8E44AD",
-            fill_opacity=0.15,
-            tooltip=f"<b>Großer Mast</b><br>Radius: {radius[1] / 1000} km"
-        ).add_to(fg_towers)
-
-        # Exakter Standortpunkt
-        folium.CircleMarker(
-            location=[lat, lon],
-            radius=4,
-            color="black",
-            fill=True,
-            fill_color="#8E44AD",
-            fill_opacity=1.0
-        ).add_to(fg_towers)
+    draw_circles(towers[0], radius[0])
+    draw_circles(towers[1], radius[1])
 
     # Ebenen-Steuerung hinzufügen
     fg_towers.add_to(m)
     folium.LayerControl().add_to(m)
 
     # Speichern
-    file_name = f"osm_coverage_{country_data.name}_{radius[0]}_{radius[1]}.html"
+    file_name = f"osm_coverage_Europe_{radius[0]}_{radius[1]}.html"
     m.save(file_name)
