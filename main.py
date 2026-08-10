@@ -1,7 +1,9 @@
+from shapely.geometry import point
+
 from logger import *
 from typing import TypedDict
 
-from models import Tower, Country, utm_to_latlon
+from models import Tower, Country, utm_to_latlon, CountryData
 from Problem import Problem
 from plotting import plot_map
 from osm import visualize_coverage_on_osm
@@ -161,36 +163,21 @@ def find_minimum(problem: Problem, starting_point: tuple[int, int],
 
     return points_to_plot, best
 
-def calculate_costs(country: Country, grid_density: int, point: tuple[int, int]) -> tuple[set, set, float]:
+def calculate_costs(country: Country, grid_density: int, sizes: tuple[int, int]) -> tuple[set, set, float]:
 
     problem = Problem(grid_density, country=country)
-    towers_small, towers_large, costs = problem.solve(point[0], point[1])
+    towers_small, towers_large, costs = problem.solve(sizes[0], sizes[1])
     return towers_small, towers_large, costs
 
 def main():
-    grid_density = 10_000
-    country_datas = []
-    cities = set()
-    positions_small: set[Tower] = set()
-    positions_large: set[Tower] = set()
-    costs: dict[Country, float] = {}
-    for country in Country:
-        problem = Problem(grid_density, country=country)
-        country_datas.append(problem.country_data)
-        cities |= problem.cities
-        towers_small, towers_large, cost = problem.solve(20_000, 50_000)
-        positions_small |= towers_small
-        positions_large |= towers_large
-        costs[country] = cost
-        print(f'Costs for {country}: {cost}')
-    visualize_coverage_on_osm(country_datas, cities, (20_000, 50_000), (positions_small, positions_large))
-    print(f'Total costs: {sum(costs.values())}')
-    """
+    grid_density = 5_000
+    country = Country.EUROPE
+
     # Starting points for the gradient search
-    starting_points = [(13_700, 44_500)]
+    starting_points = [(15156, 48750)]
 
     MAX_ITERATIONS = 40
-    step_size = 100
+    step_size = 78
 
     problem = Problem(grid_density, country=country)
 
@@ -213,9 +200,8 @@ def main():
     # At the end we log our results, write the solution.txt file and plot the coverage with osm.
     log_results(local_minima, (best['size_small'], best['size_large']), (best['positions_small'], best['positions_large']), best['costs'])
     #write_txt_file(best['positions_small'], best['positions_large'])
-    visualize_coverage_on_osm(country, (best['size_small'], best['size_large']),
-                              (best['positions_small'], best['positions_large']))
-"""
+    visualize_coverage_on_osm(cities=problem.cities, radius=(best['size_small'], best['size_large']), towers=(best['positions_small'], best['positions_large']))
+
 
 if __name__ == "__main__":
     main()

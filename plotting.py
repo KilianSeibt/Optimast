@@ -2,29 +2,30 @@ import matplotlib.pyplot as plt
 from geopandas import GeoDataFrame
 from models import *
 
-def plot_map(country_datas: tuple[CountryData,...],
-             city_coords: set[City]|None = None,
-             tower_small_coords: set[Tower]|None = None,
-             tower_large_coords: set[Tower]|None = None,
-             radius_small: int = 0, radius_large: int = 0,
+def plot_map(country_datas: list[CountryData],
+             cities: set[City]|None = None,
+             radius: tuple[int, int]|None = None,
+             towers: tuple[set[Tower], set[Tower]]|None = None,
              grid: set[Point]|None = None,
              headline: str = 'To determine',
              unit: str = 'latlon') -> None:
     """
-     Plots the map of Germany including cities, towers, grid, etc.
+     Plots the map including cities, towers, grid, etc.
      Note that the coords of any point can be given in either utm or lat/lon format
-    :param country_datas:
-    :param unit:
-    :param radius_small:
-    :param radius_large:
+    :param country_datas: List of CountryData objects to plot
+    :param cities: Set of City objects to plot
+    :param radius: Tuple of (radius_small, radius_large) for tower circles
+    :param towers: Tuple of (small_towers, large_towers) containing sets of Tower objects
+    :param grid: Set of grid points to plot
     :param headline: The headline of the map
-    :param city_coords: List of tuples containing the coords of the cities or a list of datatype city.
-    The coords can be given in either utm or lat/lon format
-    :param tower_small_coords: List of tuples containing the coords of the small towers
-    :param tower_large_coords: List of tuples containing the coords of the large towers
-    :param grid: List of tuples containing coords of the grid points
-    :return:
+    :param unit: Either 'latlon' or 'utm' for coordinate format
+    :return: None
     """
+    # Extract tuple parameters
+    radius_small, radius_large = radius if radius else (None, None)
+    tower_small_coords, tower_large_coords = towers if towers else (None, None)
+    city_coords = cities
+
     fig, ax = plt.subplots(figsize=(8, 10))
     for country_data in country_datas:
         if unit == 'latlon':
@@ -55,11 +56,11 @@ def plot_map(country_datas: tuple[CountryData,...],
 
         return points_gdf
 
-    def plot_circles(points: set[Point], color: str, radius: int):
+    def plot_circles(points: set[Point], color: str, r: int):
         points_gdf = plot_points(points, color)
 
         points_projected = points_gdf.to_crs(epsg=country_data.epsg)
-        circles = points_projected.buffer(radius)
+        circles = points_projected.buffer(r)
         circles_gdf = gpd.GeoDataFrame(geometry=circles, crs=f'EPSG:{country_data.epsg}')
         circles_gdf = circles_gdf.to_crs(epsg=4326)
         circles_gdf.plot(ax=ax, facecolor='lightcoral', edgecolor=color, alpha=0.3)

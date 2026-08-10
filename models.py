@@ -71,6 +71,7 @@ class Country(StrEnum):
     TURKIYE = "Turkey"
     UKRAINE = "Ukraine"
     UNITED_KINGDOM = "United Kingdom"
+    EUROPE = "Europe"
 
 @dataclass(frozen=True)
 class CountryData:
@@ -87,6 +88,35 @@ _world_lat_lon = gpd.read_file("input_files/ne_110m_admin_0_countries.shp")
 
 def create_country_data(country: Country, epsg: int = 3035) -> CountryData:
 
+    if country == Country.EUROPE:
+        # Erstelle CountryData für alle einzelnen Länder
+        country_datas: list[CountryData] = [create_country_data(c, epsg) for c in Country if c != Country.EUROPE]
+
+        # Füge alle latlon_plot geometries zusammen
+        all_latlon_geometries = [cd.latlon_plot.iloc[0] for cd in country_datas]
+        europe_latlon_geometry = unary_union(all_latlon_geometries)
+        europe_latlon_plot = gpd.GeoSeries([europe_latlon_geometry], crs=_world_lat_lon.crs)
+
+        # Füge alle utm_plot geometries zusammen
+        all_utm_geometries = [cd.utm_plot.iloc[0] for cd in country_datas]
+        europe_utm_geometry = unary_union(all_utm_geometries)
+        europe_utm_plot = gpd.GeoSeries([europe_utm_geometry], crs=f"EPSG:{epsg}")
+
+        # Berechne bounds
+        xmin, ymin, xmax, ymax = europe_utm_geometry.bounds
+        buffer = 10_000
+
+        return CountryData(
+            name="Europe",
+            latlon_plot=europe_latlon_plot,
+            utm_plot=europe_utm_plot,
+            latlon_prep=prep(europe_latlon_geometry),
+            utm_prep=prep(europe_utm_geometry),
+            epsg=epsg,
+            bounds=(int(xmin)-buffer, int(xmax)+buffer, int(ymin)-buffer, int(ymax)+buffer)
+        )
+
+    # Für einzelne Länder
     _world_europe_utm = _world_lat_lon.to_crs(epsg=epsg)
     country_latlon = _world_lat_lon[_world_lat_lon["NAME"] == country]
 
@@ -106,7 +136,7 @@ def create_country_data(country: Country, epsg: int = 3035) -> CountryData:
 
         latlon_prep = prep(country_geometry),
         utm_prep = prep(country_utm.iloc[0]),
-        epsg = 3035,
+        epsg = epsg,
         bounds = (int(xmin)-buffer, int(xmax)+buffer, int(ymin)-buffer, int(ymax)+buffer)
     )
 
@@ -273,7 +303,7 @@ def load_cities(country: Country) -> tuple[set[City], int]:
             line =  line.strip().split(",")
             name, lat, lon, cntry = line[0].strip(), float(line[1]), float(line[2]), line[3].strip()
 
-            if cntry == country:
+            if country == Country.EUROPE or cntry == country:
 
                 # Calculate the utm coords right away so we have them ready for later
                 x, y = latlon_to_utm((lat, lon), country)

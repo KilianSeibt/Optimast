@@ -7,7 +7,7 @@ This file does the plotting of the Open-Street-Map-coverage on a map.
 No big logic happening here^^ Just some visualization stuff
 """
 
-def visualize_coverage_on_osm(country_datas: list[CountryData], cities: set[City], radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]]):
+def visualize_coverage_on_osm(cities: set[City], radius: tuple[int, int], towers: tuple[set[Tower], set[Tower]], epsg: int = 3035):
     """
     Visualisiert Städte hocheffizient via Clustering und zeichnet die Masten
     direkt aus den Berechnungsergebnissen auf einer interaktiven OSM-Karte.
@@ -29,7 +29,7 @@ def visualize_coverage_on_osm(country_datas: list[CountryData], cities: set[City
         for circle in circles:
             lat, lon = circle.lat, circle.lon
             if lat is None or lon is None:
-                lat, lon = utm_to_latlon((circle.x, circle.y), epsg=country_datas[0].epsg)
+                lat, lon = utm_to_latlon((circle.x, circle.y), epsg=epsg)
 
             # Funkradius (schön dezent transparent)
             folium.Circle(
