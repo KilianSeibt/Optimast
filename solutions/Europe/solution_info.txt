@@ -1,0 +1,13 @@
+Num. Gridpoints:            48386
+
+Number of interferences:    0
+Interference cost:          0
+Found Cost:                 721.7232840978027
+
+Small Towers:
+        Cost:               0.9179306290417402
+        Num:                386
+
+Large Towers:
+        Cost:               2.226679159318048
+        Num:                165

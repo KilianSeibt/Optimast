@@ -1,0 +1,1 @@
+The Europe solution.txt uses kilometer as its unit, all other solution.txt use meter.

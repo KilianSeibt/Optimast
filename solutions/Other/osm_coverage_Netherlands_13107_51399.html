@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f79a2d617dea0ba63305d6fde37b167f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f79a2d617dea0ba63305d6fde37b167f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f79a2d617dea0ba63305d6fde37b167f = L.map(
+                "map_f79a2d617dea0ba63305d6fde37b167f",
+                {
+                    center: [51.165691, 10.451526],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c4630ea1721a659225828516443279e4 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c4630ea1721a659225828516443279e4.addTo(map_f79a2d617dea0ba63305d6fde37b167f);
+        
+    
+            var fast_marker_cluster_a60db81f78dbc9f97a876139cd5b0135 = (function(){
+                
+                var callback = function (row) {
+                    var icon = L.AwesomeMarkers.icon();
+                    var marker = L.marker(new L.LatLng(row[0], row[1]));
+                    marker.setIcon(icon);
+                    return marker;
+                };
+
+                var data = [[51.4997, 3.6136], [52.5167, 6.1], [52.0117, 4.3592], [52.3506, 5.6172], [52.08, 4.31], [51.42, 5.405], [51.92, 4.48], [52.632, 4.751], [51.8306, 4.9742], [51.85, 4.5333], [52.5108, 4.6728], [52.14, 6.195], [51.8833, 5.4333], [50.8833, 5.9833], [52.2639, 4.6375], [51.5911, 5.3275], [52.0333, 4.6333], [51.3333, 3.8333], [51.5, 4.3], [52.155, 5.3875], [52.1331, 5.4297], [51.8333, 4.1333], [52.3567, 6.6625], [51.9357, 4.5782], [52.25, 6.1667], [51.9167, 4.4], [52.0883, 4.3944], [51.6533, 5.2875], [51.9167, 4.35], [51.5314, 4.4556], [52.3, 4.6667], [52.2639, 4.7625], [53.2642, 6.5431], [52.3464, 5.9842], [52.3803, 4.6406], [52.6958, 6.1944], [52.0181, 4.7056], [51.7002, 5.3068], [51.8067, 5.7211], [52.21, 5.97], [53.2167, 6.5667], [52.7674, 5.1037], [51.85, 4.63], [52.775, 6.1853], [53.0325, 5.66], [52.1606, 6.4158], [52.9895, 6.9504], [52.3125, 6.9292], [51.5833, 5.2], [52.215, 4.5103], [52.1333, 4.65], [52.16, 4.49], [51.7958, 4.6783], [51.9167, 6.0833], [52.505, 4.9639], [52.02, 5.0422], [51.9644, 5.6631], [52.0456, 4.33], [50.8667, 6.0667], [51.9189, 4.2567], [52.3019, 4.8581], [52.4697, 4.7767], [51.4344, 5.4842], [53.1, 6.1], [51.8667, 4.35], [52.23, 5.18], [52.0436, 5.6667], [51.5258, 5.9747], [52.1081, 4.2731], [52.2994, 5.2531], [52.0261, 5.1728], [52.07, 4.355], [52.0833, 5.2333], [51.7667, 5.5167], [51.251, 5.709], [51.7167, 5.3667], [52.5167, 5.4833], [52.4586, 4.6194], [52.2506, 6.9119], [52.661, 6.7405], [52.0858, 4.8833], [52.2008, 4.4153], [51.9833, 5.9167], [52.55, 5.9], [52.0, 6.0167], [52.2375, 4.8264], [53.2, 5.7833], [52.1106, 5.1817], [52.2656, 6.7931], [51.8667, 4.6], [52.0908, 5.1217], [52.2214, 5.4842], [52.3828, 6.2828], [50.9667, 5.8333], [52.668, 4.841], [51.824, 4.6126], [51.5, 3.8833], [52.2733, 5.1611], [52.7833, 6.9], [52.025, 5.555], [52.3439, 4.9625], [51.8425, 5.8528], [50.8667, 5.6833], [52.7886, 4.8019], [52.5758, 6.6194], [51.0, 5.8667], [53.0833, 6.6], [52.0314, 5.0919], [52.0611, 4.4933], [51.5572, 5.0911], [51.37, 6.1681], [52.9953, 6.5606], [51.5875, 4.775], [51.8333, 4.3167], [52.3758, 5.2256], [51.45, 3.5833], [51.6431, 4.8569], [52.4864, 4.6572], [52.2225, 6.8925], [52.2333, 4.4333], [51.4639, 5.7947], [51.8333, 4.6833], [52.1408, 5.0394], [52.1333, 5.5833], [51.6825, 5.0694], [51.35, 5.4592], [52.7167, 6.4667], [52.5242, 5.7125], [51.6667, 5.6167], [52.9583, 4.7589], [52.6425, 5.0597], [51.4797, 5.6556], [51.5108, 5.3922], [51.5706, 4.6356], [52.4417, 4.8422], [51.9656, 6.2889], [51.1933, 5.9872], [51.6169, 5.5481], [50.9083, 6.0297], [52.5517, 4.6583], [52.3667, 4.8833], [52.3885, 6.4497], [52.1733, 5.2917]];
+                var cluster = L.markerClusterGroup({
+});
+
+                for (var i = 0; i < data.length; i++) {
+                    var row = data[i];
+                    var marker = callback(row);
+                    marker.addTo(cluster);
+                }
+
+                cluster.addTo(map_f79a2d617dea0ba63305d6fde37b167f);
+                return cluster;
+            })();
+        
+    
+            fast_marker_cluster_a60db81f78dbc9f97a876139cd5b0135.addTo(map_f79a2d617dea0ba63305d6fde37b167f);
+        
+    
+            var feature_group_e8013ed3a1120729cc732c6ac6bed2a6 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_b45e5043b86b49ec1caa58892d3c13a4 = L.circle(
+                [51.441924882648514, 3.7610295430423673],
+                {"bubblingMouseEvents": true, "color": "#2980B9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980B9", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13107, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_b45e5043b86b49ec1caa58892d3c13a4.bindTooltip(
+                `<div>
+                     <b>Kleiner Mast</b><br>Radius: 13.107 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e36a5db2b725196390196bb923f8163d = L.circleMarker(
+                [51.441924882648514, 3.7610295430423673],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980B9", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            var circle_ae250689ee080a4b9788f294397d5fe2 = L.circle(
+                [52.55687754531805, 5.134669033061809],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51399, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_ae250689ee080a4b9788f294397d5fe2.bindTooltip(
+                `<div>
+                     <b>Großer Mast</b><br>Radius: 51.399 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f6158854d864af1725747235b07f69d = L.circleMarker(
+                [52.55687754531805, 5.134669033061809],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            var circle_4b97549b48d81730db0fc6b7c551094d = L.circle(
+                [52.120518030759094, 6.253854964092942],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51399, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_4b97549b48d81730db0fc6b7c551094d.bindTooltip(
+                `<div>
+                     <b>Großer Mast</b><br>Radius: 51.399 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7620c9c59f4771da6154fa1a1c39bd33 = L.circleMarker(
+                [52.120518030759094, 6.253854964092942],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            var circle_8c8a956ebc7a34f683b8242615223168 = L.circle(
+                [51.228136822550944, 5.8202686269841735],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51399, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_8c8a956ebc7a34f683b8242615223168.bindTooltip(
+                `<div>
+                     <b>Großer Mast</b><br>Radius: 51.399 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f7b32e74134df0315eb2b4b0032e678 = L.circleMarker(
+                [51.228136822550944, 5.8202686269841735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            var circle_0eeefb4133a65309269aa086d5c6cc54 = L.circle(
+                [52.893464764496045, 6.234955424241792],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51399, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_0eeefb4133a65309269aa086d5c6cc54.bindTooltip(
+                `<div>
+                     <b>Großer Mast</b><br>Radius: 51.399 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75db8adbc76c6bd9cb2df1ad9667a8cc = L.circleMarker(
+                [52.893464764496045, 6.234955424241792],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            var circle_b022dfdae141bb2fff0e4a86b3165c11 = L.circle(
+                [51.843342191306256, 4.789489575990637],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51399, "stroke": true, "weight": 1}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            circle_b022dfdae141bb2fff0e4a86b3165c11.bindTooltip(
+                `<div>
+                     <b>Großer Mast</b><br>Radius: 51.399 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8170943419a0b15b8b8234e6cb445fd = L.circleMarker(
+                [51.843342191306256, 4.789489575990637],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8E44AD", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e8013ed3a1120729cc732c6ac6bed2a6);
+        
+    
+            feature_group_e8013ed3a1120729cc732c6ac6bed2a6.addTo(map_f79a2d617dea0ba63305d6fde37b167f);
+        
+    
+            var layer_control_603ab05a41e6ac9de6b02a3797296490_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_c4630ea1721a659225828516443279e4,
+                },
+                overlays :  {
+                    "St\u00e4dte (Dynamisch gruppiert)" : fast_marker_cluster_a60db81f78dbc9f97a876139cd5b0135,
+                    "Funkmasten (Abdeckung)" : feature_group_e8013ed3a1120729cc732c6ac6bed2a6,
+                },
+            };
+            let layer_control_603ab05a41e6ac9de6b02a3797296490 = L.control.layers(
+                layer_control_603ab05a41e6ac9de6b02a3797296490_layers.base_layers,
+                layer_control_603ab05a41e6ac9de6b02a3797296490_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_f79a2d617dea0ba63305d6fde37b167f);
+
+        
+</script>
+</html>
